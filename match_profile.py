@@ -2,26 +2,122 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from difflib import SequenceMatcher
+import os
+
+# Import enhanced matching functions
+try:
+    from enhanced_matching import (
+        enhanced_name_similarity,
+        enhanced_username_similarity,
+        name_component_similarity
+    )
+    ENHANCED_MATCHING_AVAILABLE = True
+except ImportError:
+    print("⚠️  Enhanced matching module not available. Using basic matching.")
+    ENHANCED_MATCHING_AVAILABLE = False
 
 df = pd.read_csv("/Users/tm/Documents/KMITL/Senior_Project/Project-for-Work/data/processed/profiles_with_embeddings.csv")
 df.head()
 
+def embedding_similarity(path_a: str, path_b: str) -> float:
+    """
+    Calculate cosine similarity between two image embeddings.
+    
+    Args:
+        path_a: Path to first embedding .npy file
+        path_b: Path to second embedding .npy file
+    
+    Returns:
+        Cosine similarity score (0.0 to 1.0)
+    """
+    if pd.isna(path_a) or pd.isna(path_b):
+        return 0.0
+    
+    if not path_a or not path_b:
+        return 0.0
+    
+    try:
+        # Check if files exist
+        if not os.path.exists(path_a) or not os.path.exists(path_b):
+            return 0.0
+        
+        # Load embeddings
+        emb_a = np.load(path_a)
+        emb_b = np.load(path_b)
+        
+        # Ensure embeddings are 1D
+        if emb_a.ndim > 1:
+            emb_a = emb_a.flatten()
+        if emb_b.ndim > 1:
+            emb_b = emb_b.flatten()
+        
+        # Check if embeddings have the same shape
+        if emb_a.shape != emb_b.shape:
+            return 0.0
+        
+        # Calculate cosine similarity
+        # Reshape for sklearn's cosine_similarity
+        similarity = cosine_similarity(
+            emb_a.reshape(1, -1),
+            emb_b.reshape(1, -1)
+        )[0][0]
+        
+        # Ensure result is in [0, 1] range
+        # Cosine similarity is in [-1, 1], but for normalized embeddings it should be [0, 1]
+        similarity = max(0.0, min(1.0, similarity))
+        
+        return float(similarity)
+        
+    except Exception as e:
+        # Silently fail and return 0.0
+        return 0.0
+
+
 def string_similarity(a, b):
+    """Basic string similarity (fallback)."""
     if pd.isna(a) or pd.isna(b):
         return 0.0
     return SequenceMatcher(None, a.lower(), b.lower()).ratio()
 
+
 def location_similarity(loc1, loc2):
-    # Use string similarity for location (fuzzy match)
+    """Location similarity using fuzzy matching."""
+    if pd.isna(loc1) or pd.isna(loc2):
+        return 0.0
+    
+    # Use enhanced matching if available
+    if ENHANCED_MATCHING_AVAILABLE:
+        try:
+            from enhanced_matching import fuzzy_ratio
+            return fuzzy_ratio(loc1, loc2)
+        except:
+            pass
+    
+    # Fallback to basic string similarity
     return string_similarity(loc1, loc2)
 
 def calculate_similarity(profile_a, profile_b):
     """
     Calculate similarity between two profiles with dynamic weighting.
     """
-    # Calculate raw similarities
-    name_sim = string_similarity(profile_a.get("fullName"), profile_b.get("fullName"))
-    username_sim = string_similarity(profile_a.get("userName"), profile_b.get("userName"))
+    # Calculate raw similarities using enhanced matching if available
+    if ENHANCED_MATCHING_AVAILABLE:
+        # Use enhanced name matching
+        name_sim, name_details = enhanced_name_similarity(
+            profile_a.get("fullName"), 
+            profile_b.get("fullName")
+        )
+        
+        # Use enhanced username matching
+        username_sim, username_details = enhanced_username_similarity(
+            profile_a.get("userName"), 
+            profile_b.get("userName")
+        )
+    else:
+        # Fallback to basic matching
+        name_sim = string_similarity(profile_a.get("fullName"), profile_b.get("fullName"))
+        username_sim = string_similarity(profile_a.get("userName"), profile_b.get("userName"))
+    
     location_sim = location_similarity(profile_a.get("location"), profile_b.get("location"))
     
     # Handle embedding similarity

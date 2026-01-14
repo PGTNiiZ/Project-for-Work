@@ -1,0 +1,21 @@
+Loading pairs from: data/processed/pairs_twitter_googleplus.csv
+Evaluating 7733 pairs...
+Evaluating match between twitter and googleplus
+Pairs processed: 7733
+Pairs missing profiles: 0
+
+--- Evaluation Results ---
+Threshold  Accuracy   Precision  Recall     F1        
+0.5        0.681      1.000      0.681      0.810     
+0.6        0.497      1.000      0.497      0.664     
+0.7        0.314      1.000      0.314      0.478     
+0.8        0.183      1.000      0.183      0.310     
+0.85       0.171      1.000      0.171      0.292     
+0.9        0.161      1.000      0.161      0.278     
+
+--- Sample Results ---
+@mylesb <-> MylesBraithwaite | Score: 0.614 | details: {'name_similarity': 0.951, 'username_similarity': 0.278, 'location_similarity': 0.0, 'embedding_similarity': 0.0, 'confidence_score': 0.614}
+@arthurhabrial <-> ArthurHabrial | Score: 0.838 | details: {'name_similarity': 0.677, 'username_similarity': 1.0, 'location_similarity': 0.0, 'embedding_similarity': 0.0, 'confidence_score': 0.838}
+@dvdrgn <-> DavidIrigoin | Score: 0.231 | details: {'name_similarity': 0.187, 'username_similarity': 0.275, 'location_similarity': 0.0, 'embedding_similarity': 0.0, 'confidence_score': 0.231}
+@puschmann <-> FalkTPuschmann | Score: 0.712 | details: {'name_similarity': 1.0, 'username_similarity': 0.424, 'location_similarity': 0.0, 'embedding_similarity': 0.0, 'confidence_score': 0.712}
+@Alice7vong <-> AliceWong | Score: 0.227 | details: {'name_similarity': 0.0, 'username_similarity': 0.454, 'location_similarity': 0.0, 'embedding_similarity': 0.0, 'confidence_score': 0.227}

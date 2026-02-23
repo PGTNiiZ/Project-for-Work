@@ -1,0 +1,7 @@
+pair_name,model_norm,top1_accuracy_baseline,candidate_recall_baseline,top1_accuracy_with_location,candidate_recall_with_location,delta_top1_accuracy,delta_candidate_recall
+pairs_instagram_googleplus,Linear,0.867809,0.944409,0.867809,0.944409,0.0,0.0
+pairs_instagram_googleplus,RF,0.845507,0.944409,0.849063,0.944409,0.0035560000000000036,0.0
+pairs_twitter_googleplus,Linear,0.842275,0.933096,0.843245,0.933096,0.0009700000000000264,0.0
+pairs_twitter_googleplus,RF,0.819328,0.933096,0.826115,0.933096,0.0067870000000000985,0.0
+pairs_twitter_instagram,Linear,0.919522,0.959276,0.920491,0.950549,0.0009689999999999976,-0.00872700000000004
+pairs_twitter_instagram,RF,0.911118,0.959276,0.918229,0.950549,0.0071109999999999784,-0.00872700000000004

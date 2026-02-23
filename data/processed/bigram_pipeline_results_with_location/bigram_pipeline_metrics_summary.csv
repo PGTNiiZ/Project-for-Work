@@ -1,0 +1,7 @@
+pair_name,model,test_size,top1_accuracy,candidate_recall_topk
+pairs_instagram_googleplus,Linear,3094,0.867809,0.944409
+pairs_instagram_googleplus,RF,3094,0.849063,0.944409
+pairs_twitter_googleplus,Linear,3094,0.843245,0.933096
+pairs_twitter_googleplus,RF,3094,0.826115,0.933096
+pairs_twitter_instagram,Linear,3094,0.920491,0.950549
+pairs_twitter_instagram,RF,3094,0.918229,0.950549

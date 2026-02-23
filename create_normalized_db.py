@@ -213,7 +213,7 @@ def create_normalized_tables():
     """)
     
     print("\n🔗 Partition Key: item_id")
-    print("   Use JOIN on item_id to combine tables")
+    print("   Use JOIN on item_id to combine tables") 
     
     print("\n📝 Example Query (SQLite):")
     print("""

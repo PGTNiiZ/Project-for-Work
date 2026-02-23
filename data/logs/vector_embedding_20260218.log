@@ -1,0 +1,166 @@
+================================================================================
+  VECTOR EMBEDDING PIPELINE LOG
+  Project: Cross-Platform Profile Matching with SBERT-MPNet
+  Date: 2026-02-18
+  Notebook: vector_embredding.ipynb
+================================================================================
+
+[2026-02-18] PIPELINE OVERVIEW
+────────────────────────────────────────────────────────────────────────────────
+  Objective : Cross-Platform Profile Matching (Twitter / Instagram / Google+)
+  Method    : Sentence-BERT (SBERT) with MPNet backbone
+  Model     : all-mpnet-base-v2 (768 dimensions)
+  Reference : Social-LLM research paper
+
+================================================================================
+  STEP 1: DATA LOADING
+================================================================================
+  Source file     : data/combined_profiles.csv
+  Source size     : ~11.8 MB
+  Platforms       : Twitter, Instagram, Google+
+  Notes           : Loaded from pre-combined CSV (faster than reading 23,000+ JSON files)
+
+================================================================================
+  STEP 2: TEXT CLEANING & PROFILE ENRICHMENT
+================================================================================
+  Cleaning steps:
+    - Fix broken unicode (ftfy)
+    - Remove URLs, @mentions
+    - Convert #hashtags → plain words
+    - Convert emoji → text descriptions (emoji.demojize)
+    - Remove zero-width spaces
+    - Discard texts shorter than 3 characters
+
+  Profile Enrichment (enrich_profile):
+    - bio (most important, placed first)
+    - fullName (normalized)
+    - location
+    - externalUrl (domain only)
+    - Combined with " | " separator
+
+  Output columns added:
+    - bio_clean     : cleaned bio text
+    - enriched_text : combined profile text for embedding
+
+================================================================================
+  STEP 3: SBERT-MPNet EMBEDDING GENERATION
+================================================================================
+  Model           : all-mpnet-base-v2 (Sentence-Transformers)
+  Embedding dim   : 768
+  Max seq length  : 384 tokens
+  Normalization   : L2 normalized (cosine sim = dot product)
+  Batch size      : 64
+  Data type       : float32
+
+  Individual Embeddings:
+    - Total files  : 2,478 per-user embedding files
+    - File pattern : {username}_{platform}_embedding.npy
+    - File size    : ~2,176 bytes each (768 × float32 = 3,072 bytes + npy header)
+    - Location     : data/embeddings/
+
+  Batch Embeddings:
+    - File         : data/embeddings/bio_mpnet_embeddings.npy
+    - Size         : ~71.9 MB
+    - Shape        : (N_profiles, 768)
+
+================================================================================
+  STEP 4: FAISS INDEX
+================================================================================
+  Index type      : IndexFlatIP (Inner Product → cosine similarity)
+  Dimension       : 768
+  Output file     : data/embeddings/bio_mpnet_faiss.index
+  File size       : ~71.9 MB
+
+================================================================================
+  STEP 5: CROSS-PLATFORM MATCHING
+================================================================================
+  Matching Strategy:
+    - Stage 1: FAISS retrieval of top-k candidates (top_k=20)
+    - Stage 2: Weighted multi-feature scoring
+
+  Scoring Weights (following Social-LLM research):
+    - bio_semantic  (SBERT cosine sim) : 50%
+    - name_sim      (RapidFuzz token sort) : 25%
+    - username_sim  (RapidFuzz partial) : 15%
+    - location+url  (max of location & URL match) : 10%
+
+  Platform Pairs Matched:
+    1. Twitter  → Instagram
+    2. Twitter  → Google+
+    3. Instagram → Google+
+
+  Threshold       : 0.45 (minimum final_score for a match)
+  Confidence levels:
+    - Very High : >= 0.70
+    - High      : >= 0.55
+    - Medium    : >= 0.45
+    - Low       : < 0.45 (filtered out)
+
+================================================================================
+  STEP 6: OUTPUT FILES
+================================================================================
+
+  Embeddings:
+    data/embeddings/bio_mpnet_embeddings.npy      ~71.9 MB   (batch embedding vectors)
+    data/embeddings/bio_mpnet_faiss.index          ~71.9 MB   (FAISS search index)
+    data/embeddings/bio_mpnet_metadata.csv          ~7.5 MB   (index-to-profile mapping)
+
+  Matching Results:
+    data/matching/cross_platform_matches.csv        ~5.5 MB   (all matches >= 0.45)
+    data/matching/high_confidence_matches.csv        ~3.2 MB   (matches >= 0.55 only)
+
+  Enriched Data:
+    data/profiles_with_enriched_text.csv           ~18.3 MB   (profiles + enriched text)
+
+  Visualization:
+    data/matching_results_chart.png                ~104 KB    (score distribution charts)
+
+================================================================================
+  STEP 7: KNOWN ISSUES & BUG FIXES
+================================================================================
+
+  [BUG] IndexError in find_same_person() — 2026-02-18
+  ────────────────────────────────────────────────────
+  Symptom : IndexError: invalid index to scalar variable
+            when calling find_same_person(first_with_bio, top_k=10)
+
+  Cause   : df_valid.index[0] returns np.int64, which does NOT pass
+            isinstance(value, int) check in some numpy versions.
+            The function falls into the 'else' branch that treats
+            the integer as a string → model.encode() fails.
+
+  Fix     : Change isinstance check to include numpy integer types:
+            BEFORE: isinstance(profile_idx_or_bio, int)
+            AFTER : isinstance(profile_idx_or_bio, (int, np.integer))
+
+            Also cast: idx = int(profile_idx_or_bio) for safety.
+
+  Status  : Identified, fix documented (apply in notebook)
+
+================================================================================
+  USAGE: How to reload saved results (no re-encoding needed)
+================================================================================
+
+  import numpy as np
+  import pandas as pd
+  import faiss
+  from sentence_transformers import SentenceTransformer
+
+  # Load model
+  model = SentenceTransformer('all-mpnet-base-v2')
+
+  # Load embeddings + index
+  embeddings = np.load('data/embeddings/bio_mpnet_embeddings.npy')
+  index = faiss.read_index('data/embeddings/bio_mpnet_faiss.index')
+  metadata = pd.read_csv('data/embeddings/bio_mpnet_metadata.csv')
+
+  # Search
+  query = model.encode(['AI researcher Bangkok'], normalize_embeddings=True)
+  scores, indices = index.search(query.astype('float32'), 10)
+
+  # Load matching results
+  matches = pd.read_csv('data/matching/cross_platform_matches.csv')
+
+================================================================================
+  END OF LOG
+================================================================================

@@ -1,0 +1,2 @@
+2026-01-11 12:24:20,089 - WARNING - From D:\66070260-Year3_Term2\Project1\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+

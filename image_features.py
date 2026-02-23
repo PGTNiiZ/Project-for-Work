@@ -264,7 +264,7 @@ class CLIPZeroShot:
             
             print("Loading CLIP for zero-shot...")
             self.processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
-            self.model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
+            self.model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32", use_safetensors=True)
             self.model.to(DEVICE).eval()
             
             if CUDA_AVAILABLE:
@@ -321,7 +321,8 @@ class CLIPZeroShot:
                 'label_scores': label_scores
             }
             
-        except:
+        except Exception as e:
+            print(f"⚠ CLIP classify error for {image_path}: {e}")
             return {'top_label': '', 'top_score': 0, 'label_scores': {}}
 
 

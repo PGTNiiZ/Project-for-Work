@@ -14,7 +14,23 @@ data/features/*.parquet
 data/normalized/*.parquet
 *.sqlite
 
-# Keep only CSV for reference
+# Image files (all formats)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.tif
+*.webp
+*.svg
+*.ico
+*.heic
+*.heif
+*.raw
+
+# Keep CSV files (do NOT ignore)
+!**/*.csv
 !data/features/*.csv
 !data/normalized/*.csv
 

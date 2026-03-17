@@ -1,20 +1,21 @@
 {
-  "pipeline": "Identity Resolution & Lead Scoring",
-  "raw_profiles": 24729,
-  "unified_customers": 6591,
-  "dedup_ratio": "73.3%",
-  "model_metrics": {
-    "threshold": 0.26,
-    "roc_auc": 0.9823342993002947,
-    "avg_precision": 0.9660155206791469,
-    "precision": 0.9711451758340848,
-    "recall": 0.9220890410958904,
-    "f1": 0.9459815546772069
+  "pipeline": "Identity Resolution & Lead Scoring v2",
+  "version": "v2",
+  "raw_profiles": 36807,
+  "candidate_pairs": 873956,
+  "unified_customers": 10723,
+  "singletons": 6966,
+  "dedup_ratio": "70.9%",
+  "decisions": {
+    "match": 20480,
+    "possible_match": 3940,
+    "no_match": 849536
   },
+  "model_metrics": {},
   "lead_scoring": {
-    "hot": 11,
-    "warm": 4945,
-    "cold": 1635
+    "hot": 7433,
+    "warm": 3285,
+    "cold": 5
   },
   "files_generated": [
     "candidate_pairs.csv",
@@ -29,6 +30,7 @@
     "profile_mapping.csv",
     "lead_scores.csv",
     "customer_360.json",
-    "crm_export.csv"
+    "crm_export.csv",
+    "pipeline_report.json"
   ]
 }

@@ -52,13 +52,14 @@ stage15_16_17_merge_scoring_export.ipynb ← merge → lead score → export
 
 ### Model
 - `IdentityMLP` — 4 layers (256→128→64→1), FocalLoss, 17 input features
-- Threshold: MATCH ≥ 0.90, POSSIBLE_MATCH ≥ 0.70
-- Test metrics: F1=0.95, AUC=0.982, Precision=0.984
+- Threshold: MATCH ≥ 0.90, POSSIBLE_MATCH ≥ 0.70 (both included in merge)
+- Test metrics (v2): F1=0.915, AUC=0.970, Precision=0.959, Recall=0.874
 
 ## Model Performance Notes
-- Overall F1=0.95 (good)
+- Overall F1=0.915, Recall=0.874 (v2 model — ตัวเลขเก่า F1=0.95 มาจาก version ก่อน)
 - Hard cases (username_jaro < 0.5 AND fullname_jaro < 0.5): F1=0.13 — เป็น data quality issue ไม่ใช่ model issue
 - 3 platforms: Twitter (13,960), Google+ (11,890), Instagram (10,957)
+- POSSIBLE_MATCH (prob 0.70–0.89): รวมใน merge ด้วย — stage15 ใช้ทั้ง MATCH + POSSIBLE_MATCH
 
 ## Output Files (data/processed/)
 | File | Description |

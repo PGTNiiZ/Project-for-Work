@@ -1,50 +1,108 @@
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
+.python-version
+
+# Virtual environments
 .venv/
+.venv_broken/
 venv/
+env/
+ENV/
+
+# Packaging / build
+build/
+dist/
+site/
 *.egg-info/
+.eggs/
+pip-wheel-metadata/
 
-# Data files (too large for GitHub)
-data/images/
-data/embeddings/
-data/index/
-data/output/
-data/features/*.parquet
-data/normalized/*.parquet
-*.sqlite
-
-# Image files (all formats)
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.bmp
-*.tiff
-*.tif
-*.webp
-*.svg
-*.ico
-*.heic
-*.heif
-*.raw
-
-# Keep CSV files (do NOT ignore)
-!**/*.csv
-!data/features/*.csv
-!data/normalized/*.csv
+# Testing / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.nox/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
 
 # Jupyter
 .ipynb_checkpoints/
 
-# IDE
+# IDE / OS
 .vscode/
 .idea/
-
-# OS
 .DS_Store
 Thumbs.db
 
-# Models (downloaded automatically)
+# Local env / secrets
+.env
+.env.*
+!.env.example
+
+# Logs / temp files
+*.log
+*.tmp
+*.temp
+
+# Databases / local caches
+*.sqlite
+*.sqlite3
+*.db
+*.pkl
+*.joblib
+
+# Downloaded model weights / large binaries
 *.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
 *.safetensors
+*.h5
+*.keras
+
+# Generated images and caches from processing pipelines
+data/images/
+data/embeddings/
+data/index/
+data/output/
+data/logs/
+data/features/
+data/normalized/
+data/processed/image_pipeline_results/
+Image-Process/image_cache.pkl
+Image-Process/download_report.json
+Image-Process/failed_urls.csv
+
+# Large training artifacts
+Train-Data/labeled_pairs.parquet
+Train-Data/**/*.parquet
+Train-Data/**/*.npy
+Train-Data/**/*.npz
+Train-Data/**/models/
+Train-Data/**/reports/
+Train-Data/**/scores/
+Train-Data/**/features/
+Train-Data/**/artifacts/
+Train-Data/**/shared_cache/
+Train-Data/**/checkpoints/
+Train-Data/**/logs/
+
+# Common generated folders anywhere in the repo
+**/artifacts/
+**/shared_cache/
+**/checkpoints/
+**/logs/
+**/output/
+**/outputs/
+**/cache/
+
+# Keep source datasets / config files by default
+!**/*.csv
+!**/*.json
+!**/*.txt
+!**/*.md

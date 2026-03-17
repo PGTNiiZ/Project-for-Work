@@ -1,0 +1,23 @@
+# Stronger exclusion set for leakage-heavy identity overlap features
+userName_jaro
+userName_lev
+userName_token_sort
+userName_exact
+fullName_jaro
+fullName_lev
+fullName_token_sort
+fullName_exact
+domain_jaccard
+domain_exact_match
+url_exact_match
+url_jaccard
+picture_url_available_a
+picture_url_available_b
+picture_url_available_both
+picture_url_exact_match
+picture_url_hash_match
+picture_url_host_match
+picture_url_stem_match
+mention_jaccard
+mention_exact_overlap
+username_in_other_mentions

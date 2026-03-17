@@ -1,3 +1,0 @@
-pair_name,model,test_size,top1_accuracy,candidate_recall_topk
-pairs_twitter_instagram,Linear,878,0.997722,1.0
-pairs_twitter_instagram,RF,878,0.997722,1.0

@@ -10,6 +10,7 @@ __pycache__/
 venv/
 env/
 ENV/
+.pip-downloads/
 
 # Packaging / build
 build/
@@ -47,6 +48,7 @@ Thumbs.db
 *.log
 *.tmp
 *.temp
+*.bak
 
 # Databases / local caches
 *.sqlite
@@ -74,23 +76,23 @@ data/logs/
 data/features/
 data/normalized/
 data/processed/image_pipeline_results/
-Image-Process/image_cache.pkl
-Image-Process/download_report.json
-Image-Process/failed_urls.csv
+image_process/image_cache.pkl
+image_process/download_report.json
+image_process/failed_urls.csv
 
 # Large training artifacts
-Train-Data/labeled_pairs.parquet
-Train-Data/**/*.parquet
-Train-Data/**/*.npy
-Train-Data/**/*.npz
-Train-Data/**/models/
-Train-Data/**/reports/
-Train-Data/**/scores/
-Train-Data/**/features/
-Train-Data/**/artifacts/
-Train-Data/**/shared_cache/
-Train-Data/**/checkpoints/
-Train-Data/**/logs/
+train_data/labeled_pairs.parquet
+train_data/**/*.parquet
+train_data/**/*.npy
+train_data/**/*.npz
+train_data/**/models/
+train_data/**/reports/
+train_data/**/scores/
+train_data/**/features/
+train_data/**/artifacts/
+train_data/**/shared_cache/
+train_data/**/checkpoints/
+train_data/**/logs/
 
 # Common generated folders anywhere in the repo
 **/artifacts/

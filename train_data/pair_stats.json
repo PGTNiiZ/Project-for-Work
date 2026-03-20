@@ -1,0 +1,9 @@
+{
+  "total_pairs": 24663633,
+  "positive_pairs": 4060200,
+  "negative_pairs": 20603433,
+  "random_negatives": 20301000,
+  "hard_negatives": 302433,
+  "class_ratio": 5.07,
+  "qa": {
+    "no_duplicate_pairs": 

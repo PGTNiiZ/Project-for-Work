@@ -1,0 +1,7 @@
+# Exact-match features that behave like near-direct label proxies
+userName_exact
+fullName_exact
+url_exact_match
+picture_url_exact_match
+picture_url_hash_match
+picture_url_stem_match

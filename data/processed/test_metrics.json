@@ -1,0 +1,14 @@
+{
+  "version": "v2",
+  "threshold": 0.38,
+  "roc_auc": 0.9702135430381825,
+  "avg_precision": 0.941442014919465,
+  "precision": 0.9592398099524881,
+  "recall": 0.8738041002277904,
+  "f1": 0.914530933365121,
+  "decisions": {
+    "match": 3422,
+    "possible_match": 316,
+    "no_match": 26975
+  }
+}

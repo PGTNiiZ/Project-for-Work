@@ -1,0 +1,36 @@
+{
+  "pipeline": "Identity Resolution & Lead Scoring v2",
+  "version": "v2",
+  "raw_profiles": 36807,
+  "candidate_pairs": 873956,
+  "unified_customers": 10723,
+  "singletons": 6966,
+  "dedup_ratio": "70.9%",
+  "decisions": {
+    "match": 20480,
+    "possible_match": 3940,
+    "no_match": 849536
+  },
+  "model_metrics": {},
+  "lead_scoring": {
+    "hot": 7433,
+    "warm": 3285,
+    "cold": 5
+  },
+  "files_generated": [
+    "candidate_pairs.csv",
+    "labeled_pairs.csv",
+    "feature_matrix.csv",
+    "model.pt",
+    "scaler.pkl",
+    "calibrator.pkl",
+    "feature_cols.pkl",
+    "predictions.csv",
+    "unified_profiles.csv",
+    "profile_mapping.csv",
+    "lead_scores.csv",
+    "customer_360.json",
+    "crm_export.csv",
+    "pipeline_report.json"
+  ]
+}

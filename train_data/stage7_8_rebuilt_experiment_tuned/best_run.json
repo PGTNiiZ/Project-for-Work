@@ -1,0 +1,177 @@
+{
+  "best_run_name": "r075_h200_s42",
+  "selection_score": 0.9597864533183631,
+  "config": {
+    "run_name": "r075_h200_s42",
+    "random_neg_ratio": 0.75,
+    "hard_neg_ratio": 2.0,
+    "seed": 42
+  },
+  "metrics": {
+    "best_model": "gb",
+    "leaderboard": [
+      {
+        "model": "gb",
+        "val_ap": 0.9782547323557295,
+        "val_auc": 0.9701167998667455
+      },
+      {
+        "model": "rf",
+        "val_ap": 0.9768579815647073,
+        "val_auc": 0.9681406525857952
+      },
+      {
+        "model": "logreg",
+        "val_ap": 0.9403920109449398,
+        "val_auc": 0.9197338781804767
+      }
+    ],
+    "feature_count": 22,
+    "threshold": 0.44000000000000006,
+    "best_val_f1": 0.9317913618126032,
+    "val_roc_auc": 0.9708973157971532,
+    "val_avg_precision": 0.9766222522767141,
+    "val_f1": 0.9317913618126032,
+    "test_roc_auc": 0.9712508800546605,
+    "test_avg_precision": 0.9778685582076555,
+    "test_f1": 0.9316229257384959,
+    "test_precision": 0.9630170316301703,
+    "test_recall": 0.9022110781855482,
+    "confusion_matrix": [
+      [
+        3774,
+        152
+      ],
+      [
+        429,
+        3958
+      ]
+    ],
+    "classification_report": {
+      "NO_MATCH": {
+        "precision": 0.8979300499643112,
+        "recall": 0.9612837493632196,
+        "f1-score": 0.9285274941567229,
+        "support": 3926.0
+      },
+      "MATCH": {
+        "precision": 0.9630170316301703,
+        "recall": 0.9022110781855482,
+        "f1-score": 0.9316229257384959,
+        "support": 4387.0
+      },
+      "accuracy": 0.9301094670997233,
+      "macro avg": {
+        "precision": 0.9304735407972408,
+        "recall": 0.931747413774384,
+        "f1-score": 0.9300752099476094,
+        "support": 8313.0
+      },
+      "weighted avg": {
+        "precision": 0.9322782502010637,
+        "recall": 0.9301094670997233,
+        "f1-score": 0.9301610390080687,
+        "support": 8313.0
+      }
+    }
+  },
+  "leakage_report": {
+    "component_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "self_pairs": 0,
+    "rows_by_split": {
+      "train": 41803,
+      "val": 8580,
+      "test": 8313
+    },
+    "label_dist_by_split": {
+      "train": {
+        "0": 21333,
+        "1": 20470
+      },
+      "val": {
+        "1": 4386,
+        "0": 4194
+      },
+      "test": {
+        "1": 4387,
+        "0": 3926
+      }
+    },
+    "single_feature_check": [
+      {
+        "feature": "fullname_token_sort",
+        "best_threshold_rule": ">= 0.4545",
+        "best_accuracy": 0.8250932274750391
+      },
+      {
+        "feature": "fullname_jaro",
+        "best_threshold_rule": ">= 0.6773",
+        "best_accuracy": 0.8248526404426801
+      },
+      {
+        "feature": "fullname_lev",
+        "best_threshold_rule": ">= 0.3333",
+        "best_accuracy": 0.8143871045350656
+      },
+      {
+        "feature": "username_token_sort",
+        "best_threshold_rule": ">= 0.4762",
+        "best_accuracy": 0.7989895344640924
+      },
+      {
+        "feature": "username_lev",
+        "best_threshold_rule": ">= 0.3333",
+        "best_accuracy": 0.7819078551666065
+      },
+      {
+        "feature": "username_jaro",
+        "best_threshold_rule": ">= 0.6330",
+        "best_accuracy": 0.779261397810658
+      },
+      {
+        "feature": "bio_tfidf_cosine",
+        "best_threshold_rule": ">= 0.0390",
+        "best_accuracy": 0.65668230482377
+      },
+      {
+        "feature": "platform_pair_code",
+        "best_threshold_rule": ">= 1.0000",
+        "best_accuracy": 0.5418019968723686
+      },
+      {
+        "feature": "style_punct_diff",
+        "best_threshold_rule": "< 0.0443",
+        "best_accuracy": 0.5416817033561891
+      },
+      {
+        "feature": "style_biolen_ratio",
+        "best_threshold_rule": ">= 0.1430",
+        "best_accuracy": 0.5359076145795741
+      }
+    ],
+    "split_stats": {
+      "train": {
+        "profiles": 22478,
+        "positive_pairs": 20470,
+        "random_negatives": 15346,
+        "hard_negatives": 5987
+      },
+      "val": {
+        "profiles": 7925,
+        "positive_pairs": 4386,
+        "random_negatives": 3289,
+        "hard_negatives": 905
+      },
+      "test": {
+        "profiles": 6401,
+        "positive_pairs": 4387,
+        "random_negatives": 3290,
+        "hard_negatives": 636
+      }
+    }
+  }
+}

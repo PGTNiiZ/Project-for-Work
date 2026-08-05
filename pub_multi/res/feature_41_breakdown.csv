@@ -1,0 +1,42 @@
+order,feature_name,feature_group,description,implemented_in
+1,username_jaro,Identity string,Jaro-Winkler similarity of userName,stage9_features_pipeline_chunked.py
+2,username_lev,Identity string,Normalized Levenshtein similarity of userName,stage9_features_pipeline_chunked.py
+3,username_token_sort,Identity string,Token-sort similarity of userName,stage9_features_pipeline_chunked.py
+4,fullname_jaro,Identity string,Jaro-Winkler similarity of fullName,stage9_features_pipeline_chunked.py
+5,fullname_lev,Identity string,Normalized Levenshtein similarity of fullName,stage9_features_pipeline_chunked.py
+6,fullname_token_sort,Identity string,Token-sort similarity of fullName,stage9_features_pipeline_chunked.py
+7,bio_tfidf_cosine,Bio text semantics,Cosine similarity of TF-IDF bio vectors,stage9_features_pipeline_chunked.py
+8,bio_sbert_cosine,Bio text semantics,Cosine similarity of SBERT bio embeddings,stage9_features_pipeline_chunked.py
+9,domain_jaccard,URL / domain,Jaccard overlap of external domains,stage9_features_pipeline_chunked.py
+10,url_jaccard,URL / domain,Jaccard overlap of full URLs,stage9_features_pipeline_chunked.py
+11,domain_count_a,URL / domain,Normalized number of domains on side A,stage9_features_pipeline_chunked.py
+12,domain_count_b,URL / domain,Normalized number of domains on side B,stage9_features_pipeline_chunked.py
+13,location_jaro,Location,Jaro-Winkler similarity of normalized location text,selected normalized location feature
+14,location_token_sort,Location,Token-sort similarity of normalized location text,selected normalized location feature
+15,mention_jaccard,Mention / hashtag,Jaccard overlap of bio mentions,stage9_features_pipeline_chunked.py
+16,hashtag_jaccard,Mention / hashtag,Jaccard overlap of bio hashtags,stage9_features_pipeline_chunked.py
+17,hashtag_count_a,Mention / hashtag,Normalized hashtag count of side A,stage9_features_pipeline_chunked.py
+18,hashtag_count_b,Mention / hashtag,Normalized hashtag count of side B,stage9_features_pipeline_chunked.py
+19,style_caps_diff,Stylometric,Difference in uppercase ratio,stage9_features_pipeline_chunked.py
+20,style_avgword_diff,Stylometric,Difference in average word length,stage9_features_pipeline_chunked.py
+21,style_biolen_ratio,Stylometric,Ratio of bio lengths between two sides,stage9_features_pipeline_chunked.py
+22,style_punct_diff,Stylometric,Difference in punctuation ratio,stage9_features_pipeline_chunked.py
+23,platform_pair_code,Platform / metadata,Encoded platform pair type,stage9_features_pipeline_chunked.py
+24,image_any_local,Image availability,At least one side has local image,run_multimodal_suite.py wrapper
+25,image_both_local,Image availability,Both sides have local image,run_multimodal_suite.py wrapper
+26,image_one_local_only,Image availability,Only one side has local image,run_multimodal_suite.py wrapper
+27,image_phash_sim,Image statistics,Perceptual hash similarity,run_multimodal_suite.py wrapper
+28,image_dhash_sim,Image statistics,Difference-hash similarity,run_multimodal_suite.py wrapper
+29,image_brightness_diff,Image statistics,Difference in image brightness,run_multimodal_suite.py wrapper
+30,image_contrast_diff,Image statistics,Difference in image contrast,run_multimodal_suite.py wrapper
+31,image_entropy_diff,Image statistics,Difference in image entropy,run_multimodal_suite.py wrapper
+32,image_rgb_l1,Image statistics,Average RGB distance,run_multimodal_suite.py wrapper
+33,image_filesize_ratio,Image statistics,Ratio of image file sizes,run_multimodal_suite.py wrapper
+34,image_face_count_diff,Image statistics,Difference in detected face count,run_multimodal_suite.py wrapper
+35,image_face_area_diff,Image statistics,Difference in detected face area ratio,run_multimodal_suite.py wrapper
+36,image_blur_diff,Image statistics,Difference in blur score,run_multimodal_suite.py wrapper
+37,image_metadata_any,Image statistics,At least one side has image metadata,run_multimodal_suite.py wrapper
+38,image_caption_any,Image-caption context,At least one side has caption embedding,run_multimodal_suite.py wrapper
+39,image_caption_bio_sbert_cross,Image-caption context,Cross similarity between image caption and opposite bio embedding,run_multimodal_suite.py wrapper
+40,image_caption_fullname_token_cross,Image-caption context,Token similarity between image caption and opposite fullName,run_multimodal_suite.py wrapper
+41,image_caption_username_token_cross,Image-caption context,Token similarity between image caption and opposite userName,run_multimodal_suite.py wrapper

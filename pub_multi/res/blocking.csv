@@ -1,0 +1,8 @@
+﻿item,value
+profiles_total,36804.0
+all_cross_platform_pairs,449149239.0
+ground_truth_positive_pairs,29243.0
+exact_match_pairs,12403.0
+candidate_pairs_for_model,2073842.0
+search_space_reduction_pct,99.53551184798958
+ground_truth_coverage_pct,88.6742126320829

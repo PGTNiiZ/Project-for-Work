@@ -1,0 +1,14 @@
+{
+  "main_run": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_13_multimodal_suite\\runs\\image_context_r075_h20_s42",
+  "pair_features": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_13_multimodal_suite\\runs\\image_context_r075_h20_s42\\artifacts\\pair_features.parquet",
+  "feature_count": 41,
+  "rows": 58696,
+  "split_counts": {
+    "train": 41803,
+    "val": 8580,
+    "test": 8313
+  },
+  "best_model": "gb",
+  "best_val_composite": 0.9614574806565076,
+  "timestamp": "2026-03-22T03:44:21.958528+07:00"
+}

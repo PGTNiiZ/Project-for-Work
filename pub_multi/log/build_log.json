@@ -1,0 +1,155 @@
+{
+  "package": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\pub_multi",
+  "built_at": "2026-03-21T14:15:28.949485",
+  "main_run": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_13_multimodal_suite\\runs\\image_context_r075_h20_s42",
+  "main_model": "gb",
+  "rows_train_all": 58696,
+  "fp_rows_saved": 200,
+  "fn_rows_saved": 200,
+  "copied_assets": [
+    {
+      "dst": "src\\s01_prep.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\clean_data\\preprocess_dataset.py"
+    },
+    {
+      "dst": "src\\s02_loc.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\clean_data\\location_mapping_pipeline.py"
+    },
+    {
+      "dst": "src\\s03_norm.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\image_process\\create_normalized_db.py"
+    },
+    {
+      "dst": "src\\s04_img.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\image_process\\recover_profile_images.py"
+    },
+    {
+      "dst": "src\\s05_pair.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\stage8_pair_builder.py"
+    },
+    {
+      "dst": "src\\s06_feat.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage9_features_pipeline_chunked.py"
+    },
+    {
+      "dst": "src\\s07_base.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\leakage_safe_experiment\\run_experiment.py"
+    },
+    {
+      "dst": "src\\s08_multi.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_13_multimodal_suite\\run_multimodal_suite.py"
+    },
+    {
+      "dst": "src\\s09_full.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_14_full_candidate_pipeline\\run_full_candidate_pipeline.py"
+    },
+    {
+      "dst": "src\\s10_crm.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage15_crm_entity_pipeline\\run_crm_entity_pipeline.py"
+    },
+    {
+      "dst": "src\\s11_train.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage10_13_training_pipeline.py"
+    },
+    {
+      "dst": "src\\s12_imgpair.py",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\image_process\\profile_image_pair_features.py"
+    },
+    {
+      "dst": "run\\r_feat.ps1",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\run_stage9_pipeline.ps1"
+    },
+    {
+      "dst": "run\\r_multi.ps1",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_13_multimodal_suite\\run_multimodal_suite.ps1"
+    },
+    {
+      "dst": "run\\r_full.ps1",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_14_full_candidate_pipeline\\run_full_candidate_pipeline.ps1"
+    },
+    {
+      "dst": "run\\r_crm.ps1",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage15_crm_entity_pipeline\\run_crm_entity_pipeline.ps1"
+    },
+    {
+      "dst": "ref\\main_report.json",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_13_multimodal_suite\\runs\\image_context_r075_h20_s42\\reports\\experiment_report.json"
+    },
+    {
+      "dst": "ref\\base_report.json",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_13_multimodal_suite\\runs\\text_attr_hybrid_r075_h20_s42\\reports\\experiment_report.json"
+    },
+    {
+      "dst": "ref\\img_stats_report.json",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_13_multimodal_suite\\runs\\image_stats_r075_h20_s42\\reports\\experiment_report.json"
+    },
+    {
+      "dst": "ref\\suite_report.json",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_13_multimodal_suite\\reports\\suite_report.json"
+    },
+    {
+      "dst": "ref\\suite_lb.csv",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_13_multimodal_suite\\reports\\leaderboard.csv"
+    },
+    {
+      "dst": "ref\\full_report.json",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_14_full_candidate_pipeline\\reports\\full_pipeline_report.json"
+    },
+    {
+      "dst": "ref\\crm_report.json",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage15_crm_entity_pipeline\\reports\\crm_entity_report.json"
+    },
+    {
+      "dst": "ref\\leak_safe_report.json",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\leakage_safe_experiment\\reports\\experiment_report.json"
+    },
+    {
+      "dst": "ref\\strict_report.json",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage10_13_training_noleak_strict\\reports\\evaluation_summary.json"
+    },
+    {
+      "dst": "ref\\tune.csv",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_8_rebuilt_experiment_tuned\\tuning_summary.csv"
+    },
+    {
+      "dst": "ref\\top_preds.csv",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_14_full_candidate_pipeline\\reports\\top_5000_predictions.csv"
+    },
+    {
+      "dst": "ref\\op_points.csv",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_14_full_candidate_pipeline\\reports\\operating_points.csv"
+    },
+    {
+      "dst": "ref\\final_dec_sample.csv",
+      "src": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage7_14_full_candidate_pipeline\\reports\\final_decisions_sample.csv"
+    }
+  ],
+  "figures": [
+    "fig\\funnel.png",
+    "fig\\blocking_keys.png",
+    "fig\\suite_cmp.png",
+    "fig\\cm_main.png",
+    "fig\\cm_strict.png",
+    "fig\\score_hist.png",
+    "fig\\pr_curve.png",
+    "fig\\roc_curve.png",
+    "fig\\thr_sweep.png",
+    "fig\\tiers_precision.png",
+    "fig\\tiers_count.png",
+    "fig\\modality.png",
+    "fig\\feat_imp.png",
+    "fig\\tune_tradeoff.png"
+  ],
+  "docs": [
+    "README.md",
+    "USE.md",
+    "doc/stage.md",
+    "doc/method.md",
+    "doc/eval.md",
+    "doc/model.md",
+    "doc/tune.md",
+    "doc/report.md",
+    "doc/file_map.md",
+    "FILES.csv"
+  ]
+}

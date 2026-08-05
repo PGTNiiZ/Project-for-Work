@@ -1,0 +1,36 @@
+{
+  "best_overall": {
+    "family": "gb",
+    "config_id": "gb_2",
+    "val_composite": 0.9614574806565076,
+    "test_ap": 0.9797065073269041,
+    "test_auc": 0.9736922733203889,
+    "test_f1": 0.9333489791128843
+  },
+  "best_by_family": [
+    {
+      "family": "gb",
+      "config_id": "gb_2",
+      "val_composite": 0.9614574806565076,
+      "test_ap": 0.9797065073269041,
+      "test_auc": 0.9736922733203889,
+      "test_f1": 0.9333489791128843
+    },
+    {
+      "family": "rf",
+      "config_id": "rf_4",
+      "val_composite": 0.9591097249106938,
+      "test_ap": 0.9767319997907031,
+      "test_auc": 0.970770457010658,
+      "test_f1": 0.9306930693069307
+    },
+    {
+      "family": "mlp",
+      "config_id": "mlp_1",
+      "val_composite": 0.9539885371283392,
+      "test_ap": 0.9733640777831638,
+      "test_auc": 0.9648521293345631,
+      "test_f1": 0.9254504769756212
+    }
+  ]
+}

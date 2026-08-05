@@ -1,0 +1,51 @@
+erDiagram
+    NORMALIZED_PROFILE ||--o{ MATCH_DECISION : "profile_id_a"
+    NORMALIZED_PROFILE ||--o{ MATCH_DECISION : "profile_id_b"
+    MATCH_DECISION ||--o| REVIEW_QUEUE : "decision_id"
+    NORMALIZED_PROFILE ||--o| PROFILE_MAPPING : "profile_row_id -> profile_id"
+    UNIFIED_PROFILE ||--|{ PROFILE_MAPPING : "unified_id"
+    UNIFIED_PROFILE ||--|| LEAD_SCORE : "unified_id"
+
+    NORMALIZED_PROFILE {
+        int profile_row_id PK
+        int profile_id "source entity key"
+        string platform
+        string userName
+        string fullName
+    }
+
+    MATCH_DECISION {
+        string decision_id PK
+        int profile_id_a FK
+        int profile_id_b FK
+        float score
+        string decision
+    }
+
+    REVIEW_QUEUE {
+        string queue_id PK
+        string decision_id FK
+        string status
+        string assigned_to
+    }
+
+    PROFILE_MAPPING {
+        int profile_id PK, FK
+        string unified_id FK
+        string platform
+        string userName
+    }
+
+    UNIFIED_PROFILE {
+        string unified_id PK
+        string canonical_name
+        int platform_count
+        float merge_confidence
+    }
+
+    LEAD_SCORE {
+        string score_id PK
+        string unified_id FK
+        float lead_score
+        string tier
+    }

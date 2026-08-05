@@ -1,0 +1,47 @@
+flowchart LR
+    raw["Raw LinkSocial JSON
+Twitter / Google+ / Instagram"]
+    clean["all_profiles_cleaned.csv
+24,729 rows
+key fields: profile_id, user_folder, platform"]
+    loc["location_mapping.csv
+4,589 rows
+canonical location lookup"]
+    norm["normalized_profiles_with_profile_id.csv
+36,807 rows
+PK: profile_row_id
+entity key: profile_id"]
+    pairs["train_pairs.parquet
+10,133,486 rows (train)
+FK: profile_id_a/profile_id_b"]
+    feat["feature_matrix_chunked_*_merged.parquet
+10,133,486 rows (train)
+pair-level engineered features"]
+    dec["match_decisions.parquet
+2,086,245 rows
+FK-like refs: profile_id_a/profile_id_b
+(actually profile_row_id refs)"]
+    rq["review_queue.parquet
+86,296 rows
+FK: decision_id"]
+    uni["unified_profiles.parquet
+19,799 rows
+PK: unified_id"]
+    map["profile_mapping.parquet
+36,804 rows
+FK: profile_id -> unified_id"]
+    lead["lead_scores.parquet
+19,799 rows
+FK: unified_id"]
+
+    raw --> clean
+    clean --> norm
+    loc --> norm
+    norm -->|"profile_id"| pairs
+    pairs --> feat
+    norm -->|"profile_row_id"| dec
+    dec -->|"decision_id"| rq
+    dec -->|"approved links / union-find"| uni
+    norm -->|"profile_row_id"| map
+    uni -->|"unified_id"| map
+    uni -->|"unified_id"| lead

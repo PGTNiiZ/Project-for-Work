@@ -1,0 +1,51 @@
+{
+  "feature_count": 22,
+  "train_balanced_rows": 23148,
+  "models": [
+    {
+      "model": "rf",
+      "source": "strict_rerun",
+      "test_ap": 0.8593906257058097,
+      "test_auc": 0.9986542962677006,
+      "test_f1": 0.8992248062015504,
+      "test_precision": 1.0,
+      "test_recall": 0.8169014084507042
+    },
+    {
+      "model": "extra_trees",
+      "source": "strict_rerun",
+      "test_ap": 0.8409038539027807,
+      "test_auc": 0.9984018966843846,
+      "test_f1": 0.8992248062015504,
+      "test_precision": 1.0,
+      "test_recall": 0.8169014084507042
+    },
+    {
+      "model": "gb",
+      "source": "strict_rerun",
+      "test_ap": 0.8593888886077717,
+      "test_auc": 0.9986541625810054,
+      "test_f1": 0.8982199908717481,
+      "test_precision": 1.0,
+      "test_recall": 0.8152444076222038
+    },
+    {
+      "model": "logreg",
+      "source": "strict_rerun",
+      "test_ap": 0.8391685213661781,
+      "test_auc": 0.9977269681883285,
+      "test_f1": 0.8982199908717481,
+      "test_precision": 1.0,
+      "test_recall": 0.8152444076222038
+    },
+    {
+      "model": "mlp",
+      "source": "strict_existing_report",
+      "test_ap": 0.7343521913203878,
+      "test_auc": 0.9960215934123662,
+      "test_f1": 0.8296171644930584,
+      "test_precision": 0.8427350427350427,
+      "test_recall": 0.8169014084507042
+    }
+  ]
+}

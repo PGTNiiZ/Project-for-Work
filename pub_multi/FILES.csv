@@ -1,0 +1,46 @@
+﻿path,meaning
+src/,code Python ที่คัดแล้ว
+run/,runner .ps1 แบบสั้น
+bench_models.py,สคริปต์ benchmark เทียบหลาย model บน main multimodal run
+tune_top_models.py,สคริปต์ tune เฉพาะ gb/rf/mlp บน main multimodal run
+bench_strict_models.py,สคริปต์เทียบ model บน strict no-leak setting
+strict_threshold_diag.py,สคริปต์วิเคราะห์ threshold และระดับ probability ของ strict rerun
+strict_calibration_compare.py,สคริปต์เทียบ isotonic กับ sigmoid calibration บน strict no-leak setting
+data/train_all.parquet,ไฟล์เดียวรวมข้อมูล train/val/test + score + metadata
+data/train_all.csv,CSV version ของ train_all
+data/fp_top.csv,false positives สำคัญจาก test split
+data/fn_top.csv,false negatives สำคัญจาก test split
+res/model_cmp.csv,ตารางเปรียบเทียบ model/run สำคัญ
+res/model_family_cmp.csv,metric เทียบหลาย model บน feature/split เดียวกัน
+res/model_family_table.csv,ตารางพร้อมเหตุผล จุดเด่น จุดอ่อน และข้อสรุปของแต่ละ model
+res/model_strict_cmp.csv,ผลเทียบ model บน strict no-leak setting
+res/strict_report_point.csv,ตารางสั้นของ strict operating point ที่เลือกใช้ในรายงาน
+res/strict_calibration_cmp.csv,ผลเทียบ calibration แบบ isotonic และ sigmoid บน strict no-leak setting
+res/strict_calibration_sweep.csv,threshold sweep เต็มของผล strict calibration compare
+res/strict_threshold_diag.csv,ตารางสรุปว่าทำไม strict rerun จึงเกิด precision=1 และ threshold ใดที่เริ่มหลุดจาก 1
+res/strict_threshold_sweep.csv,threshold sweep แบบเต็มของ strict rerun
+res/top_model_tune.csv,ผล tuning ของ gb/rf/mlp บน main run
+res/blocking.csv,summary ของ retrieval/blocking
+res/tiers.csv,production tier metrics
+res/thr_sweep.csv,precision/recall/f1 ตาม threshold
+res/feat_imp.csv,feature importance ของ main model
+fig/,visualize สำคัญสำหรับเล่ม
+fig/model_family_cmp.png,กราฟเปรียบเทียบหลาย model
+fig/model_family_cm_grid.png,confusion matrix ของ benchmark หลัก
+fig/model_strict_cmp.png,กราฟเทียบ model บน strict no-leak
+fig/model_strict_cm_grid.png,confusion matrix ของ strict no-leak
+fig/strict_calibration_cmp.png,กราฟเทียบ isotonic และ sigmoid บน strict no-leak
+fig/top_model_tune.png,กราฟสรุป tuning ของตัวหลัก
+ref/,copy ของ report/raw artifacts จาก source เดิม
+doc/,เอกสารวิธีอ่านและเหตุผลการเลือก
+doc/model_compare.md,สรุป benchmark หลาย model พร้อมคำแนะนำการเลือก model
+doc/model_strict_compare.md,สรุป strict no-leak comparison
+doc/strict_calibration_compare.md,สรุปผลเทียบ isotonic และ sigmoid บน strict no-leak
+doc/strict_threshold_diag.md,อธิบายสาเหตุของ precision=1 ใน strict rerun และวิธีอ่าน threshold trade-off
+doc/top_model_tune.md,สรุปผล tuning ของ gb/rf/mlp
+doc/model_history.md,สรุปประวัติการเลือก model จำนวน model และบทบาทของ neural network
+doc/model_selection_table.md,ตารางสรุปว่าแต่ละ model ถูกลองทำไมและทำไมเลือกหรือไม่เลือก
+doc/ch03_methodology_formal_th.md,ร่างบทที่ 3 ภาษาทางการโดยยึดตาม pipeline และ artifact ที่ทำจริง
+doc/ch03_figure_plan_th.md,แผนรูปประกอบที่ควรมีในบทที่ 3 เพื่ออธิบาย pipeline และการฝึกแบบจำลอง
+doc/original_code_trace_th.md,แผนผังอ้างอิงจากรายงานกลับไปหาโค้ดต้นฉบับของโปรเจกต์โดยตรง
+res/model_selection_table.csv,CSV ของตารางสรุปการเลือก model

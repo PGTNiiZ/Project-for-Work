@@ -1,0 +1,62 @@
+{
+  "source": "train_data/leakage_safe_experiment/artifacts/pair_features.parquet",
+  "models": [
+    {
+      "model": "gb",
+      "feature_count": 22,
+      "threshold": 0.43000000000000005,
+      "val_ap": 0.9732976524016925,
+      "val_auc": 0.9796336644318479,
+      "val_f1": 0.936839633716835,
+      "best_val_f1": 0.936839633716835,
+      "test_ap": 0.9703436322457817,
+      "test_auc": 0.9772002718696379,
+      "test_f1": 0.9337101142117038,
+      "test_precision": 0.9656600097418412,
+      "test_recall": 0.903806701618418,
+      "test_tn": 9164,
+      "test_fp": 141,
+      "test_fn": 422,
+      "test_tp": 3965,
+      "rank": 1
+    },
+    {
+      "model": "rf",
+      "feature_count": 22,
+      "threshold": 0.44000000000000006,
+      "val_ap": 0.9722707453163122,
+      "val_auc": 0.9793184644999654,
+      "val_f1": 0.9339567504383401,
+      "best_val_f1": 0.9339567504383401,
+      "test_ap": 0.968929042325144,
+      "test_auc": 0.9773196343502804,
+      "test_f1": 0.9331616528151703,
+      "test_precision": 0.9590952839268527,
+      "test_recall": 0.9085935719170276,
+      "test_tn": 9135,
+      "test_fp": 170,
+      "test_fn": 401,
+      "test_tp": 3986,
+      "rank": 2
+    },
+    {
+      "model": "logreg",
+      "feature_count": 22,
+      "threshold": 0.43000000000000005,
+      "val_ap": 0.936651988399817,
+      "val_auc": 0.9540591941702536,
+      "val_f1": 0.880814626243925,
+      "best_val_f1": 0.880814626243925,
+      "test_ap": 0.9304313137471836,
+      "test_auc": 0.9494308632791892,
+      "test_f1": 0.8704746580852776,
+      "test_precision": 0.877839592025962,
+      "test_recall": 0.8632322771825849,
+      "test_tn": 8778,
+      "test_fp": 527,
+      "test_fn": 600,
+      "test_tp": 3787,
+      "rank": 3
+    }
+  ]
+}

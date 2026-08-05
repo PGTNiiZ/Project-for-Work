@@ -1,0 +1,40 @@
+{
+  "config": {
+    "match_threshold": 0.98,
+    "review_threshold": 0.95
+  },
+  "counts": {
+    "match_decisions": 2086245,
+    "review_queue": 86296,
+    "unified_profiles": 19799,
+    "profile_mapping": 36804,
+    "lead_scores": 19799
+  },
+  "decision_breakdown": {
+    "NO_MATCH": 1979400,
+    "REVIEW": 86296,
+    "MATCH": 20549
+  },
+  "decision_source_breakdown": {
+    "AUTO_LOW": 1979400,
+    "AUTO_REVIEW": 86296,
+    "AUTO_EXACT": 12403,
+    "AUTO_HIGH": 8146
+  },
+  "merge_source_breakdown": {
+    "AUTO": 14105,
+    "EXACT": 5694
+  },
+  "lead_tier_breakdown": {
+    "WARM": 9039,
+    "COLD": 5823,
+    "HOT": 4937
+  },
+  "paths": {
+    "match_decisions": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage15_crm_entity_pipeline\\artifacts\\match_decisions.parquet",
+    "review_queue": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage15_crm_entity_pipeline\\artifacts\\review_queue.parquet",
+    "unified_profiles": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage15_crm_entity_pipeline\\artifacts\\unified_profiles.parquet",
+    "profile_mapping": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage15_crm_entity_pipeline\\artifacts\\profile_mapping.parquet",
+    "lead_scores": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\train_data\\stage15_crm_entity_pipeline\\artifacts\\lead_scores.parquet"
+  }
+}

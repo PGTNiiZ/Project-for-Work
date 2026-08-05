@@ -1,0 +1,2 @@
+name,scope,model,calibrator,threshold,test_ap,test_auc,test_f1,test_precision,test_recall,test_tn,test_fp,test_fn,test_tp,reason
+strict_noleak_logreg_report,strict_report_ref,logreg,sigmoid,0.50,0.8394517627143487,0.9973368955340599,0.8951429868361326,0.9899598393574297,0.8169014084507042,461691,10,221,986,report-facing strict point that avoids precision=1 while keeping recall unchanged

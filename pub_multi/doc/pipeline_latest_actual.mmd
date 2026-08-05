@@ -1,0 +1,58 @@
+flowchart TB
+    classDef src fill:#ECEFF4,stroke:#4C566A,color:#111827,stroke-width:1px;
+    classDef prep fill:#FEF3C7,stroke:#D97706,color:#111827,stroke-width:1px;
+    classDef feat fill:#D1FAE5,stroke:#059669,color:#111827,stroke-width:1px;
+    classDef model fill:#DBEAFE,stroke:#2563EB,color:#111827,stroke-width:1px;
+    classDef prod fill:#FCE7F3,stroke:#DB2777,color:#111827,stroke-width:1px;
+    classDef out fill:#EDE9FE,stroke:#7C3AED,color:#111827,stroke-width:1px;
+
+    subgraph S1["Source Data and Normalization"]
+        A["Raw LinkSocial JSON Files<br/>Twitter / Google+ / Instagram"]:::src
+        B["clean_data/preprocess_dataset.py<br/>load_all_profiles + clean_dataframe"]:::prep
+        C["all_profiles_cleaned.csv<br/>24,729 rows"]:::prep
+        D["clean_data/location_mapping_pipeline.py<br/>location_mapping.csv<br/>4,589 raw locations / 462 mapped"]:::prep
+        E["image_process/create_normalized_db.py<br/>normalized image artifacts"]:::prep
+        F["normalized_profiles_with_profile_id.csv<br/>36,807 rows"]:::prep
+        A --> B --> C
+        C --> D
+        C --> E
+        D --> F
+        E --> F
+    end
+
+    subgraph S2["Training Data Preparation"]
+        G["stage8_pair_builder.py<br/>positive + random negative + hard negative<br/>24,663,633 labeled pairs"]:::feat
+        H["stage9_features_pipeline_chunked.py<br/>entity split + profile cache + TF-IDF + SBERT + chunked features"]:::feat
+        I["Split artifacts<br/>train_profiles 15,848 / val_profiles 17,595 / test_profiles 3,364<br/>train_pairs 10,133,486 / val_pairs 4,511,311 / test_pairs 462,908"]:::feat
+        J["Merged feature matrices<br/>train / val / test parquet"]:::feat
+        F --> G --> H --> I --> J
+    end
+
+    subgraph S3["Model Development"]
+        K["leakage_safe_experiment/run_experiment.py<br/>classical comparison<br/>logreg / gb / rf"]:::model
+        L["stage7_8_rebuilt_experiment_hybrid/run_rebuilt_pipeline.py<br/>hybrid baseline"]:::model
+        M["stage7_13_multimodal_suite/run_multimodal_suite.py<br/>text_attr_hybrid / image_stats / image_context"]:::model
+        N["stage10_13_training_pipeline.py<br/>IdentityMLP reference"]:::model
+        O["Chosen main run<br/>image_context_r075_h20_s42<br/>Gradient Boosting + 41 features"]:::out
+        F --> K
+        F --> L --> M
+        J --> N
+        M --> O
+    end
+
+    subgraph S4["Production Retrieval and Scoring"]
+        P["run_full_candidate_pipeline.py<br/>exact-first + multi-key blocking<br/>username_prefix3 / fullname_prefix3 / external_domain"]:::prod
+        Q["Retrieval output<br/>all cross-platform pairs 449,149,239<br/>exact matches 12,403<br/>candidate pairs 2,073,842<br/>coverage 88.67%"]:::prod
+        R["Candidate scoring<br/>load best_model + scaler + calibrator + feature_cols<br/>score in chunks"]:::prod
+        T["Decision tiers<br/>MATCH / REVIEW / NO_MATCH<br/>production thresholds 0.98 / 0.95"]:::prod
+        F --> P --> Q --> R --> T
+        O --> R
+    end
+
+    subgraph S5["CRM Workflow and Final Outputs"]
+        U["run_crm_entity_pipeline.py<br/>match_decisions + review_queue"]:::prod
+        V["Entity merge<br/>Union-Find transitive closure<br/>unified_profiles + profile_mapping"]:::out
+        W["Lead scoring<br/>HOT / WARM / COLD"]:::out
+        X["Final outputs<br/>review queue / final decisions / unified customer view / lead scores"]:::out
+        T --> U --> V --> W --> X
+    end

@@ -1,0 +1,250 @@
+{
+  "metrics": {
+    "best_model": "gb",
+    "leaderboard": [
+      {
+        "model": "gb",
+        "val_ap": 0.9748877456746651,
+        "val_auc": 0.9790452099218981
+      },
+      {
+        "model": "rf",
+        "val_ap": 0.9740718475249296,
+        "val_auc": 0.9785599988804717
+      },
+      {
+        "model": "logreg",
+        "val_ap": 0.9420524730289238,
+        "val_auc": 0.9524207630708621
+      }
+    ],
+    "feature_count": 22,
+    "threshold": 0.43000000000000005,
+    "best_val_f1": 0.936839633716835,
+    "val_roc_auc": 0.9796336644318479,
+    "val_avg_precision": 0.9732976524016925,
+    "val_f1": 0.936839633716835,
+    "test_roc_auc": 0.9772002718696379,
+    "test_avg_precision": 0.9703436322457817,
+    "test_f1": 0.9337101142117038,
+    "test_precision": 0.9656600097418412,
+    "test_recall": 0.903806701618418,
+    "confusion_matrix": [
+      [
+        9164,
+        141
+      ],
+      [
+        422,
+        3965
+      ]
+    ],
+    "classification_report": {
+      "NO_MATCH": {
+        "precision": 0.9559774671395785,
+        "recall": 0.984846856528748,
+        "f1-score": 0.9701974485204595,
+        "support": 9305.0
+      },
+      "MATCH": {
+        "precision": 0.9656600097418412,
+        "recall": 0.903806701618418,
+        "f1-score": 0.9337101142117038,
+        "support": 4387.0
+      },
+      "accuracy": 0.9588810984516506,
+      "macro avg": {
+        "precision": 0.9608187384407099,
+        "recall": 0.944326779073583,
+        "f1-score": 0.9519537813660817,
+        "support": 13692.0
+      },
+      "weighted avg": {
+        "precision": 0.9590798126257111,
+        "recall": 0.9588810984516506,
+        "f1-score": 0.9585066848911497,
+        "support": 13692.0
+      }
+    }
+  },
+  "leakage_report": {
+    "pair_builder": {
+      "positive_pairs": 29246,
+      "positive_components": 13772,
+      "split_assignment": {
+        "component_count": 13772,
+        "positive_pairs_by_split_target": {
+          "train": 20472.199999999997,
+          "val": 4386.9,
+          "test": 4386.9
+        },
+        "positive_pairs_by_split_actual": {
+          "train": 20472,
+          "val": 4387,
+          "test": 4387
+        },
+        "largest_components": [
+          {
+            "component": "345",
+            "positive_pairs": 5,
+            "profiles": 4,
+            "split": "train"
+          },
+          {
+            "component": "1433",
+            "positive_pairs": 5,
+            "profiles": 4,
+            "split": "val"
+          },
+          {
+            "component": "905",
+            "positive_pairs": 5,
+            "profiles": 4,
+            "split": "test"
+          },
+          {
+            "component": "670",
+            "positive_pairs": 5,
+            "profiles": 4,
+            "split": "train"
+          },
+          {
+            "component": "34302",
+            "positive_pairs": 3,
+            "profiles": 3,
+            "split": "train"
+          },
+          {
+            "component": "22464",
+            "positive_pairs": 3,
+            "profiles": 3,
+            "split": "train"
+          },
+          {
+            "component": "34644",
+            "positive_pairs": 3,
+            "profiles": 3,
+            "split": "train"
+          },
+          {
+            "component": "32925",
+            "positive_pairs": 3,
+            "profiles": 3,
+            "split": "train"
+          },
+          {
+            "component": "32352",
+            "positive_pairs": 3,
+            "profiles": 3,
+            "split": "train"
+          },
+          {
+            "component": "24126",
+            "positive_pairs": 3,
+            "profiles": 3,
+            "split": "val"
+          }
+        ]
+      },
+      "split_stats": {
+        "train": {
+          "profiles": 24699,
+          "positive_pairs": 20472,
+          "random_negatives": 40944,
+          "hard_negatives": 6945
+        },
+        "val": {
+          "profiles": 5291,
+          "positive_pairs": 4387,
+          "random_negatives": 8774,
+          "hard_negatives": 478
+        },
+        "test": {
+          "profiles": 5291,
+          "positive_pairs": 4387,
+          "random_negatives": 8774,
+          "hard_negatives": 531
+        }
+      }
+    },
+    "split_leakage": {
+      "component_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "self_pairs": 0,
+      "rows_by_split": {
+        "train": 68361,
+        "val": 13639,
+        "test": 13692
+      },
+      "label_dist_by_split": {
+        "train": {
+          "0": 47889,
+          "1": 20472
+        },
+        "val": {
+          "0": 9252,
+          "1": 4387
+        },
+        "test": {
+          "0": 9305,
+          "1": 4387
+        }
+      }
+    },
+    "single_feature_check": [
+      {
+        "feature": "fullname_jaro",
+        "best_threshold_rule": ">= 0.7285",
+        "best_accuracy": 0.9026438796377446
+      },
+      {
+        "feature": "fullname_token_sort",
+        "best_threshold_rule": ">= 0.5000",
+        "best_accuracy": 0.9008910312591294
+      },
+      {
+        "feature": "fullname_lev",
+        "best_threshold_rule": ">= 0.3750",
+        "best_accuracy": 0.8932223196026877
+      },
+      {
+        "feature": "username_token_sort",
+        "best_threshold_rule": ">= 0.5556",
+        "best_accuracy": 0.8757668711656442
+      },
+      {
+        "feature": "username_lev",
+        "best_threshold_rule": ">= 0.4000",
+        "best_accuracy": 0.8721151037101957
+      },
+      {
+        "feature": "username_jaro",
+        "best_threshold_rule": ">= 0.6900",
+        "best_accuracy": 0.869120654396728
+      },
+      {
+        "feature": "bio_tfidf_cosine",
+        "best_threshold_rule": ">= 0.0581",
+        "best_accuracy": 0.7708881098451651
+      },
+      {
+        "feature": "domain_jaccard",
+        "best_threshold_rule": "< 0.0000",
+        "best_accuracy": 0.6795939234589541
+      },
+      {
+        "feature": "url_jaccard",
+        "best_threshold_rule": "< 0.0000",
+        "best_accuracy": 0.6795939234589541
+      },
+      {
+        "feature": "domain_count_a",
+        "best_threshold_rule": "< 0.0000",
+        "best_accuracy": 0.6795939234589541
+      }
+    ]
+  }
+}

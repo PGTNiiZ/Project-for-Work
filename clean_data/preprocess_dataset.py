@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Dict, Tuple
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent
+PROJECT_ROOT = SCRIPT_DIR.parents[1]  # Project-for-Work root
 DEFAULT_DATASET_ROOT = PROJECT_ROOT / "data" / "data" / "Dataset-LinkSocial"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "data" / "processed"
 
@@ -130,17 +130,21 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     # For text fields, replace NaN with empty string
     text_columns = ['userName', 'fullName', 'bio', 'location', 'externalUrl', 'pictureURL']
     for col in text_columns:
-        if col in df.columns:
+        if col not in df.columns:
+            df[col] = ''
+        else:
             df[col] = df[col].fillna('')
-    
+
     # For outputProfileName, use user_folder as backup
     if 'outputProfileName' in df.columns:
-        df['outputProfileName'] = df['outputProfileName'].fillna(df['user_folder'])
+        if 'user_folder' in df.columns:
+            df['outputProfileName'] = df['outputProfileName'].fillna(df['user_folder'])
+        else:
+            df['outputProfileName'] = df['outputProfileName'].fillna('')
+    elif 'user_folder' in df.columns:
+        df['outputProfileName'] = df['user_folder'].fillna('')
     else:
-        df['outputProfileName'] = df['user_folder']
-    
-    # ---- Text Normalization ----
-    # Create normalized versions (keep originals for reference)
+        df['outputProfileName'] = ''
     df['userName_clean'] = df['userName'].apply(normalize_text)
     df['fullName_clean'] = df['fullName'].apply(normalize_text)
     df['bio_clean'] = df['bio'].apply(lambda x: remove_emojis(str(x)) if pd.notna(x) else '')

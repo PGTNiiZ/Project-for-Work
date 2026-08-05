@@ -1,0 +1,109 @@
+0000|Heading 1|บทที่ 4
+0001|Normal|ผลการวิจัยและอภิปรายผล
+0002|Normal|บทนี้นำเสนอผลการวิจัยของระบบเชื่อมโยงตัวตนข้ามแพลตฟอร์มโดยอ้างอิงจากผลรันจริงในโค้ดและ artifact ภายใน workspace เท่านั้น ไม่ใช้ตัวเลขสมมติหรือค่าที่แต่งขึ้นเพื่อการเขียนรายงาน แหล่งอ้างอิงหลักของบทนี้
+0003|Normal|โครงของบทนี้ถูกจัดใหม่ให้ตอบคำถามวิจัย 3 ประเด็นอย่างชัดเจน ได้แก่ หลังเตรียมข้อมูลแล้วได้ข้อมูลพร้อมใช้แบบใด แต่ละสายการทดลองให้ผลอย่างไร และเมื่อเปรียบเทียบทุกสายแล้วแนวทางใดเหมาะสมที่สุดทั้งในเชิงว
+0004|Normal|เพื่อให้การตีความผลในบทนี้ครบทั้งระดับแบบจำลองและระดับ workflow ผู้วิจัยจึงใช้ตัวชี้วัดหลายชั้นร่วมกัน ไม่ได้พิจารณาเพียงค่า metric ของ test split อย่างเดียว กล่าวคือ ในระดับ retrieval/blocking จะพิจา
+0005|Heading 2|4.1 ผลการเตรียมข้อมูล
+0006|Heading 3|4.1.1 ผลการรวมและทำความสะอาดข้อมูล
+0007|Normal|ในขั้น full candidate pipeline ระบบไม่ได้ใช้โปรไฟล์ทั้งหมดจากไฟล์ normalized โดยตรง แต่คัดเฉพาะโปรไฟล์ที่ผ่านเงื่อนไขความพร้อมของคีย์ระบุตัวตนและ metadata ที่จำเป็นต่อการเชื่อมโยงข้ามแพลตฟอร์ม ทำให้จำ
+0008|Normal|ในเชิงคุณภาพ ข้อมูลจาก Google+ ยังเป็นส่วนที่ท้าทายที่สุดของชุดข้อมูล เนื่องจากเป็นข้อมูล archive ที่ตกค้างจากแพลตฟอร์มที่ยุติการให้บริการไปแล้ว ทำให้ metadata และสัญญาณประกอบบางชนิดไม่สมบูรณ์เท่ากับ 
+0009|Normal|ตารางที่ 4.1 จำนวนข้อมูล valid หลังผ่านการเตรียมข้อมูล
+0011|Normal|ผลในตารางนี้แสดงให้เห็นว่าหลังเตรียมข้อมูลแล้ว โจทย์ที่ระบบต้องเผชิญไม่ใช่เพียงการจำแนกคู่ข้อมูลบนชุดเล็ก แต่เป็นการลด search space จากระดับ 449,149,239 คู่ ให้เหลือเฉพาะคู่ที่มีโอกาสสูงพอจะนำเข้าสู่ข
+0014|Normal|รูปที่ 4.1 สรุปผลการเตรียมข้อมูล แสดงจำนวน valid profiles แยกตามแพลตฟอร์ม จำนวนแถวของชุด supervised split และการเติบโตของ feature space ที่ใช้จริงในแต่ละสายการทดลอง
+0016|Heading 3|4.1.2 ผลการสร้าง labeled pairs และ feature matrix
+0017|Normal|สำหรับสาย Classical Leakage-Safe ผู้วิจัยใช้ชุดข้อมูลที่สร้างใหม่จาก train_data/leakage_safe_experiment ซึ่งสร้าง positive pairs, random negatives และ hard negatives ภายใต้แนวคิด component-aware split
+0018|Normal|ตารางที่ 4.2 โครงสร้าง pair-level dataset ของสาย Classical Leakage-Safe
+0020|Normal|ส่วน feature matrix ที่เข้าสู่การฝึกแบบจำลองไม่ได้ใช้ raw field ทั้งหมดโดยตรง แต่ใช้ feature ที่ผ่านการคัดเลือกแล้วจากกลุ่มชื่อผู้ใช้ ชื่อจริง bio URL/domain location และ stylometric signals รวม 22 fe
+0021|Normal|ตารางที่ 4.3 จำนวนคุณลักษณะที่ถูกใช้จริงในแต่ละสายการทดลอง
+0023|Normal|ผลนี้มีนัยสำคัญในเชิงระเบียบวิธี เพราะทำให้ผู้อ่านเห็นชัดว่าการเพิ่มความซับซ้อนของระบบในงานนี้เกิดจากการขยายหลักฐานเชิงข้อมูลทีละขั้น ไม่ใช่การเปลี่ยนโมเดลแบบก้าวกระโดดโดยไม่มีฐานเปรียบเทียบ
+0026|Normal|รูปที่ 4.2 โครงสร้าง split และองค์ประกอบของคู่ข้อมูล แสดงจำนวน positive pairs, random negatives และ hard negatives ใน train, validation และ test
+0028|Heading 3|4.1.3 ผลการแบ่งชุดข้อมูลแบบ leakage-safe
+0029|Normal|การแบ่งข้อมูลในงานนี้ออกแบบเพื่อป้องกัน identity leakage โดยตรง กล่าวคือ entity เดียวกันหรือ component เดียวกันต้องไม่กระจายข้าม train, validation และ test พร้อมกัน ในสาย leakage_safe_experiment รายงา
+0030|Normal|ตารางที่ 4.4 ผลการตรวจ leakage ของ supervised split
+0032|Normal|การออกแบบลักษณะนี้ทำให้ผลการทดลองในบทนี้น่าเชื่อถือมากกว่าการแบ่งแบบสุ่มทั่วไป เพราะลดความเสี่ยงที่โมเดลจะเห็นตัวตนเดียวกันทั้งใน train และ test แล้วให้ค่า metric สูงผิดธรรมชาติ
+0033|Normal|กล่าวอีกนัยหนึ่ง split ลักษณะนี้ทำหน้าที่เหมือน Entity-Aware หรือ Component-Aware split ในงาน identity resolution สมัยใหม่ กล่าวคือ ระบบจะแยกกลุ่มบุคคลออกก่อน แล้วให้คู่ข้อมูลทั้งหมดที่เกี่ยวข้องติดตา
+0034|Heading 2|4.2 ผลการทดลองสาย Classical Leakage-Safe
+0035|Normal|หัวข้อนี้เปรียบเทียบแบบจำลอง 3 ชนิดบนชุดข้อมูล 22 features เดียวกัน ใช้ split เดียวกัน และใช้ขั้นตอน calibration กับ threshold selection เดียวกันทั้งหมด ผลทุกค่ามาจากไฟล์ pub_multi/res/classical_leaks
+0036|Normal|ตารางที่ 4.5 ผลการเปรียบเทียบสาย Classical Leakage-Safe
+0038|Heading 3|4.2.1 Logistic Regression
+0039|Normal|Logistic Regression ทำหน้าที่เป็น baseline เชิงเส้นที่ตีความง่ายที่สุดในสาย classical โดยได้ Test AP = 0.9304, AUC = 0.9494 และ F1-score = 0.8705 ค่า precision และ recall อยู่ที่ 0.8778 และ 0.8632 ตาม
+0040|Normal|ผลดังกล่าวชี้ว่า logistic regression สามารถจับสัญญาณจาก feature กลุ่มชื่อและข้อความได้จริง แต่ยังไม่สามารถรองรับความสัมพันธ์ไม่เชิงเส้นระหว่าง feature ต่าง ๆ ได้ดีพอ เมื่อเทียบกับ tree-based models ทำ
+0041|Heading 3|4.2.2 Gradient Boosting
+0042|Normal|Gradient Boosting ให้ผลดีที่สุดโดยรวมในสาย classical ด้วย Test AP = 0.9703, AUC = 0.9772 และ F1-score = 0.9337 ที่ threshold 0.43 พร้อม Precision = 0.9657 และ Recall = 0.9038 confusion matrix คือ TN =
+0043|Normal|ค่าที่ได้สะท้อนว่าโมเดลสามารถใช้ปฏิสัมพันธ์ของ feature ได้ดี โดยเฉพาะ feature กลุ่มชื่อผู้ใช้และชื่อจริงซึ่งเป็นสัญญาณหลักของปัญหา identity matching ทำให้รักษา precision ได้สูงโดยไม่กด recall ลงมากเกิ
+0044|Heading 3|4.2.3 Random Forest
+0045|Normal|Random Forest ให้ผลใกล้เคียง Gradient Boosting มาก โดยได้ Test AP = 0.9689, AUC = 0.9773 และ F1-score = 0.9332 พร้อม Precision = 0.9591 และ Recall = 0.9086 confusion matrix คือ TN = 9,135, FP = 170, F
+0046|Normal|เมื่อเทียบกับ Gradient Boosting จะเห็นว่า random forest ให้ recall สูงกว่าเล็กน้อย แต่ precision ลดลง และ F1 ต่ำกว่าเล็กน้อย ทำให้ในเชิงสมดุลของการใช้งานจริง Gradient Boosting ยังเป็นตัวเลือกที่เหมาะก
+0047|Heading 3|4.2.4 สรุปเปรียบเทียบผลของสาย Classical
+0048|Normal|จากผลทั้งหมดในสาย classical สามารถสรุปได้ว่า Gradient Boosting เป็นโมเดลหลักที่เหมาะสมที่สุด เพราะให้ AP และ F1-score สูงสุด ขณะที่ Random Forest ให้ AUC สูงกว่าเล็กน้อยแต่เสีย precision บางส่วน ส่วน 
+0049|Normal|กล่าวอีกนัยหนึ่ง สาย classical leak-safe พิสูจน์ได้ว่าเมื่อ pair source และ split ถูกแก้ให้ถูกต้องแล้ว แบบจำลองเชิง tabular ที่ไม่ซับซ้อนมากก็ยังให้ผลในระดับสูงได้ โดยไม่จำเป็นต้องพึ่ง deep model ตั้ง
+0050|Normal|ในเชิงการนำไปพัฒนาต่อ ผลชุดนี้ชี้ค่อนข้างชัดว่า Gradient Boosting ควรถูกใช้เป็นจุดตั้งต้นของระบบจริง เพราะให้สมดุลระหว่าง precision และ recall ดีที่สุด ขณะที่ Random Forest เหมาะกับกรณีที่ต้องการดัน r
+0053|Normal|รูปที่ 4.3 ผลการเปรียบเทียบสาย Classical Leakage-Safe ระหว่าง Logistic Regression, Gradient Boosting และ Random Forest บน AP, AUC, F1, Precision และ Recall
+0057|Normal|รูปที่ 4.4 Confusion matrix ของโมเดลในสาย Classical Leakage-Safe โดยใช้แกน Actual และ Predicted class แบบเดียวกันทุก panel เพื่อให้เห็น trade-off ระหว่าง false positive และ false negative ของแต่ละโมเด
+0059|Heading 2|4.3 ผลการทดลองสาย Multimodal Suite
+0060|Normal|สาย multimodal suite ใช้ชุด pair และ split เดียวกันในทั้ง 3 configuration เพื่อให้การเปรียบเทียบผลเกิดจากการเพิ่มหลักฐานเชิงข้อมูลจริง ไม่ใช่เกิดจากการเปลี่ยนชุดข้อมูลไปพร้อมกัน โดยผลหลักมาจาก train_d
+0061|Normal|ตารางที่ 4.6 ผลการเปรียบเทียบสาย Multimodal Suite
+0063|Heading 3|4.3.1 Text/Attribute Hybrid
+0064|Normal|การทดลอง text_attr_hybrid_r075_h20_s42 เป็น baseline ของ multimodal suite โดยเพิ่ม SBERT เข้ามาในชุด text features ทำให้จำนวนคุณลักษณะเพิ่มเป็น 23 และได้ Test AP = 0.9782, AUC = 0.9715, F1-score = 0.9
+0065|Normal|ผลนี้ยืนยันว่าการเพิ่ม semantic text encoder ช่วยให้ระบบจับความคล้ายเชิงความหมายของ bio ได้ดีขึ้น โดยเฉพาะในกรณีที่ข้อความไม่ได้ซ้ำ token ตรง ๆ แม้ precision จะไม่พุ่งสูงกว่า classical มากนัก แต่ reca
+0068|Normal|รูปที่ 4.5 ผลของการเพิ่ม SBERT ต่อสาย hybrid text แสดงการเปลี่ยนแปลงของ AP, AUC, F1, Precision และ Recall เมื่อเทียบกับ tuned baseline
+0070|Heading 3|4.3.2 Image Statistics
+0071|Normal|การเพิ่ม image-presence และ image-statistics features ทำให้จำนวนคุณลักษณะเพิ่มจาก 23 เป็น 37 และผลดีขึ้นในทุก metric หลัก โดยได้ Test AP = 0.9789, AUC = 0.9731 และ F1-score = 0.9340
+0072|Normal|เมื่อเทียบกับ text baseline เดิม ค่า AP เพิ่มขึ้น +0.00067, AUC เพิ่ม +0.00163 และ F1 เพิ่ม +0.00101 แม้จะเป็น incremental improvement แต่แนวโน้มนี้มีความสม่ำเสมอและเกิดจาก artifact จริงใน suite repor
+0073|Heading 3|4.3.3 Image Context
+0074|Normal|การทดลอง image_context_r075_h20_s42 เป็น main run ปัจจุบันของระบบ โดยเพิ่ม caption-cross signals เข้าไปใน feature space ทำให้จำนวนคุณลักษณะเป็น 41 และให้ผลดีที่สุดโดยรวมใน suite คือ Test AP = 0.9789, 
+0075|Normal|แม้ Image Stats จะมี F1-score สูงกว่าเพียงเล็กน้อยในหลักทศนิยมถัดไปบางจุด แต่ Image Context ให้สมดุลด้าน AP, AUC, Recall และ composite score สูงกว่า จึงถูกเลือกเป็น run หลักสำหรับขั้น production ถัดไป
+0076|Heading 3|4.3.4 สรุปเปรียบเทียบผลของสาย Multimodal
+0077|Normal|ผลของ multimodal suite แสดงแนวโน้มสำคัญ 3 ประการ
+0078|List Number|SBERT ช่วยเพิ่มมิติ semantic ให้กับ text branch และยกระดับ recall ได้จริง
+0079|List Number|การเพิ่ม image features ช่วยเพิ่ม AP, AUC และ Recall อย่างสม่ำเสมอ
+0080|List Number|run ที่ดีที่สุดในปัจจุบันคือ image_context_r075_h20_s42 ซึ่งเป็นหลักฐานว่าการเพิ่มบริบทภาพและข้อความร่วมกันมีประโยชน์ต่อ identity resolution
+0081|Normal|อย่างไรก็ตาม การตีความผล multimodal ต้องพิจารณาร่วมกับ coverage ของข้อมูลภาพด้วย รายงานของ main run ระบุว่า valid profiles ทั้งหมดมี 36,804 โปรไฟล์ แต่มีเพียง 4,248 โปรไฟล์ที่มี local image, 2,173 โปร
+0082|Normal|ตารางที่ 4.7 Coverage ของข้อมูลภาพใน main run
+0084|Normal|ในเชิง implementation ผลชุดนี้บอกว่าการเพิ่มมอดาลิตีควรทำแบบ incremental มากกว่ากระโดดไปสู่ learned fusion เต็มรูปแบบทันที กล่าวคือ ควรเริ่มจาก text/attribute baseline ที่ leak-safe ก่อน แล้วเพิ่ม sem
+0087|Normal|รูปที่ 4.6 การเปรียบเทียบผลของสาย Multimodal Suite ระหว่าง Text/Attribute Hybrid, Image Statistics และ Image Context
+0091|Normal|รูปที่ 4.7 Confusion matrix ของ main run `image_context_r075_h20_s42` บน test split ที่ threshold = 0.35 ซึ่งช่วยให้เห็นจำนวน false positives และ false negatives ที่โมเดลยอมรับเพื่อรักษา F1-score โดยร
+0095|Normal|รูปที่ 4.8 Feature importance ของ main run แสดงว่ากลุ่มชื่อยังเป็นสัญญาณหลักของระบบ
+0099|Normal|รูปที่ 4.9 Coverage ของข้อมูลภาพและ caption ใน main run ซึ่งสะท้อนข้อจำกัดของการทดลองแบบ partial multimodal
+0101|Heading 2|4.4 ผลการทดลองสาย Neural-Network Reference
+0102|Normal|หัวข้อนี้มีเป้าหมายเพื่อวางตำแหน่งของ neural model ในงานวิจัยอย่างระมัดระวัง กล่าวคือใช้เป็น reference line เพื่อเปรียบเทียบกับสาย classical และ multimodal ไม่ได้ใช้เป็นผลหลักของระบบ production
+0103|Heading 3|4.4.1 IdentityMLP ภายใต้ strict setting
+0104|Normal|ผลของ IdentityMLP ที่ใช้อ้างอิงใน strict setting มาจาก stage10_13_training_noleak_strict และถูกเก็บซ้ำไว้ใน pub_multi/res/model_strict_cmp.csv โดยมีค่า Test AP = 0.7344, AUC = 0.9960, F1-score = 0.829
+0105|Normal|เมื่อวางเทียบกับ strict rerun ของ classical models บน feature set 22 ตัวเดิม จะพบว่า Random Forest และ Gradient Boosting ทำได้ดีกว่าในเชิง AP และ F1-score อย่างชัดเจน เช่น Random Forest ได้ Test AP = 
+0106|Normal|ผลนี้ชี้ว่า neural model ในสาย strict reference ไม่ได้ให้ข้อได้เปรียบโดยอัตโนมัติเมื่อข้อมูลตั้งต้นและ pair source ยังมีข้อจำกัดจาก pipeline เดิม ดังนั้นจึงไม่ควรใช้ผลของ IdentityMLP เป็นข้อสรุปหลักขอ
+0109|Normal|รูปที่ 4.10 ผลเปรียบเทียบ strict reference ระหว่าง IdentityMLP และ strict rerun models บน feature set 22 ตัวเดิม
+0113|Normal|รูปที่ 4.11 Confusion matrix ของ `IdentityMLP` ภายใต้ strict setting แสดงให้เห็นว่าแม้โมเดลยังรักษา true positives ได้จำนวนมาก แต่ยังมี false positives และ false negatives สูงกว่าสาย tree-based rerun 
+0115|Heading 3|4.4.2 เปรียบเทียบกับสาย Classical และ Multimodal
+0116|Normal|เมื่อ benchmark model families บน final 41-feature split จาก pub_multi/res/model_family_cmp.csv จะพบว่า MLP ให้ Test AP = 0.9734, AUC = 0.9649 และ F1-score = 0.9255 ซึ่งดีกว่า strict reference เดิม แต
+0117|Normal|ผลดังกล่าวมีความหมาย 2 ชั้น ได้แก่
+0118|List Number|neural network สามารถทำงานได้ดีเมื่ออยู่บน split ที่สะอาดและ feature space ที่ดีกว่าเดิม
+0119|List Number|อย่างไรก็ตาม ในบริบทของงานนี้ Gradient Boosting ยังให้สมดุลของประสิทธิภาพ ความโปร่งใสในการวิเคราะห์ feature importance และความง่ายในการนำไปต่อยอดเชิง production ดีกว่า
+0120|Normal|ดังนั้น สถานะที่เหมาะสมของสาย neural ในบทนี้คือ reference line เพื่อยืนยันว่าการเลือกสาย classical/multimodal ไม่ได้เกิดจากการละเลย neural model แต่เกิดจากผลเปรียบเทียบจริงที่ยังชี้ไปทาง Gradient Boos
+0123|Normal|รูปที่ 4.12 Benchmark ของ model families บน final 41-feature split แสดงว่า Gradient Boosting ยังให้สมดุลดีที่สุดเมื่อเทียบกับ MLP และโมเดลอื่น
+0125|Normal|หากจะต่อยอดสาย neural จริงในรอบถัดไป สิ่งที่ควรเพิ่มก่อนคือ coverage ของภาพและกลไก fusion ที่เรียนรู้ข้าม modality ได้มากกว่าการต่อ feature แบบคงที่ มิฉะนั้น MLP จะยังทำหน้าที่เพียงผู้เรียนรู้บน featu
+0126|Heading 2|4.5 สรุปผลการเปรียบเทียบทุกสายการทดลอง
+0127|Normal|ตารางที่ 4.8 สรุปผลหลักของทุกสายการทดลองที่ใช้อ้างอิงในบทนี้
+0129|Normal|จากตารางนี้สามารถสรุปเชิงวิจัยได้ดังนี้
+0130|List Number|ปัญหาหลักของระบบเดิมอยู่ที่ pair source, split และ leakage ไม่ใช่เพียงการเลือกโมเดล
+0131|List Number|เมื่อ rebuild ข้อมูลและ split ให้ถูกต้องแล้ว แบบจำลองสาย classical ก็สามารถให้ผลในระดับสูงมากได้
+0132|List Number|การเพิ่ม SBERT และ image modality ช่วยให้ผลดีขึ้นต่อเนื่อง แม้จะเป็นลักษณะ incremental improvement
+0133|List Number|run ที่ดีที่สุดในปัจจุบันคือ image_context_r075_h20_s42
+0134|Normal|อย่างไรก็ตาม การเลือก run สุดท้ายสำหรับใช้งานจริงไม่ควรดูเพียง test split เท่านั้น แต่ต้องดูผลใน candidate pool ขนาดใหญ่และ workflow ปลายทางด้วย ใน full_pipeline_report.json ระบบลด search space จาก 44
+0135|Normal|เมื่อใช้ production thresholds แบบ Exact-First + Dual Threshold ที่ match_threshold = 0.98 และ review_threshold = 0.95 ผลลัพธ์ปลายทางมีดังนี้
+0136|Normal|ตารางที่ 4.9 ผลระดับ production ของ main run
+0138|Normal|ผลนี้แสดงว่าแม้ threshold = 0.35 จะเหมาะกับการประเมินเชิง classification บน test split แต่ threshold สำหรับ production ต้องเข้มกว่ามากเพื่อคุม precision ของการ merge โปรไฟล์จริง โดยที่ operating point
+0139|Normal|หากแยกพิจารณาเป็นราย tier จาก production_threshold_report จะเห็นเหตุผลของการออกแบบ workflow นี้ชัดขึ้น กล่าวคือ exact tier มี precision สูงมากที่ 0.9949, match tier ที่มาจากโมเดลและใช้เกณฑ์ score >= 0
+0140|Normal|ในระดับ CRM pipeline รายงาน crm_entity_report.json ระบุว่า decision breakdown สุดท้ายคือ NO_MATCH = 1,979,400, REVIEW = 86,296, MATCH = 20,549 และหลัง merge แล้วได้ unified_profiles = 19,799 พร้อม lea
+0141|Heading 3|4.5.1 การวิเคราะห์ Hard Cases จากตัวอย่าง False Negatives
+0142|Normal|เพื่อไม่ให้การอภิปรายผลหยุดอยู่เพียงที่ metric รวม ผู้วิจัยได้ตรวจสอบไฟล์ pub_multi/data/fn_top.csv ซึ่งเก็บตัวอย่าง false negatives จาก test split ของ run หลักจำนวน 200 คู่ พบว่า 82 คู่ หรือ 41.0% มี
+0143|Normal|นอกจากนี้ hard cases ในตัวอย่างที่เก็บไว้ยังกระจุกตัวอยู่ในคู่ที่เกี่ยวข้องกับ Google+ อย่างชัดเจน โดย googleplus -> twitter มี 110 คู่ และ googleplus -> instagram มี 45 คู่ ขณะที่ตัวอย่างที่มีภาพ loc
+0144|Normal|ตารางที่ 4.10 ตัวอย่าง Hard Cases จากไฟล์ `fn_top.csv`
+0146|Normal|ตัวอย่างเหล่านี้แสดงให้เห็นรูปแบบข้อผิดพลาดที่สำคัญ 2 แบบ ได้แก่ กรณีที่ผู้ใช้ใช้ identity คนละแบบโดยสิ้นเชิงในแต่ละแพลตฟอร์ม และกรณีที่ชื่อจริงหรือชื่อผู้ใช้เปลี่ยนจากชื่อบุคคลไปเป็นชื่อเพจ ชื่อแบรนด
+0147|Normal|ดังนั้นข้อเสนอเชิงเทคนิคสำหรับการพัฒนาต่อไม่ใช่เพียงการเพิ่มความซับซ้อนของตัวแบบจำลองเท่านั้น แต่ควรเพิ่ม coverage ของสัญญาณเสริมที่สามารถกู้กรณีเหล่านี้ได้ เช่น image embeddings ที่มีทั้งสองฝั่ง, cap
+0148|Normal|ดังนั้นข้อสรุปสุดท้ายของบทนี้คือ แนวทางที่เหมาะสมที่สุดสำหรับงานวิจัยฉบับปัจจุบันไม่ใช่การผลักไปสู่โมเดลที่ซับซ้อนที่สุด แต่คือการใช้ Gradient Boosting บน pair construction และ split ที่ leak-safe แล้
+0151|Normal|รูปที่ 4.13 Retrieval funnel ของระบบ แสดงการลด search space จาก all cross-platform pairs ไปสู่ exact pairs, candidate pairs, match-only และ review queue
+0155|Normal|รูปที่ 4.14 พฤติกรรมของ precision, recall และ F1 เมื่อเปลี่ยน threshold ของ main run
+0159|Normal|รูปที่ 4.15 จำนวนคู่ในแต่ละ production tier ได้แก่ exact, match และ review
+0163|Normal|รูปที่ 4.16 Precision ของแต่ละ production tier ภายใต้ operating point แบบ 0.98 / 0.95
+0167|Normal|รูปที่ 4.17 ผลลัพธ์ปลายทางของ CRM pipeline แสดง decision breakdown และ lead tier breakdown หลัง merge entity
+0171|Normal|รูปที่ 4.18 สรุปเส้นทางการพัฒนาชุดการทดลองจาก leakage diagnosis ไปสู่ final multimodal run และ production deployment

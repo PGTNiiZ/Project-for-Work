@@ -1,0 +1,6 @@
+﻿group,name,count
+exact,username_exact,11133
+exact,external_url_exact,1270
+candidate,username_prefix3,1026466
+candidate,fullname_prefix3,1041315
+candidate,external_domain,6061

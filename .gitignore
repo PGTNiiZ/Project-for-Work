@@ -96,11 +96,16 @@ image_process/failed_urls.csv
 *.heic
 *.heif
 *.raw
+!experiments/**/*.png
+!experiments/**/*.log
+!experiments/**/*.pt
+!experiments/**/*.pkl
 
 # Large training artifacts
 Train-Data/labeled_pairs.parquet
 Train-Data/**/sbert_embeddings.npy
 Train-Data/stage9_pipeline_chunked/future_matrix_chunked_train_merged.parquet
+experiments/r6_bert_er/profile_embeddings.npy
 train_data/labeled_pairs.parquet
 train_data/**/*.parquet
 train_data/**/*.npy

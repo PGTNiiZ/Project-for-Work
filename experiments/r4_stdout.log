@@ -1,0 +1,208 @@
+D:\66070260-Year3_Term2\Project1\Code\exp_r4_bloom_privacy.py:306: UserWarning: Glyph 3617 (\N{THAI CHARACTER MO MA}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\66070260-Year3_Term2\Project1\Code\exp_r4_bloom_privacy.py:306: UserWarning: Glyph 3639 (\N{THAI CHARACTER SARA UEE}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\66070260-Year3_Term2\Project1\Code\exp_r4_bloom_privacy.py:306: UserWarning: Glyph 3629 (\N{THAI CHARACTER O ANG}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\66070260-Year3_Term2\Project1\Code\exp_r4_bloom_privacy.py:307: UserWarning: Glyph 3617 (\N{THAI CHARACTER MO MA}) missing from font(s) DejaVu Sans.
+  fig.savefig(PLOT_PATH, dpi=150)
+D:\66070260-Year3_Term2\Project1\Code\exp_r4_bloom_privacy.py:307: UserWarning: Glyph 3639 (\N{THAI CHARACTER SARA UEE}) missing from font(s) DejaVu Sans.
+  fig.savefig(PLOT_PATH, dpi=150)
+D:\66070260-Year3_Term2\Project1\Code\exp_r4_bloom_privacy.py:307: UserWarning: Glyph 3629 (\N{THAI CHARACTER O ANG}) missing from font(s) DejaVu Sans.
+  fig.savefig(PLOT_PATH, dpi=150)
+[09:55:47] === R4/R5 bloom privacy sweep start ===
+[09:55:49] --- L=2000 ---
+[09:56:01]   L=2000 bloom-encode 10,000/36,807 (11s)
+[09:56:07]   L=2000 bloom-encode 20,000/36,807 (17s)
+[09:56:19]   L=2000 bloom-encode 30,000/36,807 (30s)
+[09:56:27] L=2000: bloom-encoded 36,807 profiles in 37s
+[09:56:43] L=2000: saved pair bloom-dice -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\pairs_L2000.parquet
+[09:56:47] L=2000: train_inner=32,496 (pos=8,124) holdout=151,639 (pos=1,434)
+[09:56:56]   epoch 01 loss=0.0906 val_ap=0.8585
+[09:57:00]   epoch 02 loss=0.0398 val_ap=0.8688
+[09:57:03]   epoch 03 loss=0.0261 val_ap=0.8735
+[09:57:07]   epoch 04 loss=0.0199 val_ap=0.8786
+[09:57:10]   epoch 05 loss=0.0165 val_ap=0.8830
+[09:57:14]   epoch 06 loss=0.0148 val_ap=0.8864
+[09:57:18]   epoch 07 loss=0.0137 val_ap=0.8889
+[09:57:22]   epoch 08 loss=0.0131 val_ap=0.8910
+[09:57:25]   epoch 09 loss=0.0125 val_ap=0.8928
+[09:57:29]   epoch 10 loss=0.0120 val_ap=0.8942
+[09:57:33]   epoch 11 loss=0.0116 val_ap=0.8953
+[09:57:36]   epoch 12 loss=0.0114 val_ap=0.8964
+[09:57:40]   epoch 13 loss=0.0114 val_ap=0.8973
+[09:57:44]   epoch 14 loss=0.0113 val_ap=0.8981
+[09:57:47]   epoch 15 loss=0.0112 val_ap=0.8989
+[09:57:51]   epoch 16 loss=0.0110 val_ap=0.8996
+[09:57:54]   epoch 17 loss=0.0109 val_ap=0.9001
+[09:57:58]   epoch 18 loss=0.0108 val_ap=0.9006
+[09:58:02]   epoch 19 loss=0.0107 val_ap=0.9010
+[09:58:06]   epoch 20 loss=0.0107 val_ap=0.9013
+[09:58:09]   epoch 21 loss=0.0106 val_ap=0.9015
+[09:58:13]   epoch 22 loss=0.0104 val_ap=0.9017
+[09:58:17]   epoch 23 loss=0.0105 val_ap=0.9018
+[09:58:21]   epoch 24 loss=0.0106 val_ap=0.9018
+[09:58:24]   epoch 25 loss=0.0105 val_ap=0.9019
+[09:58:28]   epoch 26 loss=0.0106 val_ap=0.9020
+[09:58:31]   epoch 27 loss=0.0107 val_ap=0.9020
+[09:58:35]   epoch 28 loss=0.0106 val_ap=0.9021
+[09:58:39]   epoch 29 loss=0.0104 val_ap=0.9021
+[09:58:43]   epoch 30 loss=0.0106 val_ap=0.9021
+[09:59:21] L=2000: saved probability -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\probability_r4_L2000.parquet
+  gen  0  val cost      3,431.0  g=[0.9739 0.605  0.9684 0.1446]
+  gen  5  val cost      3,382.5  g=[0.9807 0.605  0.9609 0.1446]
+  gen 10  val cost      3,382.5  g=[0.9807 0.605  0.9609 0.1446]
+  gen 15  val cost      3,382.5  g=[0.9807 0.605  0.9609 0.1446]
+  gen 20  val cost      3,382.5  g=[0.9807 0.605  0.9609 0.1446]
+  gen 25  val cost      3,382.5  g=[0.9807 0.605  0.9609 0.1446]
+  gen 30  val cost      3,382.5  g=[0.9807 0.605  0.9609 0.1446]
+  gen 35  val cost      3,382.5  g=[0.9807 0.605  0.9609 0.1446]
+  gen 39  val cost      3,382.5  g=[0.9807 0.605  0.9609 0.1446]
+[10:00:16] L=2000 R4 test={'TP': 5158, 'FP': 14, 'FN': 2858, 'REVIEW': 766, 'precision': 0.9973, 'recall': 0.5878, 'F1': 0.7397} R5 test={'TP': 6303, 'FP': 57, 'FN': 1823, 'REVIEW': 700, 'precision': 0.991, 'recall': 0.7183, 'F1': 0.8329}
+[10:00:16] --- L=1000 ---
+[10:00:27]   L=1000 bloom-encode 10,000/36,807 (10s)
+[10:00:37]   L=1000 bloom-encode 20,000/36,807 (19s)
+[10:00:48]   L=1000 bloom-encode 30,000/36,807 (30s)
+[10:00:54] L=1000: bloom-encoded 36,807 profiles in 37s
+[10:01:01] L=1000: saved pair bloom-dice -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\pairs_L1000.parquet
+[10:01:06] L=1000: train_inner=32,496 (pos=8,124) holdout=151,639 (pos=1,434)
+[10:01:09]   epoch 01 loss=0.0907 val_ap=0.8582
+[10:01:13]   epoch 02 loss=0.0397 val_ap=0.8681
+[10:01:18]   epoch 03 loss=0.0260 val_ap=0.8728
+[10:01:21]   epoch 04 loss=0.0199 val_ap=0.8779
+[10:01:25]   epoch 05 loss=0.0165 val_ap=0.8825
+[10:01:28]   epoch 06 loss=0.0148 val_ap=0.8860
+[10:01:32]   epoch 07 loss=0.0137 val_ap=0.8884
+[10:01:36]   epoch 08 loss=0.0132 val_ap=0.8905
+[10:01:39]   epoch 09 loss=0.0126 val_ap=0.8922
+[10:01:42]   epoch 10 loss=0.0120 val_ap=0.8936
+[10:01:46]   epoch 11 loss=0.0117 val_ap=0.8947
+[10:01:50]   epoch 12 loss=0.0115 val_ap=0.8957
+[10:01:53]   epoch 13 loss=0.0114 val_ap=0.8966
+[10:01:57]   epoch 14 loss=0.0114 val_ap=0.8974
+[10:02:00]   epoch 15 loss=0.0112 val_ap=0.8982
+[10:02:04]   epoch 16 loss=0.0110 val_ap=0.8988
+[10:02:07]   epoch 17 loss=0.0109 val_ap=0.8994
+[10:02:10]   epoch 18 loss=0.0109 val_ap=0.8998
+[10:02:13]   epoch 19 loss=0.0107 val_ap=0.9002
+[10:02:17]   epoch 20 loss=0.0108 val_ap=0.9005
+[10:02:20]   epoch 21 loss=0.0107 val_ap=0.9007
+[10:02:24]   epoch 22 loss=0.0105 val_ap=0.9009
+[10:02:27]   epoch 23 loss=0.0106 val_ap=0.9010
+[10:02:31]   epoch 24 loss=0.0107 val_ap=0.9011
+[10:02:35]   epoch 25 loss=0.0106 val_ap=0.9011
+[10:02:38]   epoch 26 loss=0.0107 val_ap=0.9012
+[10:02:41]   epoch 27 loss=0.0108 val_ap=0.9013
+[10:02:45]   epoch 28 loss=0.0107 val_ap=0.9013
+[10:02:48]   epoch 29 loss=0.0105 val_ap=0.9013
+[10:02:52]   epoch 30 loss=0.0106 val_ap=0.9013
+[10:03:31] L=1000: saved probability -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\probability_r4_L1000.parquet
+  gen  0  val cost      3,424.9  g=[0.9739 0.605  0.9684 0.1446]
+  gen  5  val cost      3,376.5  g=[0.9906 0.6091 0.9724 0.1467]
+  gen 10  val cost      3,375.3  g=[0.9872 0.5597 0.966  0.1552]
+  gen 15  val cost      3,375.2  g=[0.9862 0.5597 0.9638 0.1467]
+  gen 20  val cost      3,375.2  g=[0.986  0.5659 0.9627 0.1467]
+  gen 25  val cost      3,375.2  g=[0.986  0.5659 0.9627 0.1467]
+  gen 30  val cost      3,375.2  g=[0.986  0.5659 0.9627 0.1467]
+  gen 35  val cost      3,375.2  g=[0.986  0.5659 0.9627 0.1467]
+  gen 39  val cost      3,375.2  g=[0.986  0.5659 0.9627 0.1467]
+[10:04:26] L=1000 R4 test={'TP': 5085, 'FP': 14, 'FN': 2931, 'REVIEW': 766, 'precision': 0.9973, 'recall': 0.5795, 'F1': 0.733} R5 test={'TP': 6288, 'FP': 57, 'FN': 1820, 'REVIEW': 721, 'precision': 0.991, 'recall': 0.7166, 'F1': 0.8317}
+[10:04:26] --- L=500 ---
+[10:04:35]   L=500 bloom-encode 10,000/36,807 (8s)
+[10:04:43]   L=500 bloom-encode 20,000/36,807 (16s)
+[10:04:53]   L=500 bloom-encode 30,000/36,807 (26s)
+[10:04:58] L=500: bloom-encoded 36,807 profiles in 32s
+[10:05:02] L=500: saved pair bloom-dice -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\pairs_L500.parquet
+[10:05:07] L=500: train_inner=32,496 (pos=8,124) holdout=151,639 (pos=1,434)
+[10:05:10]   epoch 01 loss=0.0908 val_ap=0.8561
+[10:05:13]   epoch 02 loss=0.0398 val_ap=0.8652
+[10:05:17]   epoch 03 loss=0.0261 val_ap=0.8700
+[10:05:21]   epoch 04 loss=0.0200 val_ap=0.8756
+[10:05:24]   epoch 05 loss=0.0167 val_ap=0.8806
+[10:05:28]   epoch 06 loss=0.0150 val_ap=0.8843
+[10:05:31]   epoch 07 loss=0.0139 val_ap=0.8870
+[10:05:34]   epoch 08 loss=0.0133 val_ap=0.8891
+[10:05:38]   epoch 09 loss=0.0128 val_ap=0.8908
+[10:05:41]   epoch 10 loss=0.0123 val_ap=0.8921
+[10:05:44]   epoch 11 loss=0.0119 val_ap=0.8933
+[10:05:48]   epoch 12 loss=0.0117 val_ap=0.8943
+[10:05:51]   epoch 13 loss=0.0116 val_ap=0.8951
+[10:05:55]   epoch 14 loss=0.0116 val_ap=0.8959
+[10:05:58]   epoch 15 loss=0.0114 val_ap=0.8966
+[10:06:02]   epoch 16 loss=0.0112 val_ap=0.8971
+[10:06:06]   epoch 17 loss=0.0111 val_ap=0.8976
+[10:06:09]   epoch 18 loss=0.0111 val_ap=0.8981
+[10:06:12]   epoch 19 loss=0.0110 val_ap=0.8984
+[10:06:16]   epoch 20 loss=0.0110 val_ap=0.8987
+[10:06:19]   epoch 21 loss=0.0109 val_ap=0.8989
+[10:06:23]   epoch 22 loss=0.0107 val_ap=0.8991
+[10:06:27]   epoch 23 loss=0.0108 val_ap=0.8992
+[10:06:30]   epoch 24 loss=0.0109 val_ap=0.8993
+[10:06:33]   epoch 25 loss=0.0108 val_ap=0.8993
+[10:06:37]   epoch 26 loss=0.0109 val_ap=0.8994
+[10:06:40]   epoch 27 loss=0.0110 val_ap=0.8994
+[10:06:43]   epoch 28 loss=0.0109 val_ap=0.8995
+[10:06:47]   epoch 29 loss=0.0107 val_ap=0.8995
+[10:06:50]   epoch 30 loss=0.0109 val_ap=0.8995
+[10:07:31] L=500: saved probability -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\probability_r4_L500.parquet
+  gen  0  val cost      3,556.6  g=[0.9957 0.7384 0.9665 0.4826]
+  gen  5  val cost      3,373.6  g=[0.999  0.5    0.9682 0.121 ]
+  gen 10  val cost      3,373.6  g=[0.999  0.5    0.9682 0.121 ]
+  gen 15  val cost      3,373.6  g=[0.999  0.5    0.9682 0.121 ]
+  gen 20  val cost      3,373.6  g=[0.999  0.5    0.9682 0.121 ]
+  gen 25  val cost      3,373.6  g=[0.999  0.5    0.9682 0.121 ]
+  gen 30  val cost      3,373.6  g=[0.999  0.5    0.9682 0.121 ]
+  gen 35  val cost      3,373.6  g=[0.999  0.5    0.9682 0.121 ]
+  gen 39  val cost      3,373.6  g=[0.999  0.5    0.9682 0.121 ]
+[10:08:23] L=500 R4 test={'TP': 4991, 'FP': 14, 'FN': 2453, 'REVIEW': 1354, 'precision': 0.9972, 'recall': 0.5688, 'F1': 0.7244} R5 test={'TP': 6277, 'FP': 57, 'FN': 1818, 'REVIEW': 738, 'precision': 0.991, 'recall': 0.7153, 'F1': 0.8309}
+[10:08:23] --- L=250 ---
+[10:08:32]   L=250 bloom-encode 10,000/36,807 (9s)
+[10:08:40]   L=250 bloom-encode 20,000/36,807 (17s)
+[10:08:47]   L=250 bloom-encode 30,000/36,807 (23s)
+[10:08:52] L=250: bloom-encoded 36,807 profiles in 28s
+[10:08:54] L=250: saved pair bloom-dice -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\pairs_L250.parquet
+[10:08:57] L=250: train_inner=32,496 (pos=8,124) holdout=151,639 (pos=1,434)
+[10:09:00]   epoch 01 loss=0.0918 val_ap=0.8472
+[10:09:03]   epoch 02 loss=0.0408 val_ap=0.8541
+[10:09:07]   epoch 03 loss=0.0269 val_ap=0.8583
+[10:09:10]   epoch 04 loss=0.0208 val_ap=0.8639
+[10:09:14]   epoch 05 loss=0.0175 val_ap=0.8692
+[10:09:17]   epoch 06 loss=0.0158 val_ap=0.8733
+[10:09:21]   epoch 07 loss=0.0148 val_ap=0.8760
+[10:09:24]   epoch 08 loss=0.0142 val_ap=0.8782
+[10:17:52]   epoch 09 loss=0.0137 val_ap=0.8800
+[10:17:55]   epoch 10 loss=0.0132 val_ap=0.8814
+[10:17:59]   epoch 11 loss=0.0128 val_ap=0.8825
+[10:18:03]   epoch 12 loss=0.0127 val_ap=0.8836
+[10:18:07]   epoch 13 loss=0.0126 val_ap=0.8844
+[10:18:10]   epoch 14 loss=0.0126 val_ap=0.8851
+[10:18:14]   epoch 15 loss=0.0124 val_ap=0.8858
+[10:18:17]   epoch 16 loss=0.0123 val_ap=0.8863
+[10:18:20]   epoch 17 loss=0.0121 val_ap=0.8868
+[10:18:22]   epoch 18 loss=0.0121 val_ap=0.8872
+[10:18:25]   epoch 19 loss=0.0120 val_ap=0.8876
+[10:18:27]   epoch 20 loss=0.0120 val_ap=0.8879
+[10:18:30]   epoch 21 loss=0.0120 val_ap=0.8881
+[10:18:32]   epoch 22 loss=0.0117 val_ap=0.8883
+[10:18:35]   epoch 23 loss=0.0119 val_ap=0.8884
+[10:18:37]   epoch 24 loss=0.0119 val_ap=0.8884
+[10:18:40]   epoch 25 loss=0.0118 val_ap=0.8885
+[10:18:42]   epoch 26 loss=0.0119 val_ap=0.8886
+[10:18:45]   epoch 27 loss=0.0121 val_ap=0.8886
+[10:18:47]   epoch 28 loss=0.0120 val_ap=0.8886
+[10:18:50]   epoch 29 loss=0.0118 val_ap=0.8887
+[10:18:53]   epoch 30 loss=0.0119 val_ap=0.8887
+[10:19:24] L=250: saved probability -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\probability_r4_L250.parquet
+  gen  0  val cost      3,578.8  g=[0.9751 0.6418 0.9853 0.5359]
+  gen  5  val cost      3,492.9  g=[0.9889 0.5    0.9853 0.3744]
+  gen 10  val cost      3,492.8  g=[0.9961 0.5    0.9801 0.3744]
+  gen 15  val cost      3,492.8  g=[0.9819 0.5    0.9795 0.3825]
+  gen 20  val cost      3,492.8  g=[0.999  0.5    0.9777 0.3993]
+  gen 25  val cost      3,492.8  g=[0.999  0.5    0.9777 0.3993]
+  gen 30  val cost      3,492.8  g=[0.999  0.5    0.9777 0.3993]
+  gen 35  val cost      3,492.8  g=[0.999  0.5    0.9777 0.3993]
+  gen 39  val cost      3,492.8  g=[0.999  0.5    0.9777 0.3993]
+[10:19:52] L=250 R4 test={'TP': 5001, 'FP': 14, 'FN': 2760, 'REVIEW': 1026, 'precision': 0.9972, 'recall': 0.5699, 'F1': 0.7253} R5 test={'TP': 6276, 'FP': 57, 'FN': 1881, 'REVIEW': 674, 'precision': 0.991, 'recall': 0.7152, 'F1': 0.8308}
+[10:19:53] saved plot -> D:\66070260-Year3_Term2\Project1\Code\experiments\r4_privacy_tradeoff.png
+[10:19:53] saved -> D:\66070260-Year3_Term2\Project1\Code\experiments\r4_privacy_tradeoff.json
+[10:19:53] === R4/R5 done ===

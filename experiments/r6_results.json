@@ -1,0 +1,56 @@
+{
+  "thresholds": {
+    "MATCH": 0.98,
+    "REVIEW": 0.95
+  },
+  "splits": {
+    "test": {
+      "TP": 3817,
+      "FP": 19,
+      "FN": 4749,
+      "REVIEW": 224,
+      "precision": 0.995,
+      "recall": 0.435,
+      "F1": 0.6053
+    },
+    "full": {
+      "TP": 12610,
+      "FP": 144,
+      "FN": 15958,
+      "REVIEW": 799,
+      "precision": 0.9887,
+      "recall": 0.4312,
+      "F1": 0.6005
+    }
+  },
+  "ga_genome": {
+    "t_m": 0.999,
+    "t_r": 0.5,
+    "c_promote": 0.983980867450644,
+    "c_demote": 0.4537769746549822
+  },
+  "ga_rules": {
+    "test": {
+      "TP": 5620,
+      "FP": 13,
+      "FN": 2266,
+      "REVIEW": 3712,
+      "precision": 0.9977,
+      "recall": 0.6405,
+      "F1": 0.7801
+    },
+    "full": {
+      "TP": 20064,
+      "FP": 94,
+      "FN": 5529,
+      "REVIEW": 31219,
+      "precision": 0.9953,
+      "recall": 0.686,
+      "F1": 0.8122
+    }
+  },
+  "new_blocking": {
+    "total_bucket_pairs": 2006,
+    "genuinely_new_vs_original_2073842": 1968
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "best_epoch": 28,
+  "best_val_ap": 0.8946215792681101,
+  "holdout_best_f1": 0.8617219530376444,
+  "holdout_best_threshold": 0.34,
+  "train_neg_ratio": 3.0,
+  "n_train": 32496,
+  "n_holdout": 151639
+}

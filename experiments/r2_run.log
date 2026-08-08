@@ -1,0 +1,174 @@
+[05:23:18] === R2/R3 pipeline start ===
+[05:23:21] sanity gate OK: R0 full = {'TP': 19624, 'FP': 925, 'FN': 5558, 'REVIEW': 86296, 'precision': 0.955, 'recall': 0.671, 'F1': 0.7882}
+[05:23:21] embeddings cache found -> D:\66070260-Year3_Term2\Project1\Code\experiments\profile_embeddings_minilm.npy
+[05:23:21] bert_cos cache found -> D:\66070260-Year3_Term2\Project1\Code\experiments\pair_bert_cos.parquet
+[05:23:21] computing 17 hand features สำหรับ 2,073,842 scored pairs ...
+[05:23:43]   ... 500,000/2,073,842 (16s)
+[05:24:00]   ... 1,000,000/2,073,842 (33s)
+[05:24:16]   ... 1,500,000/2,073,842 (50s)
+[05:24:33]   ... 2,000,000/2,073,842 (66s)
+[05:24:35] loop features เสร็จใน 69s
+[05:25:56] saved features17 -> D:\66070260-Year3_Term2\Project1\Code\experiments\pair_features17.parquet
+[05:26:04] train_inner balanced=32,496 (pos=8,124) holdout=151,639 (pos=1,434)
+[05:26:26]   epoch 01 loss=0.0808 val_ap=0.8005
+[05:26:29]   epoch 02 loss=0.0406 val_ap=0.8407
+[05:26:31]   epoch 03 loss=0.0274 val_ap=0.8517
+[05:26:34]   epoch 04 loss=0.0211 val_ap=0.8596
+[05:26:37]   epoch 05 loss=0.0180 val_ap=0.8664
+[05:26:39]   epoch 06 loss=0.0161 val_ap=0.8725
+[05:26:42]   epoch 07 loss=0.0150 val_ap=0.8773
+[05:26:45]   epoch 08 loss=0.0142 val_ap=0.8808
+[05:26:47]   epoch 09 loss=0.0140 val_ap=0.8834
+[05:26:50]   epoch 10 loss=0.0133 val_ap=0.8853
+[05:26:53]   epoch 11 loss=0.0130 val_ap=0.8868
+[05:26:55]   epoch 12 loss=0.0129 val_ap=0.8881
+[05:26:58]   epoch 13 loss=0.0127 val_ap=0.8892
+[05:27:01]   epoch 14 loss=0.0125 val_ap=0.8902
+[05:27:03]   epoch 15 loss=0.0124 val_ap=0.8911
+[05:27:06]   epoch 16 loss=0.0122 val_ap=0.8919
+[05:27:09]   epoch 17 loss=0.0121 val_ap=0.8925
+[05:27:11]   epoch 18 loss=0.0120 val_ap=0.8930
+[05:27:14]   epoch 19 loss=0.0122 val_ap=0.8933
+[05:27:17]   epoch 20 loss=0.0120 val_ap=0.8936
+[05:27:20]   epoch 21 loss=0.0121 val_ap=0.8939
+[05:27:22]   epoch 22 loss=0.0118 val_ap=0.8941
+[05:27:25]   epoch 23 loss=0.0118 val_ap=0.8942
+[05:27:28]   epoch 24 loss=0.0118 val_ap=0.8944
+[05:27:30]   epoch 25 loss=0.0118 val_ap=0.8945
+[05:27:33]   epoch 26 loss=0.0119 val_ap=0.8945
+[05:27:36]   epoch 27 loss=0.0118 val_ap=0.8946
+[05:27:39]   epoch 28 loss=0.0118 val_ap=0.8946
+[05:27:41]   epoch 29 loss=0.0117 val_ap=0.8946
+[05:27:44]   epoch 30 loss=0.0118 val_ap=0.8946
+[05:27:47] holdout best_val_f1=0.8617 @ threshold=0.34 (informational only; R2 uses fixed 0.98/0.95)
+[05:28:14] saved probability_r2 for 2,073,842 pairs -> D:\66070260-Year3_Term2\Project1\Code\experiments\r2_probabilities.parquet
+[05:28:15] R2 [test] {'TP': 5157, 'FP': 19, 'FN': 2523, 'REVIEW': 1115, 'precision': 0.9963, 'recall': 0.5877, 'F1': 0.7393}
+[05:28:15] R2 [full] {'TP': 17275, 'FP': 110, 'FN': 8286, 'REVIEW': 3897, 'precision': 0.9937, 'recall': 0.5907, 'F1': 0.7409}
+[05:28:15] saved -> D:\66070260-Year3_Term2\Project1\Code\experiments\r2_results.json
+[05:28:16] GA (R3) บน val: 1,010,926 คู่
+[05:28:39] R3 best genome: t_m=0.9803 t_r=0.5409 c_promote=0.9872 c_demote=0.4076
+[05:28:39] R3 [test] {'TP': 6347, 'FP': 38, 'FN': 1873, 'REVIEW': 640, 'precision': 0.994, 'recall': 0.7233, 'F1': 0.8373}
+[05:28:39] R3 [full] {'TP': 21274, 'FP': 465, 'FN': 6179, 'REVIEW': 2751, 'precision': 0.9786, 'recall': 0.7274, 'F1': 0.8345}
+[05:28:39] saved -> D:\66070260-Year3_Term2\Project1\Code\experiments\r3_results.json, D:\66070260-Year3_Term2\Project1\Code\experiments\r3_ga_history.json
+[05:28:40] FN recovery -> {'fn_pool_size': 2242, 'R2_recovered_any (MATCH or REVIEW)': 282, 'R2_recovered_to_MATCH': 37, 'R3_recovered_any (MATCH or REVIEW)': 728, 'R3_recovered_to_MATCH': 214}
+[05:28:40] === R2/R3 pipeline done ===
+[09:56:56]   epoch 01 loss=0.0906 val_ap=0.8585
+[09:57:00]   epoch 02 loss=0.0398 val_ap=0.8688
+[09:57:03]   epoch 03 loss=0.0261 val_ap=0.8735
+[09:57:07]   epoch 04 loss=0.0199 val_ap=0.8786
+[09:57:10]   epoch 05 loss=0.0165 val_ap=0.8830
+[09:57:14]   epoch 06 loss=0.0148 val_ap=0.8864
+[09:57:18]   epoch 07 loss=0.0137 val_ap=0.8889
+[09:57:22]   epoch 08 loss=0.0131 val_ap=0.8910
+[09:57:25]   epoch 09 loss=0.0125 val_ap=0.8928
+[09:57:29]   epoch 10 loss=0.0120 val_ap=0.8942
+[09:57:33]   epoch 11 loss=0.0116 val_ap=0.8953
+[09:57:36]   epoch 12 loss=0.0114 val_ap=0.8964
+[09:57:40]   epoch 13 loss=0.0114 val_ap=0.8973
+[09:57:44]   epoch 14 loss=0.0113 val_ap=0.8981
+[09:57:47]   epoch 15 loss=0.0112 val_ap=0.8989
+[09:57:51]   epoch 16 loss=0.0110 val_ap=0.8996
+[09:57:54]   epoch 17 loss=0.0109 val_ap=0.9001
+[09:57:58]   epoch 18 loss=0.0108 val_ap=0.9006
+[09:58:02]   epoch 19 loss=0.0107 val_ap=0.9010
+[09:58:06]   epoch 20 loss=0.0107 val_ap=0.9013
+[09:58:09]   epoch 21 loss=0.0106 val_ap=0.9015
+[09:58:13]   epoch 22 loss=0.0104 val_ap=0.9017
+[09:58:17]   epoch 23 loss=0.0105 val_ap=0.9018
+[09:58:21]   epoch 24 loss=0.0106 val_ap=0.9018
+[09:58:24]   epoch 25 loss=0.0105 val_ap=0.9019
+[09:58:28]   epoch 26 loss=0.0106 val_ap=0.9020
+[09:58:31]   epoch 27 loss=0.0107 val_ap=0.9020
+[09:58:35]   epoch 28 loss=0.0106 val_ap=0.9021
+[09:58:39]   epoch 29 loss=0.0104 val_ap=0.9021
+[09:58:43]   epoch 30 loss=0.0106 val_ap=0.9021
+[10:01:09]   epoch 01 loss=0.0907 val_ap=0.8582
+[10:01:13]   epoch 02 loss=0.0397 val_ap=0.8681
+[10:01:18]   epoch 03 loss=0.0260 val_ap=0.8728
+[10:01:21]   epoch 04 loss=0.0199 val_ap=0.8779
+[10:01:25]   epoch 05 loss=0.0165 val_ap=0.8825
+[10:01:28]   epoch 06 loss=0.0148 val_ap=0.8860
+[10:01:32]   epoch 07 loss=0.0137 val_ap=0.8884
+[10:01:36]   epoch 08 loss=0.0132 val_ap=0.8905
+[10:01:39]   epoch 09 loss=0.0126 val_ap=0.8922
+[10:01:42]   epoch 10 loss=0.0120 val_ap=0.8936
+[10:01:46]   epoch 11 loss=0.0117 val_ap=0.8947
+[10:01:50]   epoch 12 loss=0.0115 val_ap=0.8957
+[10:01:53]   epoch 13 loss=0.0114 val_ap=0.8966
+[10:01:57]   epoch 14 loss=0.0114 val_ap=0.8974
+[10:02:00]   epoch 15 loss=0.0112 val_ap=0.8982
+[10:02:04]   epoch 16 loss=0.0110 val_ap=0.8988
+[10:02:07]   epoch 17 loss=0.0109 val_ap=0.8994
+[10:02:10]   epoch 18 loss=0.0109 val_ap=0.8998
+[10:02:13]   epoch 19 loss=0.0107 val_ap=0.9002
+[10:02:17]   epoch 20 loss=0.0108 val_ap=0.9005
+[10:02:20]   epoch 21 loss=0.0107 val_ap=0.9007
+[10:02:24]   epoch 22 loss=0.0105 val_ap=0.9009
+[10:02:27]   epoch 23 loss=0.0106 val_ap=0.9010
+[10:02:31]   epoch 24 loss=0.0107 val_ap=0.9011
+[10:02:35]   epoch 25 loss=0.0106 val_ap=0.9011
+[10:02:38]   epoch 26 loss=0.0107 val_ap=0.9012
+[10:02:41]   epoch 27 loss=0.0108 val_ap=0.9013
+[10:02:45]   epoch 28 loss=0.0107 val_ap=0.9013
+[10:02:48]   epoch 29 loss=0.0105 val_ap=0.9013
+[10:02:52]   epoch 30 loss=0.0106 val_ap=0.9013
+[10:05:10]   epoch 01 loss=0.0908 val_ap=0.8561
+[10:05:13]   epoch 02 loss=0.0398 val_ap=0.8652
+[10:05:17]   epoch 03 loss=0.0261 val_ap=0.8700
+[10:05:21]   epoch 04 loss=0.0200 val_ap=0.8756
+[10:05:24]   epoch 05 loss=0.0167 val_ap=0.8806
+[10:05:28]   epoch 06 loss=0.0150 val_ap=0.8843
+[10:05:31]   epoch 07 loss=0.0139 val_ap=0.8870
+[10:05:34]   epoch 08 loss=0.0133 val_ap=0.8891
+[10:05:38]   epoch 09 loss=0.0128 val_ap=0.8908
+[10:05:41]   epoch 10 loss=0.0123 val_ap=0.8921
+[10:05:44]   epoch 11 loss=0.0119 val_ap=0.8933
+[10:05:48]   epoch 12 loss=0.0117 val_ap=0.8943
+[10:05:51]   epoch 13 loss=0.0116 val_ap=0.8951
+[10:05:55]   epoch 14 loss=0.0116 val_ap=0.8959
+[10:05:58]   epoch 15 loss=0.0114 val_ap=0.8966
+[10:06:02]   epoch 16 loss=0.0112 val_ap=0.8971
+[10:06:06]   epoch 17 loss=0.0111 val_ap=0.8976
+[10:06:09]   epoch 18 loss=0.0111 val_ap=0.8981
+[10:06:12]   epoch 19 loss=0.0110 val_ap=0.8984
+[10:06:16]   epoch 20 loss=0.0110 val_ap=0.8987
+[10:06:19]   epoch 21 loss=0.0109 val_ap=0.8989
+[10:06:23]   epoch 22 loss=0.0107 val_ap=0.8991
+[10:06:27]   epoch 23 loss=0.0108 val_ap=0.8992
+[10:06:30]   epoch 24 loss=0.0109 val_ap=0.8993
+[10:06:33]   epoch 25 loss=0.0108 val_ap=0.8993
+[10:06:37]   epoch 26 loss=0.0109 val_ap=0.8994
+[10:06:40]   epoch 27 loss=0.0110 val_ap=0.8994
+[10:06:43]   epoch 28 loss=0.0109 val_ap=0.8995
+[10:06:47]   epoch 29 loss=0.0107 val_ap=0.8995
+[10:06:50]   epoch 30 loss=0.0109 val_ap=0.8995
+[10:09:00]   epoch 01 loss=0.0918 val_ap=0.8472
+[10:09:03]   epoch 02 loss=0.0408 val_ap=0.8541
+[10:09:07]   epoch 03 loss=0.0269 val_ap=0.8583
+[10:09:10]   epoch 04 loss=0.0208 val_ap=0.8639
+[10:09:14]   epoch 05 loss=0.0175 val_ap=0.8692
+[10:09:17]   epoch 06 loss=0.0158 val_ap=0.8733
+[10:09:21]   epoch 07 loss=0.0148 val_ap=0.8760
+[10:09:24]   epoch 08 loss=0.0142 val_ap=0.8782
+[10:17:52]   epoch 09 loss=0.0137 val_ap=0.8800
+[10:17:55]   epoch 10 loss=0.0132 val_ap=0.8814
+[10:17:59]   epoch 11 loss=0.0128 val_ap=0.8825
+[10:18:03]   epoch 12 loss=0.0127 val_ap=0.8836
+[10:18:07]   epoch 13 loss=0.0126 val_ap=0.8844
+[10:18:10]   epoch 14 loss=0.0126 val_ap=0.8851
+[10:18:14]   epoch 15 loss=0.0124 val_ap=0.8858
+[10:18:17]   epoch 16 loss=0.0123 val_ap=0.8863
+[10:18:20]   epoch 17 loss=0.0121 val_ap=0.8868
+[10:18:22]   epoch 18 loss=0.0121 val_ap=0.8872
+[10:18:25]   epoch 19 loss=0.0120 val_ap=0.8876
+[10:18:27]   epoch 20 loss=0.0120 val_ap=0.8879
+[10:18:30]   epoch 21 loss=0.0120 val_ap=0.8881
+[10:18:32]   epoch 22 loss=0.0117 val_ap=0.8883
+[10:18:35]   epoch 23 loss=0.0119 val_ap=0.8884
+[10:18:37]   epoch 24 loss=0.0119 val_ap=0.8884
+[10:18:40]   epoch 25 loss=0.0118 val_ap=0.8885
+[10:18:42]   epoch 26 loss=0.0119 val_ap=0.8886
+[10:18:45]   epoch 27 loss=0.0121 val_ap=0.8886
+[10:18:47]   epoch 28 loss=0.0120 val_ap=0.8886
+[10:18:50]   epoch 29 loss=0.0118 val_ap=0.8887
+[10:18:53]   epoch 30 loss=0.0119 val_ap=0.8887

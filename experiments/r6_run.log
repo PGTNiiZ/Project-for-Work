@@ -1,0 +1,61 @@
+[12:42:53] === R6 BERT-ER start (SMOKE=False, frozen-backbone mode) ===
+[12:43:02] loading tokenizer/model: distilbert-base-uncased
+[12:43:10] tokenized 36,807 profiles
+[12:43:11] model constructed (backbone frozen)
+[12:45:39]   encoding profiles 2,560/36,807 (148s, 7.41s/batch, ETA 1983s)
+[12:48:27]   encoding profiles 5,120/36,807 (316s, 7.90s/batch, ETA 1955s)
+[12:50:56]   encoding profiles 7,680/36,807 (465s, 7.75s/batch, ETA 1763s)
+[12:53:06]   encoding profiles 10,240/36,807 (594s, 7.43s/batch, ETA 1542s)
+[12:55:26]   encoding profiles 12,800/36,807 (735s, 7.35s/batch, ETA 1378s)
+[12:57:57]   encoding profiles 15,360/36,807 (886s, 7.38s/batch, ETA 1237s)
+[13:00:25]   encoding profiles 17,920/36,807 (1034s, 7.39s/batch, ETA 1090s)
+[13:02:50]   encoding profiles 20,480/36,807 (1179s, 7.37s/batch, ETA 940s)
+[13:05:36]   encoding profiles 23,040/36,807 (1345s, 7.47s/batch, ETA 803s)
+[13:08:09]   encoding profiles 25,600/36,807 (1498s, 7.49s/batch, ETA 656s)
+[13:10:51]   encoding profiles 28,160/36,807 (1659s, 7.54s/batch, ETA 510s)
+[13:13:33]   encoding profiles 30,720/36,807 (1822s, 7.59s/batch, ETA 361s)
+[13:16:01]   encoding profiles 33,280/36,807 (1970s, 7.58s/batch, ETA 209s)
+[13:18:28]   encoding profiles 35,840/36,807 (2117s, 7.56s/batch, ETA 57s)
+[13:19:17] encoded 36,807 profiles in 2165s -> D:\66070260-Year3_Term2\Project1\Code\experiments\r6_bert_er\profile_embeddings.npy
+[13:19:52] training pairs: total=38,232 pos=9,558 neg=28,674 (cache negs before extra=1,001,368, extra random negs added=28,674)
+[13:19:52] train=32,497 holdout=5,735
+[13:19:54] epoch 001 loss=0.2177 match=0.0642 hash=0.3070 holdout_AP=0.3612 (1.7s)
+[13:19:56] epoch 002 loss=0.1417 match=0.0338 hash=0.2157 holdout_AP=0.8437 (1.6s)
+[13:19:57] epoch 003 loss=0.1242 match=0.0269 hash=0.1948 holdout_AP=0.8895 (1.6s)
+[13:19:59] epoch 004 loss=0.1169 match=0.0243 hash=0.1852 holdout_AP=0.9009 (1.7s)
+[13:20:01] epoch 005 loss=0.1109 match=0.0217 hash=0.1784 holdout_AP=0.9016 (1.7s)
+[13:20:03] epoch 006 loss=0.1070 match=0.0202 hash=0.1735 holdout_AP=0.9023 (1.7s)
+[13:20:05] epoch 007 loss=0.1039 match=0.0188 hash=0.1702 holdout_AP=0.9033 (1.9s)
+[13:20:06] epoch 008 loss=0.1010 match=0.0175 hash=0.1669 holdout_AP=0.9069 (1.7s)
+[13:20:08] epoch 009 loss=0.0984 match=0.0164 hash=0.1640 holdout_AP=0.9048 (1.7s)
+[13:20:10] epoch 010 loss=0.0954 match=0.0148 hash=0.1611 holdout_AP=0.9166 (1.6s)
+[13:20:11] epoch 011 loss=0.0942 match=0.0141 hash=0.1601 holdout_AP=0.9137 (1.7s)
+[13:20:13] epoch 012 loss=0.0919 match=0.0130 hash=0.1579 holdout_AP=0.9110 (1.7s)
+[13:20:15] epoch 013 loss=0.0897 match=0.0117 hash=0.1560 holdout_AP=0.9070 (1.7s)
+[13:20:16] epoch 014 loss=0.0878 match=0.0107 hash=0.1543 holdout_AP=0.9162 (1.7s)
+[13:20:18] epoch 015 loss=0.0864 match=0.0099 hash=0.1529 holdout_AP=0.9190 (1.7s)
+[13:20:20] epoch 016 loss=0.0855 match=0.0092 hash=0.1526 holdout_AP=0.9160 (1.7s)
+[13:20:22] epoch 017 loss=0.0838 match=0.0085 hash=0.1506 holdout_AP=0.9178 (1.8s)
+[13:20:23] epoch 018 loss=0.0823 match=0.0079 hash=0.1487 holdout_AP=0.9176 (1.6s)
+[13:20:25] epoch 019 loss=0.0809 match=0.0069 hash=0.1480 holdout_AP=0.9191 (1.7s)
+[13:20:27] epoch 020 loss=0.0801 match=0.0065 hash=0.1471 holdout_AP=0.9201 (1.7s)
+[13:20:28] epoch 021 loss=0.0788 match=0.0057 hash=0.1461 holdout_AP=0.9203 (1.7s)
+[13:20:30] epoch 022 loss=0.0777 match=0.0052 hash=0.1452 holdout_AP=0.9233 (1.7s)
+[13:20:32] epoch 023 loss=0.0768 match=0.0047 hash=0.1443 holdout_AP=0.9226 (1.6s)
+[13:20:34] epoch 024 loss=0.0762 match=0.0045 hash=0.1435 holdout_AP=0.9222 (1.6s)
+[13:20:35] epoch 025 loss=0.0756 match=0.0040 hash=0.1431 holdout_AP=0.9200 (1.7s)
+[13:20:37] epoch 026 loss=0.0751 match=0.0038 hash=0.1426 holdout_AP=0.9213 (1.7s)
+[13:20:39] epoch 027 loss=0.0746 match=0.0035 hash=0.1422 holdout_AP=0.9209 (1.7s)
+[13:20:39] early stopping at epoch 27
+[13:20:39] loaded heads_best.pt (epoch 22, holdout_AP=0.9233)
+[13:20:39] hash buckets: 36,320 unique codes over 36,807 profiles (max bucket=34, mean nonempty=1.01)
+[13:20:39] blocking recovery radius=0: {'radius': 0, 'pool_size': 3316, 'recovered_as_candidate': 0, 'recovery_rate': 0.0, 'ids_not_encoded': 0}
+[13:20:39] blocking recovery radius=1: {'radius': 1, 'pool_size': 3316, 'recovered_as_candidate': 4, 'recovery_rate': 0.0012, 'ids_not_encoded': 0}
+[13:20:39] end-to-end recovery (found by hash AND classified MATCH by match_head): radius0=0/3316 radius1=3/3316
+[13:21:07] R6 [test] manual-threshold {'TP': 3817, 'FP': 19, 'FN': 4749, 'REVIEW': 224, 'precision': 0.995, 'recall': 0.435, 'F1': 0.6053}
+[13:21:07] R6 [full] manual-threshold {'TP': 12610, 'FP': 144, 'FN': 15958, 'REVIEW': 799, 'precision': 0.9887, 'recall': 0.4312, 'F1': 0.6005}
+[13:21:34] R6-GA [test] {'TP': 5620, 'FP': 13, 'FN': 2266, 'REVIEW': 3712, 'precision': 0.9977, 'recall': 0.6405, 'F1': 0.7801}
+[13:21:34] R6-GA [full] {'TP': 20064, 'FP': 94, 'FN': 5529, 'REVIEW': 31219, 'precision': 0.9953, 'recall': 0.686, 'F1': 0.8122}
+[13:21:36] new hash-based blocking: 2,006 total pairs in shared buckets, 1,968 not in original 2,073,842-pair candidate set
+[13:21:36] saved -> D:\66070260-Year3_Term2\Project1\Code\experiments\r6_results.json
+[13:21:36] === R6 done ===

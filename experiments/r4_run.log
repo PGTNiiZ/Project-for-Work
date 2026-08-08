@@ -1,0 +1,40 @@
+[09:55:47] === R4/R5 bloom privacy sweep start ===
+[09:55:49] --- L=2000 ---
+[09:56:01]   L=2000 bloom-encode 10,000/36,807 (11s)
+[09:56:07]   L=2000 bloom-encode 20,000/36,807 (17s)
+[09:56:19]   L=2000 bloom-encode 30,000/36,807 (30s)
+[09:56:27] L=2000: bloom-encoded 36,807 profiles in 37s
+[09:56:43] L=2000: saved pair bloom-dice -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\pairs_L2000.parquet
+[09:56:47] L=2000: train_inner=32,496 (pos=8,124) holdout=151,639 (pos=1,434)
+[09:59:21] L=2000: saved probability -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\probability_r4_L2000.parquet
+[10:00:16] L=2000 R4 test={'TP': 5158, 'FP': 14, 'FN': 2858, 'REVIEW': 766, 'precision': 0.9973, 'recall': 0.5878, 'F1': 0.7397} R5 test={'TP': 6303, 'FP': 57, 'FN': 1823, 'REVIEW': 700, 'precision': 0.991, 'recall': 0.7183, 'F1': 0.8329}
+[10:00:16] --- L=1000 ---
+[10:00:27]   L=1000 bloom-encode 10,000/36,807 (10s)
+[10:00:37]   L=1000 bloom-encode 20,000/36,807 (19s)
+[10:00:48]   L=1000 bloom-encode 30,000/36,807 (30s)
+[10:00:54] L=1000: bloom-encoded 36,807 profiles in 37s
+[10:01:01] L=1000: saved pair bloom-dice -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\pairs_L1000.parquet
+[10:01:06] L=1000: train_inner=32,496 (pos=8,124) holdout=151,639 (pos=1,434)
+[10:03:31] L=1000: saved probability -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\probability_r4_L1000.parquet
+[10:04:26] L=1000 R4 test={'TP': 5085, 'FP': 14, 'FN': 2931, 'REVIEW': 766, 'precision': 0.9973, 'recall': 0.5795, 'F1': 0.733} R5 test={'TP': 6288, 'FP': 57, 'FN': 1820, 'REVIEW': 721, 'precision': 0.991, 'recall': 0.7166, 'F1': 0.8317}
+[10:04:26] --- L=500 ---
+[10:04:35]   L=500 bloom-encode 10,000/36,807 (8s)
+[10:04:43]   L=500 bloom-encode 20,000/36,807 (16s)
+[10:04:53]   L=500 bloom-encode 30,000/36,807 (26s)
+[10:04:58] L=500: bloom-encoded 36,807 profiles in 32s
+[10:05:02] L=500: saved pair bloom-dice -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\pairs_L500.parquet
+[10:05:07] L=500: train_inner=32,496 (pos=8,124) holdout=151,639 (pos=1,434)
+[10:07:31] L=500: saved probability -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\probability_r4_L500.parquet
+[10:08:23] L=500 R4 test={'TP': 4991, 'FP': 14, 'FN': 2453, 'REVIEW': 1354, 'precision': 0.9972, 'recall': 0.5688, 'F1': 0.7244} R5 test={'TP': 6277, 'FP': 57, 'FN': 1818, 'REVIEW': 738, 'precision': 0.991, 'recall': 0.7153, 'F1': 0.8309}
+[10:08:23] --- L=250 ---
+[10:08:32]   L=250 bloom-encode 10,000/36,807 (9s)
+[10:08:40]   L=250 bloom-encode 20,000/36,807 (17s)
+[10:08:47]   L=250 bloom-encode 30,000/36,807 (23s)
+[10:08:52] L=250: bloom-encoded 36,807 profiles in 28s
+[10:08:54] L=250: saved pair bloom-dice -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\pairs_L250.parquet
+[10:08:57] L=250: train_inner=32,496 (pos=8,124) holdout=151,639 (pos=1,434)
+[10:19:24] L=250: saved probability -> D:\66070260-Year3_Term2\Project1\Code\experiments\bloom\probability_r4_L250.parquet
+[10:19:52] L=250 R4 test={'TP': 5001, 'FP': 14, 'FN': 2760, 'REVIEW': 1026, 'precision': 0.9972, 'recall': 0.5699, 'F1': 0.7253} R5 test={'TP': 6276, 'FP': 57, 'FN': 1881, 'REVIEW': 674, 'precision': 0.991, 'recall': 0.7152, 'F1': 0.8308}
+[10:19:53] saved plot -> D:\66070260-Year3_Term2\Project1\Code\experiments\r4_privacy_tradeoff.png
+[10:19:53] saved -> D:\66070260-Year3_Term2\Project1\Code\experiments\r4_privacy_tradeoff.json
+[10:19:53] === R4/R5 done ===

@@ -1,0 +1,63 @@
+[05:23:18] === R2/R3 pipeline start ===
+[05:23:21] sanity gate OK: R0 full = {'TP': 19624, 'FP': 925, 'FN': 5558, 'REVIEW': 86296, 'precision': 0.955, 'recall': 0.671, 'F1': 0.7882}
+[05:23:21] embeddings cache found -> D:\66070260-Year3_Term2\Project1\Code\experiments\profile_embeddings_minilm.npy
+[05:23:21] bert_cos cache found -> D:\66070260-Year3_Term2\Project1\Code\experiments\pair_bert_cos.parquet
+[05:23:21] computing 17 hand features สำหรับ 2,073,842 scored pairs ...
+[05:23:43]   ... 500,000/2,073,842 (16s)
+[05:24:00]   ... 1,000,000/2,073,842 (33s)
+[05:24:16]   ... 1,500,000/2,073,842 (50s)
+[05:24:33]   ... 2,000,000/2,073,842 (66s)
+[05:24:35] loop features เสร็จใน 69s
+[05:25:56] saved features17 -> D:\66070260-Year3_Term2\Project1\Code\experiments\pair_features17.parquet
+[05:26:04] train_inner balanced=32,496 (pos=8,124) holdout=151,639 (pos=1,434)
+[05:26:26]   epoch 01 loss=0.0808 val_ap=0.8005
+[05:26:29]   epoch 02 loss=0.0406 val_ap=0.8407
+[05:26:31]   epoch 03 loss=0.0274 val_ap=0.8517
+[05:26:34]   epoch 04 loss=0.0211 val_ap=0.8596
+[05:26:37]   epoch 05 loss=0.0180 val_ap=0.8664
+[05:26:39]   epoch 06 loss=0.0161 val_ap=0.8725
+[05:26:42]   epoch 07 loss=0.0150 val_ap=0.8773
+[05:26:45]   epoch 08 loss=0.0142 val_ap=0.8808
+[05:26:47]   epoch 09 loss=0.0140 val_ap=0.8834
+[05:26:50]   epoch 10 loss=0.0133 val_ap=0.8853
+[05:26:53]   epoch 11 loss=0.0130 val_ap=0.8868
+[05:26:55]   epoch 12 loss=0.0129 val_ap=0.8881
+[05:26:58]   epoch 13 loss=0.0127 val_ap=0.8892
+[05:27:01]   epoch 14 loss=0.0125 val_ap=0.8902
+[05:27:03]   epoch 15 loss=0.0124 val_ap=0.8911
+[05:27:06]   epoch 16 loss=0.0122 val_ap=0.8919
+[05:27:09]   epoch 17 loss=0.0121 val_ap=0.8925
+[05:27:11]   epoch 18 loss=0.0120 val_ap=0.8930
+[05:27:14]   epoch 19 loss=0.0122 val_ap=0.8933
+[05:27:17]   epoch 20 loss=0.0120 val_ap=0.8936
+[05:27:20]   epoch 21 loss=0.0121 val_ap=0.8939
+[05:27:22]   epoch 22 loss=0.0118 val_ap=0.8941
+[05:27:25]   epoch 23 loss=0.0118 val_ap=0.8942
+[05:27:28]   epoch 24 loss=0.0118 val_ap=0.8944
+[05:27:30]   epoch 25 loss=0.0118 val_ap=0.8945
+[05:27:33]   epoch 26 loss=0.0119 val_ap=0.8945
+[05:27:36]   epoch 27 loss=0.0118 val_ap=0.8946
+[05:27:39]   epoch 28 loss=0.0118 val_ap=0.8946
+[05:27:41]   epoch 29 loss=0.0117 val_ap=0.8946
+[05:27:44]   epoch 30 loss=0.0118 val_ap=0.8946
+[05:27:47] holdout best_val_f1=0.8617 @ threshold=0.34 (informational only; R2 uses fixed 0.98/0.95)
+[05:28:14] saved probability_r2 for 2,073,842 pairs -> D:\66070260-Year3_Term2\Project1\Code\experiments\r2_probabilities.parquet
+[05:28:15] R2 [test] {'TP': 5157, 'FP': 19, 'FN': 2523, 'REVIEW': 1115, 'precision': 0.9963, 'recall': 0.5877, 'F1': 0.7393}
+[05:28:15] R2 [full] {'TP': 17275, 'FP': 110, 'FN': 8286, 'REVIEW': 3897, 'precision': 0.9937, 'recall': 0.5907, 'F1': 0.7409}
+[05:28:15] saved -> D:\66070260-Year3_Term2\Project1\Code\experiments\r2_results.json
+[05:28:16] GA (R3) บน val: 1,010,926 คู่
+  gen  0  val cost      3,302.7  g=[0.9751 0.6418 0.9853 0.5359]
+  gen  5  val cost      3,040.9  g=[0.9803 0.5495 0.9981 0.4076]
+  gen 10  val cost      3,040.5  g=[0.9803 0.5324 0.9884 0.384 ]
+  gen 15  val cost      3,040.0  g=[0.9803 0.5409 0.9872 0.4076]
+  gen 20  val cost      3,040.0  g=[0.9803 0.5409 0.9872 0.4076]
+  gen 25  val cost      3,040.0  g=[0.9803 0.5409 0.9872 0.4076]
+  gen 30  val cost      3,040.0  g=[0.9803 0.5409 0.9872 0.4076]
+  gen 35  val cost      3,040.0  g=[0.9803 0.5409 0.9872 0.4076]
+  gen 39  val cost      3,040.0  g=[0.9803 0.5409 0.9872 0.4076]
+[05:28:39] R3 best genome: t_m=0.9803 t_r=0.5409 c_promote=0.9872 c_demote=0.4076
+[05:28:39] R3 [test] {'TP': 6347, 'FP': 38, 'FN': 1873, 'REVIEW': 640, 'precision': 0.994, 'recall': 0.7233, 'F1': 0.8373}
+[05:28:39] R3 [full] {'TP': 21274, 'FP': 465, 'FN': 6179, 'REVIEW': 2751, 'precision': 0.9786, 'recall': 0.7274, 'F1': 0.8345}
+[05:28:39] saved -> D:\66070260-Year3_Term2\Project1\Code\experiments\r3_results.json, D:\66070260-Year3_Term2\Project1\Code\experiments\r3_ga_history.json
+[05:28:40] FN recovery -> {'fn_pool_size': 2242, 'R2_recovered_any (MATCH or REVIEW)': 282, 'R2_recovered_to_MATCH': 37, 'R3_recovered_any (MATCH or REVIEW)': 728, 'R3_recovered_to_MATCH': 214}
+[05:28:40] === R2/R3 pipeline done ===

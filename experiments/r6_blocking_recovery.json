@@ -1,0 +1,19 @@
+{
+  "pool_size": 3316,
+  "radius0": {
+    "radius": 0,
+    "pool_size": 3316,
+    "recovered_as_candidate": 0,
+    "recovery_rate": 0.0,
+    "ids_not_encoded": 0
+  },
+  "radius1": {
+    "radius": 1,
+    "pool_size": 3316,
+    "recovered_as_candidate": 4,
+    "recovery_rate": 0.0012,
+    "ids_not_encoded": 0
+  },
+  "end_to_end_recovered_as_MATCH_radius0": 0,
+  "end_to_end_recovered_as_MATCH_radius1": 3
+}

@@ -1,0 +1,26 @@
+{
+  "thresholds": {
+    "MATCH": 0.98,
+    "REVIEW": 0.95
+  },
+  "splits": {
+    "test": {
+      "TP": 5157,
+      "FP": 19,
+      "FN": 2523,
+      "REVIEW": 1115,
+      "precision": 0.9963,
+      "recall": 0.5877,
+      "F1": 0.7393
+    },
+    "full": {
+      "TP": 17275,
+      "FP": 110,
+      "FN": 8286,
+      "REVIEW": 3897,
+      "precision": 0.9937,
+      "recall": 0.5907,
+      "F1": 0.7409
+    }
+  }
+}

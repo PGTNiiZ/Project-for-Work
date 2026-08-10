@@ -74,7 +74,7 @@ R1 = [
     md('## 2. Crossover และ mutation\n\nGA สร้างประชากรของ rule, วัด validation cost, เก็บ elite, crossover และ mutate. Test ไม่ถูกใช้เลือก genome.'),
     code("source(r1, 'uniform_crossover', 'mutate')\nr = read_json('experiments/r1_results.json')\ndisplay(pd.DataFrame(r['rules']['test']).T); print('Legacy genome:', r['best_genome'])"),
     md('## 3. Nested automation result\n\nการรันล่าสุดใช้หลาย GA seeds และเลือกจาก validation cost เท่านั้น.'),
-    code("s = read_json('experiments/automation/r1_nested_primary_20260809/summary.json')\ndisplay(pd.DataFrame(s['scenarios'][0]['trials']))"),
+    code("s = read_json('experiments/automation/r1_nested_primary_20260809/summary.json')\ndisplay(pd.DataFrame(s['trials'])); print(json.dumps(s['aggregates']['A_current'], ensure_ascii=False, indent=2))"),
     code("# Optional full rerun:\n# import subprocess\n# subprocess.run([sys.executable, str(ROOT/'run_ga_experiments.py'), '--experiment', 'r1', '--seeds', '7', '42', '123', '999', '2025'], check=True)"),
 ]
 
@@ -95,7 +95,7 @@ R3 = [
     md('## 1. Reuse R2 probability และ optimize บน ga_validation\n\nGA ไม่ train MLP ใหม่ และไม่มีการอ่าน test label ระหว่างการเลือก genome.'),
     code("import exp_r2_bert_feature as r2\nimport exp_r1_ga_redecision as ga\nsource(r2, 'run_r3'); source(ga, 'run_ga', 'decide_code')"),
     md('## 2. Primary result และ GA seeds\n\nค่าเฉลี่ยข้าม seed อาจมีทศนิยมใน TP/REVIEW; ไม่ได้หมายถึงมีคู่ครึ่งคู่.'),
-    code("s = read_json('experiments/automation/r3_primary_20260809/summary.json')\ndisplay(pd.DataFrame(s['scenarios'][0]['trials'])); display(pd.DataFrame([s['scenarios'][0]['summary']]))"),
+    code("s = read_json('experiments/automation/r3_primary_20260809/summary.json')\ndisplay(pd.DataFrame(s['trials'])); print(json.dumps(s['aggregates']['A_current'], ensure_ascii=False, indent=2))"),
     md('## 3. Robustness ของ model seed\n\nเปรียบเทียบ model seed แยกจาก GA seed เพื่อดูว่าผลขึ้นกับ random initialization มากเกินไปหรือไม่.'),
     code("r = read_json('experiments/automation/r0_r3_report_20260809/r0_r3_report.json')\nprint(json.dumps(r['model_seed_robustness'], ensure_ascii=False, indent=2))"),
 ]

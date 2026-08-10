@@ -1,0 +1,66 @@
+{
+  "run_id": "r1_20260808_200954",
+  "experiment": "r1",
+  "seeds": [
+    7,
+    42,
+    123,
+    999,
+    2025
+  ],
+  "ga_overrides": {
+    "population_size": null,
+    "generations": null,
+    "elite_size": null,
+    "mutation_probability": null,
+    "mutation_sigma": null
+  },
+  "scenarios": [
+    {
+      "name": "A_current",
+      "weights": {
+        "W_FP": 5.0,
+        "W_FN": 1.0,
+        "W_REV": 0.02
+      }
+    }
+  ],
+  "defaults": {
+    "seed": 42,
+    "population_size": 60,
+    "generations": 40,
+    "elite_size": 12,
+    "mutation_probability": 0.3,
+    "mutation_sigma": 0.02,
+    "weights": {
+      "fp": 5.0,
+      "fn": 1.0,
+      "review": 0.02
+    }
+  },
+  "input_artifacts": {
+    "scored_cache": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\scored_pairs_enriched.parquet",
+      "bytes": 9577326,
+      "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+    }
+  },
+  "split": {
+    "val": {
+      "tp_exact": 8604,
+      "fp_exact": 23,
+      "fn_blocking": 2310,
+      "total_pos": 20472,
+      "n_scored": 1010926
+    },
+    "test": {
+      "tp_exact": 3736,
+      "fp_exact": 11,
+      "fn_blocking": 1006,
+      "total_pos": 8775,
+      "n_scored": 191693
+    }
+  },
+  "split_rule": "entity-aware md5(user_folder or negative profile id), test when bucket < 30; cross-split pairs dropped",
+  "generated_at": "2026-08-08T20:11:15.630990+07:00"
+}

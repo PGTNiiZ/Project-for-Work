@@ -1,0 +1,128 @@
+{
+  "run_id": "r3_sensitivity_fp10_20260809",
+  "experiment": "r3",
+  "seeds": [
+    7,
+    42,
+    123,
+    999,
+    2025
+  ],
+  "ga_overrides": {
+    "population_size": null,
+    "generations": null,
+    "elite_size": null,
+    "mutation_probability": null,
+    "mutation_sigma": null
+  },
+  "scenarios": [
+    {
+      "name": "custom",
+      "weights": {
+        "W_FP": 10.0,
+        "W_FN": 1.0,
+        "W_REV": 0.02
+      }
+    }
+  ],
+  "defaults": {
+    "seed": 42,
+    "population_size": 60,
+    "generations": 40,
+    "elite_size": 12,
+    "mutation_probability": 0.3,
+    "mutation_sigma": 0.02,
+    "weights": {
+      "fp": 5.0,
+      "fn": 1.0,
+      "review": 0.02
+    }
+  },
+  "input_artifacts": {
+    "scored_cache": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\scored_pairs_enriched.parquet",
+      "bytes": 9577326,
+      "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+    },
+    "r2_probabilities": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_primary_20260809\\r2_probabilities.parquet",
+      "bytes": 6142828,
+      "sha256": "39520028e33935382e5f69aa307b109ba314e4b6336cc3d33b90fb9b29a8b28b"
+    }
+  },
+  "provenance_chain": {
+    "input_cache_and_features": {
+      "scored_cache": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\scored_pairs_enriched.parquet",
+        "bytes": 9577326,
+        "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+      },
+      "r2_probabilities": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_primary_20260809\\r2_probabilities.parquet",
+        "bytes": 6142828,
+        "sha256": "39520028e33935382e5f69aa307b109ba314e4b6336cc3d33b90fb9b29a8b28b"
+      }
+    },
+    "ga_config": {
+      "seeds": [
+        7,
+        42,
+        123,
+        999,
+        2025
+      ],
+      "overrides": {
+        "population_size": null,
+        "generations": null,
+        "elite_size": null,
+        "mutation_probability": null,
+        "mutation_sigma": null
+      }
+    },
+    "result_artifacts": {
+      "trials.csv": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_sensitivity_fp10_20260809\\trials.csv",
+        "bytes": 909,
+        "sha256": "f1731c452021892d21a5c5f47ac28395127b80fcb09a10738af2dc8049238266"
+      },
+      "generations.csv": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_sensitivity_fp10_20260809\\generations.csv",
+        "bytes": 11653,
+        "sha256": "a80a0b8277bbece6b24577b4967ba75be5db0e921d2429f3146f4b8328b4e62a"
+      },
+      "summary.json": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_sensitivity_fp10_20260809\\summary.json",
+        "bytes": 7109,
+        "sha256": "d1dade3aa9e41c3348fe5a3fb5cc803bd02944640b2c51ba97eb4f9d49e28a96"
+      },
+      "summary.md": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_sensitivity_fp10_20260809\\summary.md",
+        "bytes": 1987,
+        "sha256": "27ec4a1efbe1c15cd72dda0de5c1a6f78744e1484d41c84b7439f9521ae73e40"
+      }
+    }
+  },
+  "split": {
+    "validation": {
+      "tp_exact": 1256,
+      "fp_exact": 0,
+      "fn_blocking": 358,
+      "total_pos": 2927,
+      "n_scored": 21617
+    },
+    "test": {
+      "tp_exact": 3736,
+      "fp_exact": 11,
+      "fn_blocking": 1006,
+      "total_pos": 8775,
+      "n_scored": 191693
+    }
+  },
+  "split_names": {
+    "validation": "ga_validation",
+    "test": "test"
+  },
+  "selection_policy": "GA genome and deployment seed are selected by validation cost only; held-out test is never used for selection.",
+  "generated_at": "2026-08-09T01:29:49.648366+07:00",
+  "nested_split_seed": 42
+}

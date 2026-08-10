@@ -1,0 +1,103 @@
+{
+  "best_epoch": 5,
+  "best_calibration_ap": 0.9203815930679836,
+  "epochs_completed": 5,
+  "training_config": {
+    "seed": 42,
+    "split_seed": 42,
+    "epochs": 5,
+    "patience": 2,
+    "batch_size": 8192,
+    "eval_batch_size": 16384,
+    "train_neg_ratio": 3.0,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "dropout": 0.3,
+    "focal_alpha": 0.25,
+    "focal_gamma": 2.0,
+    "num_threads": 1
+  },
+  "feature_columns": [
+    "username_jaro",
+    "username_lev_sim",
+    "username_token_sort",
+    "fullname_jaro",
+    "fullname_lev_sim",
+    "fullname_token_sort",
+    "name_sim",
+    "bio_jaccard",
+    "bio_len_ratio",
+    "both_have_bio",
+    "location_jaro",
+    "location_exact",
+    "both_have_location",
+    "same_platform",
+    "username_len_diff",
+    "fullname_wordcount_diff",
+    "username_prefix3_match",
+    "bert_cos"
+  ],
+  "split_column": "experiment_split",
+  "split_counts": {
+    "model_train": 504968,
+    "model_calibration": 24901,
+    "ga_validation": 21617,
+    "test": 191693,
+    "drop": 1330663
+  },
+  "label_access": {
+    "model_fit": "model_train only",
+    "early_stopping_and_calibration": "model_calibration only",
+    "ga_optimisation": "ga_validation only (performed after this function)",
+    "held_out_test": "features predicted only; labels never read by this function"
+  },
+  "calibration_diagnostics": {
+    "best_threshold_diagnostic_only": 0.42000000000000004,
+    "best_threshold_f1_diagnostic_only": 0.8659277797640329,
+    "curve_fraction_positive": [
+      0.006073051380636141,
+      0.1342281879194631,
+      0.266304347826087,
+      0.3617021276595745,
+      0.46511627906976744,
+      0.6078431372549019,
+      0.7631578947368421,
+      0.84,
+      0.9925023430178069
+    ],
+    "curve_mean_predicted_value": [
+      0.0060730593377057865,
+      0.13422821145463043,
+      0.2663043521992538,
+      0.3617021143436432,
+      0.465116270059763,
+      0.6078431606292725,
+      0.7631579041481018,
+      0.8399999737739563,
+      0.9925023469281398
+    ]
+  },
+  "n_train_after_undersample": 27036,
+  "n_calibration": 24901,
+  "n_predicted_all_scored_pairs": 2073842,
+  "environment": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "numpy": "2.4.2",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.8.0",
+    "pytorch": "2.10.0+cpu",
+    "device": "cpu",
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "torch_num_threads": 1,
+    "deterministic_algorithms": true
+  },
+  "artifact_hashes": {
+    "identity_mlp_r2.pt": "c84247d9741743639fa93e6ffedaee517f1b07e7e383d4bd15d8bcd969810cc6",
+    "scaler.pkl": "3d64f051a7e9e1154fec241bfc492051063a2ec828543be2f6c3f0066f45d70f",
+    "isotonic_calibrator.pkl": "e57d310d01e8dd3170f71bebf03801356bc2ad450fe17b363e19036fbb90bc16",
+    "feature_cols.pkl": "1130111c621fbabb010bd5dcb013c56579a58df71336e0f796979b3af355c794",
+    "r2_probabilities.parquet": "fc22d4ac8bf9e8f9fba944798befe2b9287b291ad8eca1d67cbd907e6c2bc4dc"
+  }
+}

@@ -1,0 +1,4 @@
+experiment,decision_rule,probability_artifact,calibration_average_precision,selected_ga_seed,TP,FP,FN,REVIEW,precision,recall,F1,cost
+GB-17,manual_thresholds_0.98_0.95,gb17_probabilities.parquet,0.9219752775917887,,3736,11,1916,3289,0.9971,0.4258,0.5967,2036.78
+GB-18,manual_thresholds_0.98_0.95,gb18_probabilities.parquet,0.9440822672340019,,6266,65,1833,755,0.9897,0.7141,0.8296,2173.1
+GB-18-GA,ga_selected_validation_cost,gb18_probabilities.parquet,0.9440822672340019,999,6711,99,1571,861,0.9855,0.7648,0.8612,2083.22

@@ -1,0 +1,87 @@
+{
+  "version": "entity_nested_v1",
+  "seed": 42,
+  "outer_split": "existing entity-aware cache split; test remains sealed",
+  "development_entity_allocation": {
+    "model_train": 70,
+    "model_calibration": 15,
+    "ga_validation": 15
+  },
+  "pair_counts": {
+    "model_train": 510981,
+    "model_calibration": 26246,
+    "ga_validation": 22873,
+    "test": 195440,
+    "dropped": 1330705
+  },
+  "entity_counts": {
+    "model_train": 7413,
+    "model_calibration": 1606,
+    "ga_validation": 1510,
+    "test": 4554
+  },
+  "entity_overlap_check": "passed",
+  "source_inputs": {
+    "scored_pairs_enriched": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\scored_pairs_enriched.parquet",
+      "bytes": 9577326,
+      "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+    },
+    "pair_features17": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\pair_features17.parquet",
+      "bytes": 32494840,
+      "sha256": "215d2a1ee5464f4c11774052ef5510451a2f49d7bda4ec40435dae10f870d591"
+    },
+    "pair_bert_cos": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\pair_bert_cos.parquet",
+      "bytes": 13456136,
+      "sha256": "687e93cb46b12df3ae47b26f2eeaafafcf16f6a566146e3d5198d4cefeef97b7"
+    },
+    "blocking_missed_pairs": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\analysis_decision_matrix\\blocking_missed_pairs.csv",
+      "bytes": 1847856,
+      "sha256": "93b5121597148295d9686fa4daa04122d4f4ce58941e49f63464c76a6d0c746e"
+    },
+    "r0_nested_summary": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r1_nested_primary_20260809\\summary.json",
+      "bytes": 7190,
+      "sha256": "f9ad7a7397f694be0924eba903edc0c1d637822be2b44cc31d0e2bf44e674c56"
+    },
+    "r3_summary": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_primary_20260809\\summary.json",
+      "bytes": 7163,
+      "sha256": "31e03d2ec4ef8302e0f1d76e646759e60faa07038642228590c087de7d14c74b"
+    }
+  },
+  "scored_feature_row_count": 2073842,
+  "feature_columns": [
+    "username_jaro",
+    "username_lev_sim",
+    "username_token_sort",
+    "fullname_jaro",
+    "fullname_lev_sim",
+    "fullname_token_sort",
+    "name_sim",
+    "bio_jaccard",
+    "bio_len_ratio",
+    "both_have_bio",
+    "location_jaro",
+    "location_exact",
+    "both_have_location",
+    "same_platform",
+    "username_len_diff",
+    "fullname_wordcount_diff",
+    "username_prefix3_match",
+    "bert_cos"
+  ],
+  "roles": [
+    "model_train",
+    "model_calibration",
+    "ga_validation",
+    "test",
+    "drop"
+  ],
+  "test_sealed_until": "final_test_evaluation",
+  "smoke": true,
+  "smoke_rows_per_role": 2000
+}

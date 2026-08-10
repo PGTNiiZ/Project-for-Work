@@ -1,0 +1,579 @@
+===== PAGE 1 =====
+D a t a  P r e p a r a t i o n
+Standardization
+IN P U T  
+Raw Data
+Unstructured
+o u tP U T  
+Data Quality
+Cleaning
+Completeness
+Duplicates
+Usable Columns
+Check Missing
+25
+
+===== PAGE 2 =====
+D a t a  P r e p a r a t i o n
+5  O v e r v i e w  
+1
+2
+3
+4
+5
+@aaronbird →     aaronbird
+aaron z. lewis →   aaron z lewis
+Pro Sleeper 💤 | Lazy Sloth 🐨 | Day Dreamer 💭
+→  pro sleeper ZZZ lazy sloth koala day dreamer thought_balloon
+Germany-Berlin / KSA-Makkah →   germany-berlin ksa-makkah
+['https://twitter.com/AdamGandy', 'http://www.facebook.com/adamgandy']
+→  [  'twitter.com/adamgandy'  , 'facebook.com/adamgandy'  ]
+iPhone: 36.187325,-86.746086     →   36.187325,-86.746086
+Username
+Normalization
+Full Name
+Normalization
+Bio Cleaning
+Location 
+URL Parsing
+Bio Cleaning
+26
+
+===== PAGE 3 =====
+Profile_id 
+Canonical_IDRow_id
+1
+2
+3
+4
+5
+Donginstagram
+Donggoogleja
+D o ng tw ite re ie i
+1
+2
+3
+R o w _id
+N a m e  :  D o n g
+P ro f ile _id  
+P r o f i l e _ i d  = =  1
+D o n g                               
+I c e                                   
+M i l k                                  
+1                                            
+2                                            
+3                                            
+P r o f i l e _ i d  = =  1
+P r o f i l e _ i d  = =  1
+Shared
+Profile ID
+C a n o n i c a l  K e y s
+32
+
+===== PAGE 4 =====
+W h y  C a n o n i c a l  K e y s  
+I M P O R T A N T
+E n d - t o - E n d  T r a c e a b i l i t y
+A n t i - A m b i g u i t y  G u a r d r a i l
+E n t e r p r i s e  S y n c
+R e s i l i e n t  R o l l b a c k
+ส ม ช า ย  ( 1 )
+S o m c h a i ( 1 )
+ส ม ช ัย  ( 2 )
+S o m c h a i ( 2 )
+Somchai (2)
+ส ม ช ัย  ( 2 )
+S o m c h a i ( 2 )
+M a r k e t in g  
+S a le
+33
+
+===== PAGE 5 =====
+N a m e  :  J a n e
+P l a t fo r m - s p e c i fi c  P e r s o n a s
+J a n e ja a
+J a n e jir a
+jjjja jija n e _lo v e _a r w a t a r
+34
+
+===== PAGE 6 =====
+D i m e n s i o n a l  S h i f t
+ i t  m a t t e r s ?
+P a i r w i s e  T r a n s f o r m a t i o n
+D e e p  D i f f e r e n t i a t i o n
+I d e n t i t y  R e s o l u t i o n
+R e l a t i o n a l  L e a r n i n g
+W h y
+               Concept
+C o r e
+35
+
+===== PAGE 7 =====
+ Profile
+ Profile  Profile
+P r o f i l e I D  :  0 0 1
+P r o f i l e I D  :  0 0 1
+M A T C H ?
+P r o f i l e I D  :  0 2 3
+Profile-Level                    Pair Level
+ P a i r  F o r m u l a t i o n
+36
+
+===== PAGE 8 =====
+Total Search Space
+C r o s s - p l a t fo r m
+4 4 9 , 1 4 9 , 2 3 9     ค ู่
+A I  M a t c h i n g
+M o d e l
+40
+D a t a  E x p l o d i n g
+
+===== PAGE 9 =====
+ Profile
+ Profile  Profile
+P r o f i l e I D  :  0 0 1
+P r o f i l e I D  :  0 0 1
+M A T C H ?
+P r o f i l e I D  :  0 2 3
+Profile-Level                    Pair Level
+ P a i r  F o r m u l a t i o n
+36
+
+===== PAGE 10 =====
+A I  M a t c h i n g
+M o d e l
+A I  M a t c h i n g
+M o d e l
+T o t a l  S e a r c h  S p a c e
+S o l i u t i o n  
+4 4 9 , 1 4 9 , 2 3 9     
+40
+4 4 9 , 1 4 9 , 2 3 9     
+T r a i n i n g  D a t a
+
+===== PAGE 11 =====
+Search over Comparison
+Candidate Selection
+Retrieval First Scoring
+Architecture
+T w o - S t a g e
+Weighted Aggregation
+Confidence Scoring
+Why? Why?
+ประหยัดพลังงานการประมวลผล  และ
+ช่วยให้ระบบรองรับข้อมูลระดับ  100 ล้าน
+หรือ  1,000 ล้านได้โดยไม่พัง
+ประหยัดพลังงานการประมวลผล  และ
+ช่วยให้ระบบรองรับข้อมูลระดับ  100 ล้าน
+หรือ  1,000 ล้านได้โดยไม่พัง
+
+===== PAGE 12 =====
+ 88.67% 
+Retrieval First
+Total ground-truth
+coverage after
+retrievale
+Search Space
+Reduction
+9 9 . 5 4 %  
+Smart Filtering     225x Faster Processing
+B l o c k i n g  S t r a t e g y
+Search Space Reduction Strategy
+449M
+E x a c t - f i r s t  S t r a t e g y
+2 , 0 7 3 , 8 4 2
+Top
+Middle
+Bottom
+All Pairs
+C a n d i d a t e s
+1 2 , 4 0 3  
+A l l  p o s s i b l e  c r o s s -
+p l a t f o r m  p a i r s
+12,403 Exact Matches + 2,073,842 Blocking Candidates  =  2,086,245
+449,149,239 all pairs
+2,086,245 Cross-platform pairs
+
+===== PAGE 13 =====
+29,243 ⟶ 25,931
+R e t r i e v a l  P e r f o r m a n c e
+S e a r c h  S p a c e  R e d u c tio n
+g r o u n d - t r u t h  p o s i t i v e  p a i r s
+c o v e r e d  a f t e r  r e t r i e v a l
+ ground-truth coverage
+8 8 . 6 7 %
+จํานวนคู่จริงทั งหมดใน  full dataset
+
+===== PAGE 14 =====
+ P r o f i l e
+P r o f i l e I D  :  0 0 1
+C a n d i d a t e  R e t r i e v a l  O u t p u t
+Top-k likely
+matches
+C a n d i d a t e  1
+C a n d i d a t e  2
+C a n d i d a t e  3
+. . . . .
+C a n d i d a t e  K
+Ranked candidate pairs
+[ Q u e r y  A ]  < - >  [ C a n d i d a t e  B ]
+[ Q u e r y  A ]  < - >  [ C a n d i d a t e  C ]
+[ Q u e r y  A ]  < - >  [ C a n d i d a t e  D ]
+Input to ML
+scoring
+
+===== PAGE 15 =====
+ P r o f i l e
+ P r o f i l e
+P r o f i l e I D  :  0 0 1
+M A T C H ?
+P r o f i l e I D  :  1 2 3
+ P r o f i l e
+ P r o f i l e
+P r o f i l e I D  :  0 0 1
+M A T C H ?
+P r o f i l e I D  :  0 2 3
+P o s i t i v e  P a i r s
+N e g a t i v e  P a i r s
+T r a i n i n g  D a t a
+41
+2 4 , 6 6 3 , 6 3 3    
+T o t a l
+P o s i t i v e  :  N e g a t i v e
+1  :  5 . 1
+
+===== PAGE 16 =====
+P o s i t i v e  P a i r s
+Ground-truth matches
+Same person across platforms
+4,060,200
+ P r o f i l e
+ P r o f i l e
+P r o f i l e I D  :  0 0 1
+M A T C H ?
+P r o f i l e I D  :  1 2 3
+Label = 1
+
+===== PAGE 17 =====
+ P r o f i l e
+ P r o f i l e
+P r o f i l e I D  :  0 0 1
+M A T C H ?
+P r o f i l e I D  :  0 2 3
+N e g a t i v e  P a i r s
+2 0 , 3 0 1 , 0 0 0
+302,433 
+2 0 ,6 0 3 ,4 3 3
+Total Negatives
+ Random Negative 
+ h a r d  n e g a t i v e
+L a b e l  =  0
+Handle class imbalance
+Reduce false positives
+T e a c h  t h e  m o d e l  d i f f i c u l t  n o n -
+m a t c h e s
+P r o v i d e  b r o a d  c o n t r a s t
+
+
+===== PAGE 18 =====
+Train
+ Test
+2                                            
+J a n e                                        
+4                                         
+Preventing Data Leakage
+E n t i t y - A w a r e  S p l i t  
+Validation 
+D o n g i n s t a g r a m
+i c e _ n a
+D o n g t w i t e r e i e i
+D o n g                                       
+M ilk                                          
+Ic e                                           
+1                                            
+3                                            
+J a n e j i r a
+m i l k m i l k
+M i l k k y
+J a n e j a a
+i i c w e
+D a t a
+1
+2
+3
+4
+5
+6
+7
+8
+D o n g i n s t a g r a m
+1
+D o n g t w i t e r e i e i
+3
+m i l k m i l k
+M i l k k y
+5
+6
+i c e _ n a
+2
+i i c w e
+8
+J a n e j a a
+7
+J a n e j i r a
+4
+Learning Phase Model Refinement Tested on Unseen UsersOnly
+P ro file _id  
+
+===== PAGE 19 =====
+N a m e  :  D o n g
+T r a i n  
+T e s t
+Donggoogleja
+N a m e  :  D o n g
+T r a i n  
+T e s t
+Donggoogleja
+Random Split 
+Donginstagram
+Donggoogleja
+Dongtwitereiei  Entity-Aware Split 36
+T e s t
+Data Leakage
+Donginstagram
+Dongtwitereiei
+T e s t
+Data Leakage
+AI Matching Model
+O v e r o p t i m i s t i c  E v a l u a t i o n  R e s u l t s AI Matching Model
+U n s e e n  I d e n t i t y  V a l i d a t i o n
+
+===== PAGE 20 =====
+24,663,633 คู่ ⟶ 15,107,705 คู่ 
+P a i r  C o n s t r u c t i o n
+A fte r   E n tity - A w a r e  S p lit   
+F e a t u r e s  e n g i n e e r i n g
+E x t r a c t
+ - 3 8 . 7 %  R e d u c t i o n  
+F o c u s e d  C a n d i d a t e s
+(9.5M pairs)
+
+===== PAGE 21 =====
+Match
+Confidence
+Score
+0.00 ──  1.00
+Profile A
++
+ Profile B
+AI Matching
+Model
+Feature
+Comparison Decision
+Identity
+Resolution
+M L  M a t c h i n g  D i a g r a m
+Unified profile
+C R M  O u tp u t
+N a m e  /  B i o  /  U R L  /
+I m a g e
+37Scoring
+
+===== PAGE 22 =====
+F e a t u r e s  e n g i n e e r i n g
+F e a t u r e s
+4 1  ม ิต ิ
+1 5 , 1 0 7 , 7 0 5  ค ู่ 
+E x t r a c t
+A t t r i b u t e  V e c t o r i z a t i o n
+M u l t i - D i m e n s i o n a l  P r o f i l i n g
+W h y ?
+
+===== PAGE 23 =====
+Features
+41 มิติ
+Name Similarity Bio, Social Tokens
+& Style
+URL, Location &
+Platform Signals Image & CaptionSignals
+26 features 10 features
+4  features 18  features
+Feature Matrix
+4  G R O U P
+S t r o n g  s i g n a l  จ ับ ค ู่ต ัว ต น
+P r i m a r y  e v i d e n c e  ท ี ส ุด ใ น ห ล า ย
+ก ร ณ ี
+ช ่ว ย เ ม ื อ ช ื อ ไ ม ่ต ร ง ก ัน ส ม บ ูร ณ ์
+ม ีป ร ะ โ ย ช น ์เ ม ื อ  b i o  ส ื อ ไ ป ใ น ท ิศ ท า ง
+เ ด ีย ว ก ัน
+ช ่ว ย จ ับ ค ว า ม ค ล ้า ย เ ช ิง ค ว า ม ห ม า ย
+S t r o n g  s i g n a l  เ ม ื อ ใ ช ้โ ด เ ม น เ ด ีย ว ก ัน
+ม ีป ร ะ โ ย ช น ์ม า ก เ ม ื อ ม ี L i n k  เ ด ีย ว ก ัน ข ้า ม
+แ พ ล ต ฟ อ ร ์ม
+ช ่ว ย ย ืน ย ัน ก า ร เ ช ื อ ม โ ย ง ข ้า ม แ พ ล ต ฟ อ ร ์ม
+เ ป  น ห ล ัก ฐ า น เ ช ิง บ ร ิบ ท เ ส ร ิม
+ช ่ว ย ย ืน ย ัน ค ว า ม ส อ ด ค ล ้อ ง ข อ ง โ ป ร ไ ฟ ล ์
+
+===== PAGE 24 =====
+M L  M o d e l  เ พ ื อ ใ ห ้ A I  เ ร ีย น ร ู้ร ูป แ บ บ ท ี ซ ับ ซ ้อ น  
+M L - b a s e d  C a n d i d a t e  S c o r i n g
+F e a t u r e s
+4 1  ม ิต ิ
+Non-linear Interactions
+G r a d i e n t
+B o o s t i n g
+C o n f i d e n c e
+S c o r e
+
+===== PAGE 25 =====
+Classical Multimodal Suite Neural Reference
+Gradient Boosting
+Random Forest
+Logistic Regression
+เพิ่ม image features
+ทีละขั้น
+23 →  37 →  41
+features
+I d e n t i t y M L P
+[ 2 5 6 ,  1 2 8 ,  6 4 ]
+หา baseline ที่ดีที่สุด ภาพช วยเพิ่มความแม นยําได ไหม Deep Learning คุ มค าไหม
+3  E x p e r i m e n t a l  T r a c k s
+
+===== PAGE 26 =====
+Model AP F1 AUC
+Gradient Boosting 0.9789 0.934 0.9734
+Random Forest 0.9778 0.9337 0.9696
+Logistic Regression 0.9431 - 0.9245
+IdentityMLP 0.9734 0.9255 0.9649
+Model Comparison Results
+ Gradient Boosting?
+M o d e l  S e l e c t i o n
+
+===== PAGE 27 =====
+W h y  T h r e s h o l d i n g ?
+High ⟶  Medium ⟶  Low confidence
+auto merge
+Human Review
+l o w  ใ ห  ม น ุษ ย   m e r g e  เ ก ็บ  l o g
+Keep separate
+
+===== PAGE 28 =====
+Why 3 Tiers?
+ล ด ค ว า ม เ ส ี ย ง ข อ ง  
+F a l s e  M e r g e
+ใ ห ้เ ค ส มั น ใ จ ส ูง ร ว ม
+อ ัต โ น มัต ิไ ด ้
+ใ ห ้เ ค ส ก ํ า ก ึ ง เ ข ้า ส ู่ h u m a n
+r e v i e w
+C o n fi d e n c e  S c o r e
+M A T C H3 Decision Tiers
+R E V I E W  
+N O _ M A T C H
+0.95 <= score < 0.98
+score >= 0.98
+score < 0.95
+Score นี คือระดับความมั นใจ ไม่ใช่คําสั ง merge ทันที
+
+===== PAGE 29 =====
+C l a s s i f i c a t i o n
+P r o d u c t i o n
+t h r e s h o l d  0 . 3 5
+t h r e s h o l d  0 . 9 8
+ 
+P r e c i s i o n  0 . 9 5 0 7  
+R e c a l l  0 . 9 1 7 9  
+F 1  0 . 9 3 4 0
+P r e c i s i o n  0 . 9 9 3 6
+R e c a l l  0 . 8 1 1 0  
+F 1  0 . 8 9 3 1
+W h y  d o  w e  n e e d  t w o  t h r e s h o l d s ?
+ใช้วัดประสิทธิภาพ model ใช้งานจริงใน CRM 
+
+===== PAGE 30 =====
+M a t c h - o n l y  p r e c i s i o n  
+ 0 . 9 5 5 0
+ P r o f ile
+ P r o f ile
+M i n i m i z i n g  
+F a l s e  P o s i t i v e s
+0 . 6 7 1 1
+T r u s t e d  A u t o m a t i o n
+M a t c h - o n l y  r e c a l
+H i g h - P r e c i s i o n  I d e n t i t y  M e r g i n g
+A u t o - P i l o t  
+R e d u c i n g  M a n u a l  W o r k
+M O R E  I M P O R T A N T
+
+===== PAGE 31 =====
+merge แล ว!
+confidence = สูงมาก
+แต ถ า AI ทํางานผิดพลาดล ะ?
+merge ผิดคน →  ข อมูลพัง
+ทั้งระบบเชื่อถือไม ได 
+AI
+Human-in-the-Loop
+ เราจึงออกแบบ
+T r u s t e d  A u t o m a t i o n
+
+===== PAGE 32 =====
+Ecperiment
+⟶  
+Real Data
+ R e s u l t  s u m m a r y
+T o t a l  P r o f i l e  =  3 6 , 8 0 7
+⟶  
+U n i f i e d  p r o f i l e s  =  1 5 , 2 9 8
+T o t a l  P r o f i l e  =  3 6 , 8 0 7
+⟶  
+U n i f i e d  p r o f i l e s  =  1 9 , 7 9 9
+
+===== PAGE 33 =====
+Easy Match Review No Match
+C a s e  S t u d i e s  -  E x a m p l e  C a s e  
+S a m e  f u l l  n a m e
+D z ir e  2  D z in e  ( D 2 D )
+S a m e  d o m a in
+d z ir e 2 d z in e .c o m
+S a m e  b u s in e s s  b io
+g r a p h ic  d e s ig n  /  c o r p o r a t e
+id e n t it y  /  v id e o  p r o d u c t io n
+@ D z i r e 2 D z i n e  ↔  d z i r e 2 d z i n e
+Score = 0.9973
+r a j n o n g t h o m b a m  ↔  r a j _ n o n g Score = 0.9973
+ a n u p o n g k k  ↔  T k h a l i d a l b a i h
+Different persona and
+business context
+IG bio
+ local personal / teeth-
+whitening Facebook page
+Twitter bio
+political cartoonist /
+illustrator in Doha
+S a m e  f u l l  n a m e  
+R a j  N o n g t h o m b a m
+T w i t t e r  
+h a s  r i c h  b i o  +  a b o u t .m e  l i n k
+G o o g l e +  
+p r o f i l e  i s  s p a r s e
+Score = 0.5375
+
+===== PAGE 34 =====
+Unified Profile
+ลูกค า 1 คน = 1 ดาต าที่
+สมบูรณ 
+L e a d  S c o r i n g
+ใ ห  ค ะ แ น น ว  า ล ูก ค  า ค น น ั้น
+ม ีแ น ว โ น  ม จ ะ ซ ื้อ ม า ก แ ค  ไ ห น
+ทําให 
+เกิด
+Part 1 — Done
+P a r t  2  —  N e x t
+scope PROJECT 2 →
+ภาพ Customer Journey ที่เคยขาดหายไปไปกลับมาต อกัน
+เมื่อ profile สมบูรณ แล ว เราถึงสามารถให  คะแนน (Score) ลูกค าคนนั้นได อย าง
+ถูกต องว ามีแนวโน มจะซื้อมากแค ไหน — นําไปสู   Project 2 Lead Scoring
+Transition to Lead Scoring
+
+===== PAGE 35 =====
+T H A N K  Y O U
+

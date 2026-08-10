@@ -1,0 +1,118 @@
+{
+  "run_id": "r1_nested_primary_20260809",
+  "experiment": "r1",
+  "seeds": [
+    7,
+    42,
+    123,
+    999,
+    2025
+  ],
+  "ga_overrides": {
+    "population_size": null,
+    "generations": null,
+    "elite_size": null,
+    "mutation_probability": null,
+    "mutation_sigma": null
+  },
+  "scenarios": [
+    {
+      "name": "A_current",
+      "weights": {
+        "W_FP": 5.0,
+        "W_FN": 1.0,
+        "W_REV": 0.02
+      }
+    }
+  ],
+  "defaults": {
+    "seed": 42,
+    "population_size": 60,
+    "generations": 40,
+    "elite_size": 12,
+    "mutation_probability": 0.3,
+    "mutation_sigma": 0.02,
+    "weights": {
+      "fp": 5.0,
+      "fn": 1.0,
+      "review": 0.02
+    }
+  },
+  "input_artifacts": {
+    "scored_cache": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\scored_pairs_enriched.parquet",
+      "bytes": 9577326,
+      "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+    }
+  },
+  "provenance_chain": {
+    "input_cache_and_features": {
+      "scored_cache": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\scored_pairs_enriched.parquet",
+        "bytes": 9577326,
+        "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+      }
+    },
+    "ga_config": {
+      "seeds": [
+        7,
+        42,
+        123,
+        999,
+        2025
+      ],
+      "overrides": {
+        "population_size": null,
+        "generations": null,
+        "elite_size": null,
+        "mutation_probability": null,
+        "mutation_sigma": null
+      }
+    },
+    "result_artifacts": {
+      "trials.csv": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r1_nested_primary_20260809\\trials.csv",
+        "bytes": 944,
+        "sha256": "d50c964d9c561b6f592bbb22bc9764959e858ef0eddb48058201fc61d1b82070"
+      },
+      "generations.csv": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r1_nested_primary_20260809\\generations.csv",
+        "bytes": 12550,
+        "sha256": "8f63a2a0216ca31a774d96004e770ae48ca5db53191ee8c01b6d435c13e5b2fe"
+      },
+      "summary.json": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r1_nested_primary_20260809\\summary.json",
+        "bytes": 7190,
+        "sha256": "f9ad7a7397f694be0924eba903edc0c1d637822be2b44cc31d0e2bf44e674c56"
+      },
+      "summary.md": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r1_nested_primary_20260809\\summary.md",
+        "bytes": 2011,
+        "sha256": "102b66ea7049140055b08a73be1e9d4fe9cffbd9649a98161ca9c03dee01be71"
+      }
+    }
+  },
+  "split": {
+    "validation": {
+      "tp_exact": 1256,
+      "fp_exact": 0,
+      "fn_blocking": 358,
+      "total_pos": 2927,
+      "n_scored": 21617
+    },
+    "test": {
+      "tp_exact": 3736,
+      "fp_exact": 11,
+      "fn_blocking": 1006,
+      "total_pos": 8775,
+      "n_scored": 191693
+    }
+  },
+  "split_names": {
+    "validation": "ga_validation",
+    "test": "test"
+  },
+  "selection_policy": "GA genome and deployment seed are selected by validation cost only; held-out test is never used for selection.",
+  "generated_at": "2026-08-09T01:34:23.441925+07:00",
+  "nested_split_seed": 42
+}

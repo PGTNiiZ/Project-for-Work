@@ -1,0 +1,161 @@
+{
+  "selection_policy": "R1 and R3 deployment genomes were selected from GA-validation cost only; test metrics were not used for seed/genome selection.",
+  "r1_run": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r1_nested_primary_20260809",
+  "r3_run": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_primary_20260809",
+  "r3_probability_sha256": "39520028e33935382e5f69aa307b109ba314e4b6336cc3d33b90fb9b29a8b28b",
+  "table": [
+    {
+      "experiment": "R0",
+      "score_model": "Original 17-feature score / production manual rule",
+      "TP": 5864.0,
+      "FP": 88.0,
+      "FN": 1689.0,
+      "REVIEW": 8783.0,
+      "precision": 0.9852,
+      "recall": 0.6683,
+      "F1": 0.7964,
+      "cost": 2304.66,
+      "F1_std": 0.0,
+      "cost_std": 0.0,
+      "F1_change_from_R0_pct": NaN,
+      "cost_change_from_R0_pct": NaN,
+      "F1_change_from_R2_pct": NaN,
+      "cost_change_from_R2_pct": NaN
+    },
+    {
+      "experiment": "R1",
+      "score_model": "Original 17-feature score / GA rule",
+      "TP": 6619.4,
+      "FP": 65.0,
+      "FN": 1366.4,
+      "REVIEW": 31917.8,
+      "precision": 0.9903,
+      "recall": 0.75434,
+      "F1": 0.85634,
+      "cost": 2329.756,
+      "F1_std": 5.5e-05,
+      "cost_std": 0.30509,
+      "F1_change_from_R0_pct": NaN,
+      "cost_change_from_R0_pct": NaN,
+      "F1_change_from_R2_pct": NaN,
+      "cost_change_from_R2_pct": NaN
+    },
+    {
+      "experiment": "R2",
+      "score_model": "Frozen 18-feature MLP + MiniLM cosine / manual 0.98/0.95",
+      "TP": 6154.0,
+      "FP": 37.0,
+      "FN": 2183.0,
+      "REVIEW": 462.0,
+      "precision": 0.994,
+      "recall": 0.7013,
+      "F1": 0.8224,
+      "cost": 2377.24,
+      "F1_std": 0.0,
+      "cost_std": 0.0,
+      "F1_change_from_R0_pct": 3.2646911099949807,
+      "cost_change_from_R0_pct": 3.149271476052864,
+      "F1_change_from_R2_pct": NaN,
+      "cost_change_from_R2_pct": NaN
+    },
+    {
+      "experiment": "R3",
+      "score_model": "Same frozen R2 probabilities / GA rule",
+      "TP": 6689.6,
+      "FP": 66.0,
+      "FN": 1565.0,
+      "REVIEW": 1119.4,
+      "precision": 0.9902,
+      "recall": 0.76236,
+      "F1": 0.86146,
+      "cost": 1917.388,
+      "F1_std": 5.5e-05,
+      "cost_std": 0.010954,
+      "F1_change_from_R0_pct": 8.16926167754897,
+      "cost_change_from_R0_pct": -16.80386694783612,
+      "F1_change_from_R2_pct": 4.749513618677041,
+      "cost_change_from_R2_pct": -19.343945079167433
+    }
+  ],
+  "r1_selected_genome": {
+    "experiment": "r1",
+    "scenario": "A_current",
+    "seed": 999,
+    "t_m": 0.999,
+    "t_r": 0.8312684806189347,
+    "c_promote": 0.956951473696239,
+    "c_demote": 0.6459217930892283,
+    "val_cost": 541.42,
+    "objective_val_cost": 183.42000000000002,
+    "test_TP": 6619,
+    "test_FP": 65,
+    "test_FN": 1368,
+    "test_REVIEW": 31824,
+    "test_precision": 0.9903,
+    "test_recall": 0.7543,
+    "test_F1": 0.8563,
+    "test_cost": 2329.48,
+    "runtime_seconds": 0.373572
+  },
+  "r3_selected_genome": {
+    "experiment": "r3",
+    "scenario": "A_current",
+    "seed": 7,
+    "t_m": 0.999,
+    "t_r": 0.5222196122079251,
+    "c_promote": 0.9570813226909884,
+    "c_demote": 0.12170055141556829,
+    "val_cost": 559.02,
+    "objective_val_cost": 201.02,
+    "test_TP": 6689,
+    "test_FP": 66,
+    "test_FN": 1565,
+    "test_REVIEW": 1120,
+    "test_precision": 0.9902,
+    "test_recall": 0.7623,
+    "test_F1": 0.8614,
+    "test_cost": 1917.4,
+    "runtime_seconds": 0.675131
+  },
+  "charts": [
+    "r2_training_history.png",
+    "r1_r3_ga_history.png"
+  ],
+  "model_seed_robustness": {
+    "per_model_seed": [
+      {
+        "model_seed": 7,
+        "run": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809",
+        "ga_seed_count": 5,
+        "F1_mean_over_ga_seeds": 0.8642,
+        "F1_std_within_ga_seeds": 0.004137,
+        "cost_mean_over_ga_seeds": 2027.66,
+        "cost_std_within_ga_seeds": 37.894599
+      },
+      {
+        "model_seed": 42,
+        "run": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_primary_20260809",
+        "ga_seed_count": 5,
+        "F1_mean_over_ga_seeds": 0.86146,
+        "F1_std_within_ga_seeds": 5.5e-05,
+        "cost_mean_over_ga_seeds": 1917.388,
+        "cost_std_within_ga_seeds": 0.010954
+      },
+      {
+        "model_seed": 123,
+        "run": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed123_20260809",
+        "ga_seed_count": 5,
+        "F1_mean_over_ga_seeds": 0.86196,
+        "F1_std_within_ga_seeds": 0.000114,
+        "cost_mean_over_ga_seeds": 2003.924,
+        "cost_std_within_ga_seeds": 14.664736
+      }
+    ],
+    "between_model_seed_variation": {
+      "F1_mean": 0.86254,
+      "F1_sample_std": 0.001459177850709081,
+      "cost_mean": 1982.9906666666666,
+      "cost_sample_std": 58.039915828103524
+    }
+  }
+}

@@ -1,0 +1,5 @@
+experiment,score_model,TP,FP,FN,REVIEW,precision,recall,F1,cost,F1_std,cost_std,F1_change_from_R0_pct,cost_change_from_R0_pct,F1_change_from_R2_pct,cost_change_from_R2_pct
+R0,Original 17-feature score / production manual rule,5864.0,88.0,1689.0,8783.0,0.9852,0.6683,0.7964,2304.66,0.0,0.0,,,,
+R1,Original 17-feature score / GA rule,6619.4,65.0,1366.4,31917.8,0.9903,0.75434,0.85634,2329.756,5.5e-05,0.30509,,,,
+R2,Frozen 18-feature MLP + MiniLM cosine / manual 0.98/0.95,6154.0,37.0,2183.0,462.0,0.994,0.7013,0.8224,2377.24,0.0,0.0,3.2646911099949807,3.149271476052864,,
+R3,Same frozen R2 probabilities / GA rule,6689.6,66.0,1565.0,1119.4,0.9902,0.76236,0.86146,1917.388,5.5e-05,0.010954,8.16926167754897,-16.80386694783612,4.749513618677041,-19.343945079167433

@@ -1,0 +1,266 @@
+{
+  "run_id": "r1_20260808_200954",
+  "experiment": "r1",
+  "baseline": "R0_production",
+  "selection_policy": "GA genome and best seed are selected by validation cost only; test is held out.",
+  "baselines": {
+    "A_current": {
+      "TP": 5864,
+      "FP": 88,
+      "FN": 1689,
+      "REVIEW": 8783,
+      "precision": 0.9852,
+      "recall": 0.6683,
+      "F1": 0.7964,
+      "cost": 2304.66
+    }
+  },
+  "trials": [
+    {
+      "experiment": "r1",
+      "scenario": "A_current",
+      "seed": 7,
+      "t_m": 0.9970742787738913,
+      "t_r": 0.9639470824425975,
+      "c_promote": 0.9874593348064823,
+      "c_demote": 0.09275662068541604,
+      "val_cost": 5243.78,
+      "objective_val_cost": 2818.78,
+      "test_TP": 6231,
+      "test_FP": 23,
+      "test_FN": 1885,
+      "test_REVIEW": 3117,
+      "test_precision": 0.9963,
+      "test_recall": 0.7101,
+      "test_F1": 0.8292,
+      "test_cost": 2062.34,
+      "runtime_seconds": 11.235446
+    },
+    {
+      "experiment": "r1",
+      "scenario": "A_current",
+      "seed": 42,
+      "t_m": 0.999,
+      "t_r": 0.9641788272097049,
+      "c_promote": 0.9874745971103054,
+      "c_demote": 0.505228579843769,
+      "val_cost": 5243.72,
+      "objective_val_cost": 2818.7200000000003,
+      "test_TP": 6231,
+      "test_FP": 23,
+      "test_FN": 1885,
+      "test_REVIEW": 3116,
+      "test_precision": 0.9963,
+      "test_recall": 0.7101,
+      "test_F1": 0.8292,
+      "test_cost": 2062.32,
+      "runtime_seconds": 12.435649
+    },
+    {
+      "experiment": "r1",
+      "scenario": "A_current",
+      "seed": 123,
+      "t_m": 0.999,
+      "t_r": 0.9641439742134834,
+      "c_promote": 0.9867464822785611,
+      "c_demote": 0.5699803194706092,
+      "val_cost": 5243.68,
+      "objective_val_cost": 2818.68,
+      "test_TP": 6231,
+      "test_FP": 23,
+      "test_FN": 1885,
+      "test_REVIEW": 3116,
+      "test_precision": 0.9963,
+      "test_recall": 0.7101,
+      "test_F1": 0.8292,
+      "test_cost": 2062.32,
+      "runtime_seconds": 11.695344
+    },
+    {
+      "experiment": "r1",
+      "scenario": "A_current",
+      "seed": 999,
+      "t_m": 0.999,
+      "t_r": 0.9642062341982416,
+      "c_promote": 0.9873330269687521,
+      "c_demote": 0.35478742064098295,
+      "val_cost": 5243.74,
+      "objective_val_cost": 2818.74,
+      "test_TP": 6231,
+      "test_FP": 23,
+      "test_FN": 1885,
+      "test_REVIEW": 3116,
+      "test_precision": 0.9963,
+      "test_recall": 0.7101,
+      "test_F1": 0.8292,
+      "test_cost": 2062.32,
+      "runtime_seconds": 11.982742
+    },
+    {
+      "experiment": "r1",
+      "scenario": "A_current",
+      "seed": 2025,
+      "t_m": 0.999,
+      "t_r": 0.9640283166886895,
+      "c_promote": 0.986900378066107,
+      "c_demote": 0.5123802144724137,
+      "val_cost": 5243.74,
+      "objective_val_cost": 2818.74,
+      "test_TP": 6231,
+      "test_FP": 23,
+      "test_FN": 1885,
+      "test_REVIEW": 3116,
+      "test_precision": 0.9963,
+      "test_recall": 0.7101,
+      "test_F1": 0.8292,
+      "test_cost": 2062.32,
+      "runtime_seconds": 11.020192
+    }
+  ],
+  "aggregates": {
+    "A_current": {
+      "metrics": {
+        "test_precision": {
+          "mean": 0.9963,
+          "std": 0.0,
+          "min": 0.9963,
+          "max": 0.9963
+        },
+        "test_recall": {
+          "mean": 0.7101,
+          "std": 0.0,
+          "min": 0.7101,
+          "max": 0.7101
+        },
+        "test_F1": {
+          "mean": 0.8292,
+          "std": 0.0,
+          "min": 0.8292,
+          "max": 0.8292
+        },
+        "test_cost": {
+          "mean": 2062.324,
+          "std": 0.008944,
+          "min": 2062.32,
+          "max": 2062.34
+        },
+        "test_TP": {
+          "mean": 6231.0,
+          "std": 0.0,
+          "min": 6231.0,
+          "max": 6231.0
+        },
+        "test_FP": {
+          "mean": 23.0,
+          "std": 0.0,
+          "min": 23.0,
+          "max": 23.0
+        },
+        "test_FN": {
+          "mean": 1885.0,
+          "std": 0.0,
+          "min": 1885.0,
+          "max": 1885.0
+        },
+        "test_REVIEW": {
+          "mean": 3116.2,
+          "std": 0.447214,
+          "min": 3116.0,
+          "max": 3117.0
+        }
+      },
+      "min_max": {
+        "test_cost": {
+          "min": 2062.32,
+          "max": 2062.34
+        },
+        "test_F1": {
+          "min": 0.8292,
+          "max": 0.8292
+        }
+      },
+      "best_genome_selected_by_validation_cost_only": {
+        "experiment": "r1",
+        "scenario": "A_current",
+        "seed": 123,
+        "t_m": 0.999,
+        "t_r": 0.9641439742134834,
+        "c_promote": 0.9867464822785611,
+        "c_demote": 0.5699803194706092,
+        "val_cost": 5243.68,
+        "objective_val_cost": 2818.68,
+        "test_TP": 6231,
+        "test_FP": 23,
+        "test_FN": 1885,
+        "test_REVIEW": 3116,
+        "test_precision": 0.9963,
+        "test_recall": 0.7101,
+        "test_F1": 0.8292,
+        "test_cost": 2062.32,
+        "runtime_seconds": 11.695344
+      },
+      "percent_change_from_baseline_per_seed": {
+        "7": {
+          "test_precision": 1.126675,
+          "test_recall": 6.254676,
+          "test_F1": 4.118533,
+          "test_cost": -10.514349,
+          "test_TP": 6.258527,
+          "test_FP": -73.863636,
+          "test_FN": 11.6045,
+          "test_REVIEW": -64.510987
+        },
+        "42": {
+          "test_precision": 1.126675,
+          "test_recall": 6.254676,
+          "test_F1": 4.118533,
+          "test_cost": -10.515217,
+          "test_TP": 6.258527,
+          "test_FP": -73.863636,
+          "test_FN": 11.6045,
+          "test_REVIEW": -64.522373
+        },
+        "123": {
+          "test_precision": 1.126675,
+          "test_recall": 6.254676,
+          "test_F1": 4.118533,
+          "test_cost": -10.515217,
+          "test_TP": 6.258527,
+          "test_FP": -73.863636,
+          "test_FN": 11.6045,
+          "test_REVIEW": -64.522373
+        },
+        "999": {
+          "test_precision": 1.126675,
+          "test_recall": 6.254676,
+          "test_F1": 4.118533,
+          "test_cost": -10.515217,
+          "test_TP": 6.258527,
+          "test_FP": -73.863636,
+          "test_FN": 11.6045,
+          "test_REVIEW": -64.522373
+        },
+        "2025": {
+          "test_precision": 1.126675,
+          "test_recall": 6.254676,
+          "test_F1": 4.118533,
+          "test_cost": -10.515217,
+          "test_TP": 6.258527,
+          "test_FP": -73.863636,
+          "test_FN": 11.6045,
+          "test_REVIEW": -64.522373
+        }
+      },
+      "percent_change_from_baseline_mean": {
+        "test_precision": 1.126675,
+        "test_recall": 6.254676,
+        "test_F1": 4.118533,
+        "test_cost": -10.515043,
+        "test_TP": 6.258527,
+        "test_FP": -73.863636,
+        "test_FN": 11.6045,
+        "test_REVIEW": -64.520096
+      }
+    }
+  }
+}

@@ -102,6 +102,7 @@ image_process/failed_urls.csv
 !experiments/**/*.pkl
 
 # Large training artifacts
+labeled_pairs.parquet
 Train-Data/labeled_pairs.parquet
 Train-Data/**/sbert_embeddings.npy
 Train-Data/stage9_pipeline_chunked/future_matrix_chunked_train_merged.parquet

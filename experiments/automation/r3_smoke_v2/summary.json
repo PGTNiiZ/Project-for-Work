@@ -1,0 +1,146 @@
+{
+  "run_id": "r3_smoke_v2",
+  "experiment": "r3",
+  "baseline": "R2_manual",
+  "selection_policy": "GA genome and deployment seed are selected by validation cost only; held-out test is never used for selection.",
+  "baselines": {
+    "A_current": {
+      "TP": 5992,
+      "FP": 35,
+      "FN": 2162,
+      "REVIEW": 687,
+      "precision": 0.9942,
+      "recall": 0.6828,
+      "F1": 0.8096,
+      "cost": 2350.74
+    }
+  },
+  "trials": [
+    {
+      "experiment": "r3",
+      "scenario": "A_current",
+      "seed": 42,
+      "t_m": 0.999,
+      "t_r": 0.5904190414151658,
+      "c_promote": 0.9576787203603366,
+      "c_demote": 0.3899671978898349,
+      "val_cost": 629.62,
+      "objective_val_cost": 271.62,
+      "test_TP": 6581,
+      "test_FP": 50,
+      "test_FN": 1847,
+      "test_REVIEW": 580,
+      "test_precision": 0.9925,
+      "test_recall": 0.75,
+      "test_F1": 0.8543,
+      "test_cost": 2108.6,
+      "runtime_seconds": 0.045822
+    }
+  ],
+  "aggregates": {
+    "A_current": {
+      "metrics": {
+        "test_precision": {
+          "mean": 0.9925,
+          "std": 0.0,
+          "min": 0.9925,
+          "max": 0.9925
+        },
+        "test_recall": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "test_F1": {
+          "mean": 0.8543,
+          "std": 0.0,
+          "min": 0.8543,
+          "max": 0.8543
+        },
+        "test_cost": {
+          "mean": 2108.6,
+          "std": 0.0,
+          "min": 2108.6,
+          "max": 2108.6
+        },
+        "test_TP": {
+          "mean": 6581.0,
+          "std": 0.0,
+          "min": 6581.0,
+          "max": 6581.0
+        },
+        "test_FP": {
+          "mean": 50.0,
+          "std": 0.0,
+          "min": 50.0,
+          "max": 50.0
+        },
+        "test_FN": {
+          "mean": 1847.0,
+          "std": 0.0,
+          "min": 1847.0,
+          "max": 1847.0
+        },
+        "test_REVIEW": {
+          "mean": 580.0,
+          "std": 0.0,
+          "min": 580.0,
+          "max": 580.0
+        }
+      },
+      "min_max": {
+        "test_cost": {
+          "min": 2108.6,
+          "max": 2108.6
+        },
+        "test_F1": {
+          "min": 0.8543,
+          "max": 0.8543
+        }
+      },
+      "best_genome_selected_by_validation_cost_only": {
+        "experiment": "r3",
+        "scenario": "A_current",
+        "seed": 42,
+        "t_m": 0.999,
+        "t_r": 0.5904190414151658,
+        "c_promote": 0.9576787203603366,
+        "c_demote": 0.3899671978898349,
+        "val_cost": 629.62,
+        "objective_val_cost": 271.62,
+        "test_TP": 6581,
+        "test_FP": 50,
+        "test_FN": 1847,
+        "test_REVIEW": 580,
+        "test_precision": 0.9925,
+        "test_recall": 0.75,
+        "test_F1": 0.8543,
+        "test_cost": 2108.6,
+        "runtime_seconds": 0.045822
+      },
+      "percent_change_from_baseline_per_seed": {
+        "42": {
+          "test_precision": -0.170992,
+          "test_recall": 9.841828,
+          "test_F1": 5.521245,
+          "test_cost": -10.300586,
+          "test_TP": 9.829773,
+          "test_FP": 42.857143,
+          "test_FN": -14.569843,
+          "test_REVIEW": -15.574964
+        }
+      },
+      "percent_change_from_baseline_mean": {
+        "test_precision": -0.170992,
+        "test_recall": 9.841828,
+        "test_F1": 5.521245,
+        "test_cost": -10.300586,
+        "test_TP": 9.829773,
+        "test_FP": 42.857143,
+        "test_FN": -14.569843,
+        "test_REVIEW": -15.574964
+      }
+    }
+  }
+}

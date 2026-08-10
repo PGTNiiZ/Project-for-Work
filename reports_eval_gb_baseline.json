@@ -1,0 +1,57 @@
+{
+  "split": "test",
+  "threshold": 0.35,
+  "n": 8313,
+  "n_pos": 4387,
+  "test_ap": 0.9789,
+  "overall": {
+    "precision": 0.9507,
+    "recall": 0.9179,
+    "f1": 0.934,
+    "FN": 360,
+    "FP": 209
+  },
+  "by_slice": {
+    "EASY": {
+      "n_pos": 4234,
+      "recall": 0.9433,
+      "FN": 240
+    },
+    "MID": {
+      "n_pos": 148,
+      "recall": 0.223,
+      "FN": 115
+    },
+    "HARD": {
+      "n_pos": 5,
+      "recall": 0.0,
+      "FN": 5
+    }
+  },
+  "by_platform_pair": {
+    "googleplus x instagram": {
+      "precision": 0.9439,
+      "recall": 0.9138,
+      "f1": 0.9286,
+      "FN": 84,
+      "FP": 53,
+      "n_pos": 975
+    },
+    "googleplus x twitter": {
+      "precision": 0.9548,
+      "recall": 0.8936,
+      "f1": 0.9232,
+      "FN": 191,
+      "FP": 76,
+      "n_pos": 1795
+    },
+    "instagram x twitter": {
+      "precision": 0.9504,
+      "recall": 0.9474,
+      "f1": 0.9489,
+      "FN": 85,
+      "FP": 80,
+      "n_pos": 1617
+    }
+  }
+}

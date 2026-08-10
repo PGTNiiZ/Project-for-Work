@@ -1,0 +1,29 @@
+{
+  "version": "entity_nested_v1",
+  "seed": 42,
+  "outer_split": "existing entity-aware cache split; test remains sealed",
+  "development_entity_allocation": {
+    "model_train": 70,
+    "model_calibration": 15,
+    "ga_validation": 15
+  },
+  "pair_counts": {
+    "model_train": 510981,
+    "model_calibration": 26246,
+    "ga_validation": 22873,
+    "test": 195440,
+    "dropped": 1330705
+  },
+  "entity_counts": {
+    "model_train": 7413,
+    "model_calibration": 1606,
+    "ga_validation": 1510,
+    "test": 4554
+  },
+  "entity_overlap_check": "passed",
+  "source_profiles": {
+    "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\Project-for-Work\\data_for_project\\normalized_profiles_with_profile_id.csv",
+    "bytes": 19827079,
+    "sha256": "8a8af1dcaa3a26710da63bf8f9fe384160356a507f7002c3d93b1c4f851a6cc1"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "run_id": "gb_transformer_smoke_v2_20260809",
+  "experiment": "GB-17 vs GB-18 vs GB-18-GA",
+  "smoke": true,
+  "split": {
+    "version": "entity_nested_v1",
+    "seed": 42,
+    "roles": [
+      "model_train",
+      "model_calibration",
+      "ga_validation",
+      "test",
+      "drop"
+    ],
+    "outer_test_sealed": true,
+    "cross_entity_or_cross_split_pairs": "drop and excluded"
+  },
+  "features": {
+    "gb17": [
+      "username_jaro",
+      "username_lev_sim",
+      "username_token_sort",
+      "fullname_jaro",
+      "fullname_lev_sim",
+      "fullname_token_sort",
+      "name_sim",
+      "bio_jaccard",
+      "bio_len_ratio",
+      "both_have_bio",
+      "location_jaro",
+      "location_exact",
+      "both_have_location",
+      "same_platform",
+      "username_len_diff",
+      "fullname_wordcount_diff",
+      "username_prefix3_match"
+    ],
+    "gb18": [
+      "username_jaro",
+      "username_lev_sim",
+      "username_token_sort",
+      "fullname_jaro",
+      "fullname_lev_sim",
+      "fullname_token_sort",
+      "name_sim",
+      "bio_jaccard",
+      "bio_len_ratio",
+      "both_have_bio",
+      "location_jaro",
+      "location_exact",
+      "both_have_location",
+      "same_platform",
+      "username_len_diff",
+      "fullname_wordcount_diff",
+      "username_prefix3_match",
+      "bert_cos"
+    ],
+    "feature_18": "bert_cos from cached pair_bert_cos.parquet"
+  },
+  "gb_configuration": {
+    "n_estimators": 5,
+    "learning_rate": 0.05,
+    "max_depth": 6,
+    "random_state": 42
+  },
+  "training": {
+    "model_seed": 42,
+    "train_neg_ratio": 3.0,
+    "calibration": "isotonic on model_calibration",
+    "hyperparameter_selection": "none; project-standard benchmark configuration"
+  },
+  "manual_thresholds": {
+    "MATCH": 0.98,
+    "REVIEW": 0.95
+  },
+  "ga": {
+    "implementation": "exp_r1_ga_redecision.py",
+    "seeds": [
+      7,
+      42,
+      123,
+      999,
+      2025
+    ],
+    "population": 10,
+    "generations": 2,
+    "elite": 3,
+    "mutation_probability": 0.3,
+    "mutation_sigma": 0.02,
+    "weights": {
+      "W_FP": 5.0,
+      "W_FN": 1.0,
+      "W_REV": 0.02
+    },
+    "selection": {
+      "policy": "minimum ga_validation weighted cost; ties resolved by smallest GA seed",
+      "selected_seed": 42,
+      "selected_genome": {
+        "t_m": 0.999,
+        "t_r": 0.6418103872519474,
+        "c_promote": 0.9608596315630417,
+        "c_demote": 0.5085094888084053
+      },
+      "selected_validation_cost": 379.24,
+      "seed_statistics": {
+        "val_cost": {
+          "mean": 405.356,
+          "sample_std": 45.801153697259636,
+          "min": 379.24,
+          "max": 485.0
+        },
+        "objective_val_cost": {
+          "mean": 47.356,
+          "sample_std": 45.80115369725964,
+          "min": 21.24,
+          "max": 127.0
+        },
+        "t_m": {
+          "mean": 0.9623862564009944,
+          "sample_std": 0.03420042738406195,
+          "min": 0.9169397986089413,
+          "max": 0.999
+        },
+        "t_r": {
+          "mean": 0.6301907330682582,
+          "sample_std": 0.13838092632578833,
+          "min": 0.5014936968208303,
+          "max": 0.8607698243268824
+        },
+        "c_promote": {
+          "mean": 0.8759383755735339,
+          "sample_std": 0.17153550242795276,
+          "min": 0.5708907708888395,
+          "max": 0.9660591310946436
+        },
+        "c_demote": {
+          "mean": 0.38228302953201554,
+          "sample_std": 0.17463518006940978,
+          "min": 0.09506372915079553,
+          "max": 0.5327501015659476
+        },
+        "validation_TP": {
+          "mean": 1331.2,
+          "sample_std": 42.073744782227315,
+          "min": 1256.0,
+          "max": 1353.0
+        },
+        "validation_FP": {
+          "mean": 1.0,
+          "sample_std": 2.23606797749979,
+          "min": 0.0,
+          "max": 5.0
+        },
+        "validation_FN": {
+          "mean": 399.4,
+          "sample_std": 47.8518547184955,
+          "min": 378.0,
+          "max": 485.0
+        },
+        "validation_REVIEW": {
+          "mean": 47.8,
+          "sample_std": 27.003703449712226,
+          "min": 0.0,
+          "max": 62.0
+        },
+        "validation_precision": {
+          "mean": 0.9992599999999999,
+          "sample_std": 0.0016546903033498607,
+          "min": 0.9963,
+          "max": 1.0
+        },
+        "validation_recall": {
+          "mean": 0.4548,
+          "sample_std": 0.014377760604489144,
+          "min": 0.4291,
+          "max": 0.4622
+        },
+        "validation_F1": {
+          "mean": 0.625,
+          "sample_std": 0.013697627531802705,
+          "min": 0.6005,
+          "max": 0.6315
+        }
+      },
+      "test_evaluations_during_selection": 0
+    }
+  },
+  "input_artifacts": {
+    "scored_pairs_enriched": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\scored_pairs_enriched.parquet",
+      "bytes": 9577326,
+      "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+    },
+    "pair_features17": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\pair_features17.parquet",
+      "bytes": 32494840,
+      "sha256": "215d2a1ee5464f4c11774052ef5510451a2f49d7bda4ec40435dae10f870d591"
+    },
+    "pair_bert_cos": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\pair_bert_cos.parquet",
+      "bytes": 13456136,
+      "sha256": "687e93cb46b12df3ae47b26f2eeaafafcf16f6a566146e3d5198d4cefeef97b7"
+    },
+    "blocking_missed_pairs": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\analysis_decision_matrix\\blocking_missed_pairs.csv",
+      "bytes": 1847856,
+      "sha256": "93b5121597148295d9686fa4daa04122d4f4ce58941e49f63464c76a6d0c746e"
+    },
+    "r0_nested_summary": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r1_nested_primary_20260809\\summary.json",
+      "bytes": 7190,
+      "sha256": "f9ad7a7397f694be0924eba903edc0c1d637822be2b44cc31d0e2bf44e674c56"
+    },
+    "r3_summary": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_primary_20260809\\summary.json",
+      "bytes": 7163,
+      "sha256": "31e03d2ec4ef8302e0f1d76e646759e60faa07038642228590c087de7d14c74b"
+    }
+  },
+  "output_artifacts": {
+    "probabilities": [
+      "gb17_probabilities.parquet",
+      "gb18_probabilities.parquet"
+    ],
+    "models": [
+      "model/gb17_model.pkl",
+      "model/gb17_calibrator.pkl",
+      "model/gb18_model.pkl",
+      "model/gb18_calibrator.pkl"
+    ]
+  },
+  "label_access": {
+    "before_final_test_evaluation": [
+      "model_train",
+      "model_calibration",
+      "ga_validation"
+    ],
+    "test": "fetched once after selected genome; no test metric used for selection"
+  },
+  "generated_at": "2026-08-09T13:39:45.343119+07:00"
+}

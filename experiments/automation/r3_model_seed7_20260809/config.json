@@ -1,0 +1,269 @@
+{
+  "run_id": "r3_model_seed7_20260809",
+  "experiment": "r3",
+  "seeds": [
+    7,
+    42,
+    123,
+    999,
+    2025
+  ],
+  "ga_overrides": {
+    "population_size": null,
+    "generations": null,
+    "elite_size": null,
+    "mutation_probability": null,
+    "mutation_sigma": null
+  },
+  "scenarios": [
+    {
+      "name": "A_current",
+      "weights": {
+        "W_FP": 5.0,
+        "W_FN": 1.0,
+        "W_REV": 0.02
+      }
+    }
+  ],
+  "defaults": {
+    "seed": 42,
+    "population_size": 60,
+    "generations": 40,
+    "elite_size": 12,
+    "mutation_probability": 0.3,
+    "mutation_sigma": 0.02,
+    "weights": {
+      "fp": 5.0,
+      "fn": 1.0,
+      "review": 0.02
+    }
+  },
+  "input_artifacts": {
+    "scored_cache": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\scored_pairs_enriched.parquet",
+      "bytes": 9577326,
+      "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+    },
+    "pair_features17": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\pair_features17.parquet",
+      "bytes": 32494840,
+      "sha256": "215d2a1ee5464f4c11774052ef5510451a2f49d7bda4ec40435dae10f870d591"
+    },
+    "pair_bert_cos": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\pair_bert_cos.parquet",
+      "bytes": 13456136,
+      "sha256": "687e93cb46b12df3ae47b26f2eeaafafcf16f6a566146e3d5198d4cefeef97b7"
+    },
+    "fresh_r2_probabilities": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809\\r2_probabilities.parquet",
+      "bytes": 5876028,
+      "sha256": "74d42a54fdf88d49c01440bd000adbd436bb1a3f2941277d786ff29574394ae4"
+    },
+    "fresh_r2_training_metadata": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809\\r2_training.json",
+      "bytes": 3119,
+      "sha256": "93bba141a364e28760b806d4412a3f8326b5f1657ac613774a97a9ae240ebfb4"
+    },
+    "r2_probabilities": {
+      "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809\\r2_probabilities.parquet",
+      "bytes": 5876028,
+      "sha256": "74d42a54fdf88d49c01440bd000adbd436bb1a3f2941277d786ff29574394ae4"
+    }
+  },
+  "provenance_chain": {
+    "input_cache_and_features": {
+      "scored_cache": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\scored_pairs_enriched.parquet",
+        "bytes": 9577326,
+        "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+      },
+      "pair_features17": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\pair_features17.parquet",
+        "bytes": 32494840,
+        "sha256": "215d2a1ee5464f4c11774052ef5510451a2f49d7bda4ec40435dae10f870d591"
+      },
+      "pair_bert_cos": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\pair_bert_cos.parquet",
+        "bytes": 13456136,
+        "sha256": "687e93cb46b12df3ae47b26f2eeaafafcf16f6a566146e3d5198d4cefeef97b7"
+      },
+      "fresh_r2_probabilities": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809\\r2_probabilities.parquet",
+        "bytes": 5876028,
+        "sha256": "74d42a54fdf88d49c01440bd000adbd436bb1a3f2941277d786ff29574394ae4"
+      },
+      "fresh_r2_training_metadata": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809\\r2_training.json",
+        "bytes": 3119,
+        "sha256": "93bba141a364e28760b806d4412a3f8326b5f1657ac613774a97a9ae240ebfb4"
+      },
+      "r2_probabilities": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809\\r2_probabilities.parquet",
+        "bytes": 5876028,
+        "sha256": "74d42a54fdf88d49c01440bd000adbd436bb1a3f2941277d786ff29574394ae4"
+      }
+    },
+    "ga_config": {
+      "seeds": [
+        7,
+        42,
+        123,
+        999,
+        2025
+      ],
+      "overrides": {
+        "population_size": null,
+        "generations": null,
+        "elite_size": null,
+        "mutation_probability": null,
+        "mutation_sigma": null
+      }
+    },
+    "result_artifacts": {
+      "trials.csv": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809\\trials.csv",
+        "bytes": 876,
+        "sha256": "f37e86d3d6da8875a2d962581fede515695afe9436c02b79f0d1d0cc48d7ce38"
+      },
+      "generations.csv": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809\\generations.csv",
+        "bytes": 11883,
+        "sha256": "164263487bc1046798a40175fab38e8ccd5a0600567ab064551a458329b2ef24"
+      },
+      "summary.json": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809\\summary.json",
+        "bytes": 7064,
+        "sha256": "6a45c614f70b83e838e1618ec74cc2a3e2d86c163eddb55c5cd072e468a94ec4"
+      },
+      "summary.md": {
+        "path": "D:\\66070260-Year3_Term2\\Project1\\Code\\experiments\\automation\\r3_model_seed7_20260809\\summary.md",
+        "bytes": 2005,
+        "sha256": "be4f02f522d62784953ad7a0955de726e87e80923ab231c65a690facab8aeee1"
+      }
+    }
+  },
+  "split": {
+    "validation": {
+      "tp_exact": 1256,
+      "fp_exact": 0,
+      "fn_blocking": 358,
+      "total_pos": 2927,
+      "n_scored": 21617
+    },
+    "test": {
+      "tp_exact": 3736,
+      "fp_exact": 11,
+      "fn_blocking": 1006,
+      "total_pos": 8775,
+      "n_scored": 191693
+    }
+  },
+  "split_names": {
+    "validation": "ga_validation",
+    "test": "test"
+  },
+  "selection_policy": "GA genome and deployment seed are selected by validation cost only; held-out test is never used for selection.",
+  "generated_at": "2026-08-09T01:31:55.128007+07:00",
+  "nested_split_seed": 42,
+  "fresh_r2_training": {
+    "best_epoch": 30,
+    "best_calibration_ap": 0.9369659384111035,
+    "epochs_completed": 30,
+    "training_config": {
+      "seed": 7,
+      "split_seed": 42,
+      "epochs": 30,
+      "patience": 5,
+      "batch_size": 8192,
+      "eval_batch_size": 16384,
+      "train_neg_ratio": 3.0,
+      "learning_rate": 0.001,
+      "weight_decay": 1e-05,
+      "dropout": 0.3,
+      "focal_alpha": 0.25,
+      "focal_gamma": 2.0,
+      "num_threads": 1
+    },
+    "feature_columns": [
+      "username_jaro",
+      "username_lev_sim",
+      "username_token_sort",
+      "fullname_jaro",
+      "fullname_lev_sim",
+      "fullname_token_sort",
+      "name_sim",
+      "bio_jaccard",
+      "bio_len_ratio",
+      "both_have_bio",
+      "location_jaro",
+      "location_exact",
+      "both_have_location",
+      "same_platform",
+      "username_len_diff",
+      "fullname_wordcount_diff",
+      "username_prefix3_match",
+      "bert_cos"
+    ],
+    "split_column": "experiment_split",
+    "split_counts": {
+      "model_train": 504968,
+      "model_calibration": 24901,
+      "ga_validation": 21617,
+      "test": 191693,
+      "drop": 1330663
+    },
+    "label_access": {
+      "model_fit": "model_train only",
+      "early_stopping_and_calibration": "model_calibration only",
+      "ga_optimisation": "ga_validation only (performed after this function)",
+      "held_out_test": "features predicted only; labels never read by this function"
+    },
+    "calibration_diagnostics": {
+      "best_threshold_diagnostic_only": 0.34,
+      "best_threshold_f1_diagnostic_only": 0.8858638743455497,
+      "curve_fraction_positive": [
+        0.005420876881044278,
+        0.13028169014084506,
+        0.2920353982300885,
+        0.3333333333333333,
+        0.4782608695652174,
+        0.5982905982905983,
+        0.8282828282828283,
+        0.9908592321755028
+      ],
+      "curve_mean_predicted_value": [
+        0.00542090545822654,
+        0.13028169160997363,
+        0.2920353900542301,
+        0.3333333432674408,
+        0.4782608665417934,
+        0.5982906222343445,
+        0.8282828198538886,
+        0.9908592360438115
+      ]
+    },
+    "n_train_after_undersample": 27036,
+    "n_calibration": 24901,
+    "n_predicted_all_scored_pairs": 2073842,
+    "environment": {
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "numpy": "2.4.2",
+      "pandas": "3.0.1",
+      "scikit_learn": "1.8.0",
+      "pytorch": "2.10.0+cpu",
+      "device": "cpu",
+      "cuda_available": false,
+      "cuda_device_count": 0,
+      "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+      "torch_num_threads": 1,
+      "deterministic_algorithms": true
+    },
+    "artifact_hashes": {
+      "identity_mlp_r2.pt": "9d2fbd09d8f22098cdd8ddbf561d2f1ef3c12909a1ae30c12ec4521ef1f5e2a9",
+      "scaler.pkl": "d8e88f9c11ad0f9e41a862859024ec0c0dec76c85a0139ef566665303a2c2e35",
+      "isotonic_calibrator.pkl": "5506cc9231d2c6975acf3a37a4435061e2bbe56c136167f3c882c79367597b6a",
+      "feature_cols.pkl": "1130111c621fbabb010bd5dcb013c56579a58df71336e0f796979b3af355c794",
+      "r2_probabilities.parquet": "74d42a54fdf88d49c01440bd000adbd436bb1a3f2941277d786ff29574394ae4"
+    }
+  }
+}

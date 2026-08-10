@@ -1,0 +1,65 @@
+{
+  "hash_algorithm": "SHA-256",
+  "files": {
+    "config.json": {
+      "bytes": 7032,
+      "sha256": "dc358d380873f8da0da40e6d746a35c168016bea3342bd6f93f7ddf719c6e0c8"
+    },
+    "environment.json": {
+      "bytes": 609,
+      "sha256": "4d1fb03e21af3d315e962ba6ac6659030059b57781e88b2f3109c48c2e5e4283"
+    },
+    "ga_generations.csv": {
+      "bytes": 643,
+      "sha256": "133222427b1e6d2257ba1c2319d8802675a6a9cc04b957c35e3de1e8fd3e5bba"
+    },
+    "gb17_probabilities.parquet": {
+      "bytes": 75234,
+      "sha256": "c4f0c2df465141890632ff9bf82f41b19d1c386131f08974b92cb2580fd2d3eb"
+    },
+    "gb18_probabilities.parquet": {
+      "bytes": 75208,
+      "sha256": "fe445522b4cc18a429c5dd925fc3c3bb17575b1c435bb853f4c33ec3cccc8668"
+    },
+    "model\\gb-17_calibrator.pkl": {
+      "bytes": 485,
+      "sha256": "965d205339e5576474992e6756afc068b526dbd37a11fcc424d92d1ff1dfac22"
+    },
+    "model\\gb-17_model.pkl": {
+      "bytes": 12920,
+      "sha256": "ee3cb8e6e0eec35bef92aee046b1dcda5a2ebc34357d7ab0f9833a3dac291ba7"
+    },
+    "model\\gb-18_calibrator.pkl": {
+      "bytes": 517,
+      "sha256": "56bf0aedefdee19aaf7a365675eb7bba36dcd3421473f6664cd37fabc55eff6f"
+    },
+    "model\\gb-18_model.pkl": {
+      "bytes": 13640,
+      "sha256": "b3de9d68a9ca1e0efe99269515192861ddb22df44ad52fcc3ea93b52cb3ad7b1"
+    },
+    "split_manifest.json": {
+      "bytes": 2833,
+      "sha256": "0b4aa46fc56acc1146e8236b68603a6d35d680fa03a197798b68a7eca7e9a124"
+    },
+    "summary.json": {
+      "bytes": 18509,
+      "sha256": "ae962bb0c55af64847d783d24884b1f24c65f0656096518e76135e78d1b61218"
+    },
+    "summary.md": {
+      "bytes": 2563,
+      "sha256": "0d9adfc0040704bab8e581348436df4fb2aa2a9530b3d7648bb6aaf61b1de1e1"
+    },
+    "test_results.csv": {
+      "bytes": 516,
+      "sha256": "bfc8b5777773fe0c38078eca7bf25396a67be57867efdc16cc6043a413bba354"
+    },
+    "training_metadata.json": {
+      "bytes": 4260,
+      "sha256": "edf58cc18b2a2102fbdf37cb896aa7b08cac93fde8cd3eabdca83b011ea06e08"
+    },
+    "trials.csv": {
+      "bytes": 954,
+      "sha256": "6b95da2c1f74854ff34b4e5d6b9a2282e626976b1717559fe19415be93c10309"
+    }
+  }
+}

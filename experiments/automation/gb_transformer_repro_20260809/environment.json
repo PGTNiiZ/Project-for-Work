@@ -1,0 +1,15 @@
+{
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "python_executable": "D:\\66070260-Year3_Term2\\Project1\\Code\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "numpy": "2.4.2",
+  "pandas": "3.0.1",
+  "scikit_learn": "1.8.0",
+  "cwd": "D:\\66070260-Year3_Term2\\Project1\\Code",
+  "deterministic_numpy_seed": 42,
+  "generated_at": "2026-08-09T13:44:17.258242+07:00",
+  "pytorch": "2.10.0+cpu",
+  "torch_num_threads": 8,
+  "cuda_available": false
+}

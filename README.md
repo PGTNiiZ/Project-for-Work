@@ -1,37 +1,21 @@
 # Project-for-Work
 
-This repository mixes data preparation, image processing, feature engineering, and training experiments for social profile matching. The top level has been cleaned so the root now holds only high-signal entry points and project folders.
+โปรเจกต์นี้ช่วยจับคู่โปรไฟล์โซเชียลที่เป็นคนเดียวกัน แล้วรวมเป็นข้อมูลลูกค้าสำหรับ CRM
 
-## Top-level layout
+## ตอนนี้ถึงไหนแล้ว
 
-- `scripts/`: standalone utility and analysis scripts that used to float in the repo root
-- `archive/`: old notebook copies and historical scratch files kept out of the active workflow
-- `image_process/`: image download, embedding, captioning, and image matching pipelines
-- `clean_data/`: dataset cleaning and location normalization scripts
-- `bigram_username_and_fullname/`: username/full-name matching pipeline
-- `bio_vector/`: notebook-based bio embedding experiments
-- `train_data/`: feature generation, labeling, training, scoring, and experiment suites
-- `data/`: source datasets, processed outputs, manifests, and matching results
-- `data_for_project/`: project-specific exported CSVs used across stages
-- `confix/`: one-off repair and migration utilities
-- `docs/`: repository notes and structure guidance
+- **ระบบหลักทำงานเป็นขั้นตอนได้แล้ว** ตั้งแต่เตรียมข้อมูลจนถึงรวมข้อมูลลูกค้า
+- **มีผลทดลองหลายชุดแล้ว** R3 มีค่า F1 สูงสุดเฉพาะชุด R0–R6; ผลชุดอื่นใช้เกณฑ์วัดต่างกัน
+- **R6 ยังไม่พร้อมใช้** เพราะกู้คู่ที่ระบบเดิมหาไม่เจอได้เพียง 3 คู่
+- **งานทดลองรอบใหม่ยังไม่เริ่ม** ผลตรวจ Phase 1 ผ่านบางส่วน และมีการจัดระเบียบไฟล์ค้างอยู่ใน Git
 
-## Main script entry points
+รายละเอียดอยู่ที่ [สถานะโปรเจกต์](docs/STATUS_TH.md) และ [แผนจัดโครงสร้าง](docs/plans/PROJECT_REORGANIZATION_PLAN_TH.md)
 
-- `scripts/image/advanced_embeddings.py`
-- `scripts/analysis/compare_pipeline_metrics.py`
-- `image_process/recover_profile_images.py`
-- `image_process/image_matching_pipeline.py`
-- `clean_data/preprocess_dataset.py`
-- `train_data/stage10_13_training_pipeline.py`
+## ถ้าจะเปิดดูโค้ด
 
-## Working rules
+- ระบบหลัก: `src/identity_resolution/`
+- โค้ดทดลอง: `experiments/code/`
+- ผลทดลอง: `experiments/REPORT_R0_R5.md`
+- เอกสารอธิบายแบบละเอียด: `docs/GETTING_STARTED_TH.md`
 
-- Put new standalone scripts in `scripts/` instead of the repository root.
-- Move old notebook copies and ad-hoc backups into `archive/` instead of leaving them beside active files.
-- Keep large generated artifacts under existing data folders, not beside source code.
-- Keep notebooks inside the domain folder they belong to, for example `train_data/` or `bio_vector/`.
-- Avoid adding cache, venv, or OS-generated files to git.
-- Prefer project-root-based paths in scripts so they work regardless of the current working directory.
-
-More detail is in `docs/PROJECT_STRUCTURE.md`.
+ยังไม่ต้องรัน pipeline ใหม่เพื่อดูผล เพราะมีผลการทดลองและรายงานเก็บไว้แล้ว
